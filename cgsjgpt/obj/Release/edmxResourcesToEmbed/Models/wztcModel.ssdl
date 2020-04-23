@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SPECIATABLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="HPHM" Type="varchar2" MaxLength="20" />
+    <Property Name="HPZL" Type="varchar2" MaxLength="2" />
+    <Property Name="DW" Type="varchar2" MaxLength="100" />
+    <Property Name="HPZLNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="KSSJ" Type="date" />
+    <Property Name="JSSJ" Type="date" />
+    <Property Name="LB" Type="char" MaxLength="1" />
+    <Property Name="JDCSYR" Type="varchar2" MaxLength="200" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="200" />
+    <Property Name="SFYDD" Type="char" MaxLength="1" />
+    <Property Name="GXR" Type="varchar2" MaxLength="200" />
+    <Property Name="LXR" Type="varchar2" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="SPECIATABLE" EntityType="Self.SPECIATABLE" Schema="WZTC" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CKSET">
+      <EntityTypeMapping TypeName="Model.CKSET">
+        <MappingFragment StoreEntitySet="CKSET">
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="CZSJ" ColumnName="CZSJ" />
+          <ScalarProperty Name="CZRY" ColumnName="CZRY" />
+          <ScalarProperty Name="YWLXS" ColumnName="YWLXS" />
+          <ScalarProperty Name="PJCOM" ColumnName="PJCOM" />
+          <ScalarProperty Name="ZCCKH" ColumnName="ZCCKH" />
+          <ScalarProperty Name="WDBH" ColumnName="WDBH" />
+          <ScalarProperty Name="KZKDZ" ColumnName="KZKDZ" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="CKMC" ColumnName="CKMC" />
+          <ScalarProperty Name="BMMC" ColumnName="BMMC" />
+          <ScalarProperty Name="BMNO" ColumnName="BMNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONFIGBASE">
+      <EntityTypeMapping TypeName="Model.CONFIGBASE">
+        <MappingFragment StoreEntitySet="CONFIGBASE">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="V5" ColumnName="V5" />
+          <ScalarProperty Name="LX5" ColumnName="LX5" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="V4" ColumnName="V4" />
+          <ScalarProperty Name="LX4" ColumnName="LX4" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="V3" ColumnName="V3" />
+          <ScalarProperty Name="LX3" ColumnName="LX3" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="V2" ColumnName="V2" />
+          <ScalarProperty Name="LX2" ColumnName="LX2" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="V1" ColumnName="V1" />
+          <ScalarProperty Name="LX1" ColumnName="LX1" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="KEYWORD" ColumnName="KEYWORD" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="LX" ColumnName="LX" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CODE">
+      <EntityTypeMapping TypeName="Model.CODE">
+        <MappingFragment StoreEntitySet="CODE">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE1" ColumnName="CODE" />
+          <ScalarProperty Name="LB" ColumnName="LB" />
+          <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+          <ScalarProperty Name="PTLB" ColumnName="PTLB" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES">
+      <EntityTypeMapping TypeName="Model.ROLES">
+        <MappingFragment StoreEntitySet="ROLES">
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="IDS" ColumnName="IDS" />
+          <ScalarProperty Name="CJ" ColumnName="CJ" />
+          <ScalarProperty Name="LX" ColumnName="LX" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUSINESSBM">
+      <EntityTypeMapping TypeName="Model.BUSINESSBM">
+        <MappingFragment StoreEntitySet="BUSINESSBM">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="BIDS" ColumnName="BIDS" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONFIGBM">
+      <EntityTypeMapping TypeName="Model.CONFIGBM">
+        <MappingFragment StoreEntitySet="CONFIGBM">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="OPTIME" ColumnName="OPTIME" />
+          <ScalarProperty Name="V5" ColumnName="V5" />
+          <ScalarProperty Name="LX5" ColumnName="LX5" />
+          <ScalarProperty Name="K5" ColumnName="K5" />
+          <ScalarProperty Name="V4" ColumnName="V4" />
+          <ScalarProperty Name="LX4" ColumnName="LX4" />
+          <ScalarProperty Name="K4" ColumnName="K4" />
+          <ScalarProperty Name="V3" ColumnName="V3" />
+          <ScalarProperty Name="LX3" ColumnName="LX3" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="V2" ColumnName="V2" />
+          <ScalarProperty Name="LX2" ColumnName="LX2" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="V1" ColumnName="V1" />
+          <ScalarProperty Name="LX1" ColumnName="LX1" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="KEYWORD" ColumnName="KEYWORD" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG">
+      <EntityTypeMapping TypeName="Model.LOG">
+        <MappingFragment StoreEntitySet="LOG">
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="CONN" ColumnName="CONN" />
+          <ScalarProperty Name="LX" ColumnName="LX" />
+          <ScalarProperty Name="SOURCEID" ColumnName="SOURCEID" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="LOGLEVEL" ColumnName="LOGLEVEL" />
+          <ScalarProperty Name="LB" ColumnName="LB" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BMDB">
+      <EntityTypeMapping TypeName="Model.BMDB">
+        <MappingFragment StoreEntitySet="BMDB">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ISJG" ColumnName="ISJG" />
+          <ScalarProperty Name="LXDZ" ColumnName="LXDZ" />
+          <ScalarProperty Name="FZJG" ColumnName="FZJG" />
+          <ScalarProperty Name="LXDH" ColumnName="LXDH" />
+          <ScalarProperty Name="LXR" ColumnName="LXR" />
+          <ScalarProperty Name="BMJB" ColumnName="BMJB" />
+          <ScalarProperty Name="BAJGNAME" ColumnName="BAJGNAME" />
+          <ScalarProperty Name="BAJGNO" ColumnName="BAJGNO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BMNO" ColumnName="BMNO" />
+          <ScalarProperty Name="PNAME" ColumnName="PNAME" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERDB">
+      <EntityTypeMapping TypeName="Model.USERDB">
+        <MappingFragment StoreEntitySet="USERDB">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="FASTMENU" ColumnName="FASTMENU" />
+          <ScalarProperty Name="JGDWS" ColumnName="JGDWS" />
+          <ScalarProperty Name="QXS" ColumnName="QXS" />
+          <ScalarProperty Name="QXLX" ColumnName="QXLX" />
+          <ScalarProperty Name="BM" ColumnName="BM" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="QD" ColumnName="QD" />
+          <ScalarProperty Name="LXDZ" ColumnName="LXDZ" />
+          <ScalarProperty Name="PJXTZH" ColumnName="PJXTZH" />
+          <ScalarProperty Name="IP3" ColumnName="IP3" />
+          <ScalarProperty Name="IP2" ColumnName="IP2" />
+          <ScalarProperty Name="IP1" ColumnName="IP1" />
+          <ScalarProperty Name="IPXZ" ColumnName="IPXZ" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="MMYXQ" ColumnName="MMYXQ" />
+          <ScalarProperty Name="SFZHM" ColumnName="SFZHM" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="DWNAME" ColumnName="DWNAME" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CODEYWLX">
+      <EntityTypeMapping TypeName="Model.CODEYWLX">
+        <MappingFragment StoreEntitySet="CODEYWLX">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="LSHISNULL" ColumnName="LSHISNULL" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUDB">
+      <EntityTypeMapping TypeName="Model.MENUDB">
+        <MappingFragment StoreEntitySet="MENUDB">
+          <ScalarProperty Name="ADMIN" ColumnName="ADMIN" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="FSCREEN" ColumnName="FSCREEN" />
+          <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+          <ScalarProperty Name="MINHEIGHT" ColumnName="MINHEIGHT" />
+          <ScalarProperty Name="WIDTH" ColumnName="WIDTH" />
+          <ScalarProperty Name="MINWIDTH" ColumnName="MINWIDTH" />
+          <ScalarProperty Name="AUTO" ColumnName="AUTO" />
+          <ScalarProperty Name="OPENMODE" ColumnName="OPENMODE" />
+          <ScalarProperty Name="ICON" ColumnName="ICON" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PNAME" ColumnName="PNAME" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

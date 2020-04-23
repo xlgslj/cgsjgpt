@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/style/green.css" rel="stylesheet" type="text/css" id = 'link'>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+
+	<ul class="tab">
+    <li name="website" class="tabcurrent" ><a href="javascript:;">网站设置</a></li>
+    <li name="userinfo"><a href="javascript:;">用户管理</a></li>
+    </ul>
+    
+    <div class="website">
+    
+    	<ul class="step">
+        <li><span>1</span>基本信息</li>
+        <li><span>2</span>用户权限</li>
+        <li class="stepcurrent"><span>3</span>网站安全</li>
+        <li><span>4</span>性能选项</li>
+        <li><span>5</span>数据库</li>
+        </ul>
+        
+        <form>
+     	<ul class="nform">
+        <li><span>网站名称：</span><input type="text" class="forminput nforminput" ><em>*请输入网站名称，例如：uimaker</em></li>
+        <li><span>网站负责人：</span><input type="text" class="forminput nforminput" ></li>
+        <li><span>支付密码：</span><input type="text" class="forminput nforminput" ></li>
+        <li><span>默认保存路径：</span><input type="text" class="forminput nforminput" ></li>
+        <li><span>开启管理日志：</span><input type="radio" checked>&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio">&nbsp;&nbsp;否</li>
+        <li class="areali"><span>站点描述：</span><textarea class="formarea"></textarea></li>
+        <li><span>&nbsp;</span><a href="javascript:;" class="pre">上一步</a><a href="javascript:;" class="nextlink">下一步</a></li>
+        </ul>
+        </form>
+        
+    </div>
+    
+    <div class="userinfo">
+    
+    <table class="simpletable">
+            
+            <thead>
+            <th>订单编号</th>
+            <th>订单金额(元)</th>
+            <th>下单时间</th>
+            <th>交易完成日期</th>
+            <th>卖家ID</th>
+            <th>操作</th>
+        	</thead>
+            
+            <tbody>
+            
+            <tr>
+                <td>20171101</td>
+                <td>256</td>
+                <td>2017-11-01 16:35:26</td>
+                <td>2017-11-01</td>
+                <td>uimaker</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171102</td>
+                <td>300</td>
+                <td>2017-11-02 10:50:08</td>
+                <td>2017-11-02</td>
+                <td>admin</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171103</td>
+                <td>500</td>
+                <td>2017-11-03 00:00:14</td>
+                <td>2017-11-03</td>
+                <td>nanjing</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171104</td>
+                <td>1000</td>
+                <td>2017-11-04 16:22:00</td>
+                <td>2017-11-04</td>
+                <td>office</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171105</td>
+                <td>200</td>
+                <td>2017-11-05 04:00:00</td>
+                <td>2017-11-05</td>
+                <td>uimaker</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171106</td>
+                <td>150</td>
+                <td>2017-11-06 18:20:10</td>
+                <td>2017-11-06</td>
+                <td>guanliyuan</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171107</td>
+                <td>450</td>
+                <td>2017-11-07 08:34:00</td>
+                <td>2017-11-07</td>
+                <td>moodoc</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171108</td>
+                <td>500</td>
+                <td>2017-11-08 19:00:14</td>
+                <td>2017-11-08</td>
+                <td>iphonex</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            </tbody>
+            
+            </table>
+    
+    </div>
+
+
+</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/skin.js"></script>
+    
+    <script type="text/javascript"> 
+    $(".tab > li").click(function(){
+        $(".tab > li").removeClass("tabcurrent");
+        $(this).addClass("tabcurrent");
+        $(".website,.userinfo").hide();
+        $("." + $(".tab >li.tabcurrent").attr("name")).show();
+    });
+    </script>
+</html>

@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 70px;
+        }
+
+            ul > li {
+                margin-left: 20px;
+                line-height: 30px;
+            }
+
+                ul > li input[type='text']:not(.vue-treeselect__input) {
+                    height: 26px;
+                    border: solid 1px #c6c6c6;
+                    line-height: 26px;
+                    text-indent: 8px;
+                    font-family: '微软雅黑';
+                    color: #585858;
+                    width: 200px;
+                }
+
+                ul > li a {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    background: #d2d2d2;
+                    color: #000;
+                    border: solid 1px #acacac;
+                    padding: 0 12px;
+                    border-radius: 1px;
+                }
+
+        .vue-treeselect__control {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--top-->
+    <div id="app" style="display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <ul>
+            <li>
+                <treeselect placeholder="选择单位..." v-model="bmno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:250px;height:32px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+            </li>
+            <li>
+                申请人:&nbsp;<input type="text" v-model="sqr" style="width:120px;">
+            </li>
+            <li>
+                &nbsp;&nbsp;号牌种类:
+                <select class="select swidth" v-model="hpzlno" style="min-width:120px;width:120px">
+                    <option v-for="item in code.hpzls" :value="item.CODE1">{{item.NAME}}</option>
+                </select>
+            </li>
+            <li>
+                号牌号码:&nbsp;<input type="text" v-model="hphm" style="width:120px;">
+            </li>
+            <li>
+                &nbsp;&nbsp;业务类型:
+                <select class="select swidth" v-model="ywlxno" style="min-width:80px;width:150px">
+                    <option v-for="item in code.ywlxs" :value="item.CODE1">{{item.NAME}}</option>
+                </select>
+            </li>
+            <li>
+                经办人:&nbsp;<input type="text" v-model="jbr" style="width:120px;">
+            </li>
+            <li>
+                &nbsp;&nbsp;退办类型:
+                <select class="select swidth" v-model="tblx" style="min-width:80px;width:150px">
+                    <option v-for="item in code.tblx" :value="item">{{item}}</option>
+                </select>
+            </li>
+            <li>
+                &nbsp;&nbsp;退办时间:&nbsp;<input type="text" id="rqfw" placeholder="选择时间" style="width:200px;">
+            </li>
+            <li>
+            <li><a href="#" class="headtop" @click="query" style="height:30px;margin-left:15px;"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+            </li>
+        </ul>
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" lay-event="show">查看</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="queryjdcywgzs.js"></script>
+</html>
+

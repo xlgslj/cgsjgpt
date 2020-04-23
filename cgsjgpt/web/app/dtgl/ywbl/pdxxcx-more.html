@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">排队号码：</td>
+                    <td style="position:relative;">
+                        {{pdxx.PDHM}}
+                    </td>
+                    <td class="tlabel">业务类型</td>
+                    <td>{{pdxx.YWLXMC}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">办理状态：</td>
+                    <td style="position:relative;">
+                        {{pdxx.ZT}}
+                    </td>
+                    <td class="tlabel">本人证件号码</td>
+                    <td>{{pdxx.BRZJHM+"  "+pdxx.BRZJLX}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">办理类型：</td>
+                    <td style="position:relative;">
+                        {{pdxx.BLLX}}
+                    </td>
+                    <td class="tlabel">红名单检测:</td>
+                    <td>{{pdxx.ISHMD=='00'?'不是':'是'}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">本人姓名：</td>
+                    <td style="position:relative;">
+                        {{pdxx.BRNAME}}
+                    </td>
+                    <td class="tlabel">本人证件号码</td>
+                    <td>{{pdxx.BRZJHM+"  "+pdxx.BRZJLX}}</td>
+                </tr>
+                <tr v-if="pdxx.BLLX=='代理人业务'">
+                    <td class="tlabel">代理人姓名：</td>
+                    <td style="position:relative;">
+                        {{pdxx.DLRNAME}}
+                    </td>
+                    <td class="tlabel">代理人证件号码</td>
+                    <td>{{pdxx.DLRZJHM+"  "+pdxx.DLRZJLX}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">导办民警：</td>
+                    <td style="position:relative;">
+                        {{pdxx.DBR}}
+                    </td>
+                    <td class="tlabel">取号时间:</td>
+                    <td>{{pdxx.QHSJ}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">办理窗口：</td>
+                    <td style="position:relative;">
+                        {{pdxx.CK}}
+                    </td>
+                    <td class="tlabel">经办人:</td>
+                    <td>{{pdxx.JBR}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">办理开始时间：</td>
+                    <td style="position:relative;">
+                        {{pdxx.STARTTIME}}
+                    </td>
+                    <td class="tlabel">办理结束时间:</td>
+                    <td>{{pdxx.ENDTIME}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">等候时间：</td>
+                    <td style="position:relative;">
+                        {{pdxx.WAITSECOND}}秒
+                    </td>
+                    <td class="tlabel">办理时间:</td>
+                    <td>{{pdxx.SECOND}}秒</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layui/layui.all.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="pdxxcx-more.js"></script>
+
+</html>
+

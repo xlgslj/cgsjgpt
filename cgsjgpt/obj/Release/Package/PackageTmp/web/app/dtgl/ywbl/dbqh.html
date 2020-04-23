@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        * {
+            font-size: 25px;
+        }
+
+        input[type="radio"] {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle;
+            margin-top: -2px;
+            margin-bottom: 1px;
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+
+        .formtable td {
+            text-indent: 0px;
+        }
+
+        .swidth {
+            width: 250px;
+            height: 40px;
+            margin-left: 0px;
+        }
+
+        .inputstyle {
+            width: 350px;
+            height: 40px;
+            color: #000;
+        }
+    </style>
+</head>
+<body style="padding:2px 8px 0px 8px;">
+    <object style="display: none" id="CVR_IDCard" name="CVR_IDCard" classid="clsid:10946843-7507-44FE-ACE8-2B3483D179B7"></object>
+    <table class="formtable" style="width:990px;">
+        <tbody>
+            <tr>
+                <td class="tlabel">等候业务</td>
+                <td>
+                    <div id="main" style="width: 600px;height:300px;"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table id="app" class="formtable" style="width:990px;">
+        <tbody>
+            <tr>
+                <td class="tlabel" style="height:50px;">办理类型</td>
+                <td>
+                    <template v-for="item in bllxs">
+                        <input name="qxlx" type="radio" :value="item" v-model="bllx">{{item}}
+                    </template>
+                </td>
+            </tr>
+            <tr>
+                <td class="tlabel">业务类型</td>
+                <td>
+                    <template v-for="(item,index) in ywlxs">
+                        <br v-if="index%2==0&&index!==0" />
+                        <input name="ywlx" type="radio" :value="item.NAME" v-model="ywlx" style="margin:15px;">{{item.NAME}}
+
+                    </template>
+                </td>
+            </tr>
+            <tr>
+                <td class="tlabel">当事人</td>
+                <td style="padding:5px;">
+                    证件类型:
+                    <select class="select swidth" v-model="zjlx">
+                        <option v-for="item in zjlxs" :value="item">{{item}}</option>
+                    </select>
+                    <template v-if="zjlx!='居民身份证11'">
+                        名称:
+                        <input type="text" class="forminput inputstyle" v-model.trim="name">
+                    </template>
+                    <div style="height:5px;"></div>
+                    证件号码:
+                    <input type="text" class="forminput inputstyle" v-model.trim="zjhmComputed" :disabled="zjlx=='居民身份证111'">
+                    <input v-if="zjlx=='居民身份证'" type="button" value="读取" class="btnsave" style="float:none;display:inline" @click="readidcard('1')">
+                </td>
+            </tr>
+            <tr v-if="showdlr">
+                <td class="tlabel">代理人</td>
+                <td style="padding:5px;">
+                    证件类型:
+                    <select class="select swidth" v-model="zjlx1">
+                        <option v-for="item in zjlxs" :value="item">{{item}}</option>
+                    </select>
+                    <template v-if="zjlx1!='居民身份证111'">
+                        名称:
+                        <input type="text" class="forminput inputstyle" v-model.trim="name1">
+                    </template>
+                    <div style="height:5px;"></div>
+                    证件号码:
+                    <input type="text" class="forminput inputstyle" v-model.lazy.trim="zjhm1Computed" :disabled="zjlx1=='居民身份证111'">
+                    <input v-if="zjlx1=='居民身份证'" type="button" value="读取" class="btnsave" style="float:none;display:inline" @click="readidcard('2')">
+                    <img v-if="showloadgif" src="../../../images/load.gif" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p v-if="dbcs>=4" style="color:red;font-size:20px;display:inline">历史代办次数:{{dbcs}}次</p>
+                    <input type="button" value="取号" :disabled="!allowsubmit" :class="{ 'btnsave': allowsubmit, 'btncancel': !allowsubmit }" @click="save" style="float:right;display:block;margin-right:50px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <object id="objActiveX" classid="clsid:A66F5373-0A8A-4C42-814B-38A87B331D40" width=0 height=0"></object>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/echarts.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/lodop/LodopFuncs.js"></script>
+<script type="text/javascript" src="dbqh.js"></script>
+</html>

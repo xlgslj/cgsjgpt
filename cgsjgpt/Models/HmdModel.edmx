@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AGENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="YWZL" Type="varchar2" MaxLength="50" />
+          <Property Name="PID" Type="varchar2" MaxLength="10" />
+          <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+          <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+          <Property Name="YWLX" Type="varchar2" MaxLength="100" />
+          <Property Name="BRNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="BRZJLX" Type="varchar2" MaxLength="100" />
+          <Property Name="BRZJHM" Type="varchar2" MaxLength="100" />
+          <Property Name="DLRNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="DLRZJLX" Type="varchar2" MaxLength="100" />
+          <Property Name="DLRZJHM" Type="varchar2" MaxLength="100" />
+          <Property Name="ADDLX" Type="varchar2" MaxLength="20" />
+          <Property Name="ADDRY" Type="varchar2" MaxLength="50" />
+          <Property Name="ADDDAY" Type="varchar2" MaxLength="12" />
+          <Property Name="ADDTIME" Type="date" />
+          <Property Name="ADDTIMESECONDS" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZT" Type="varchar2" MaxLength="20" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="DWBADB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="BALX" Type="varchar2" MaxLength="20" />
+          <Property Name="DWLX" Type="varchar2" MaxLength="50" />
+          <Property Name="DWMC" Type="varchar2" MaxLength="200" />
+          <Property Name="ZZJGDM" Type="varchar2" MaxLength="100" />
+          <Property Name="ADDRESS" Type="varchar2" MaxLength="200" />
+          <Property Name="DWJBR" Type="varchar2" MaxLength="50" />
+          <Property Name="TEL" Type="varchar2" MaxLength="50" />
+          <Property Name="LXDH" Type="varchar2" MaxLength="50" />
+          <Property Name="IMG1" Type="varchar2" MaxLength="100" />
+          <Property Name="URL1" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG2" Type="varchar2" MaxLength="100" />
+          <Property Name="URL2" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG3" Type="varchar2" MaxLength="100" />
+          <Property Name="URL3" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG4" Type="varchar2" MaxLength="100" />
+          <Property Name="URL4" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG5" Type="varchar2" MaxLength="100" />
+          <Property Name="URL5" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG6" Type="varchar2" MaxLength="100" />
+          <Property Name="URL6" Type="varchar2" MaxLength="100" />
+          <Property Name="OPER" Type="varchar2" MaxLength="100" />
+          <Property Name="OPTIME" Type="date" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="4000" />
+          <Property Name="MEMO1" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="RBLIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+          <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+          <Property Name="LX" Type="varchar2" MaxLength="50" />
+          <Property Name="DLFW" Type="varchar2" MaxLength="10" />
+          <Property Name="NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="SFZHM" Type="varchar2" MaxLength="100" />
+          <Property Name="TEL" Type="varchar2" MaxLength="100" />
+          <Property Name="ZZJGDM" Type="varchar2" MaxLength="100" />
+          <Property Name="DWNAME" Type="varchar2" MaxLength="200" />
+          <Property Name="OPER" Type="varchar2" MaxLength="50" />
+          <Property Name="OPERLX" Type="varchar2" MaxLength="100" />
+          <Property Name="SPER" Type="varchar2" MaxLength="50" />
+          <Property Name="JSER" Type="varchar2" MaxLength="50" />
+          <Property Name="LRDAY" Type="varchar2" MaxLength="12" />
+          <Property Name="LRSJ" Type="date" />
+          <Property Name="LRSECOND" Type="number" Precision="38" Scale="0" />
+          <Property Name="SPDAY" Type="varchar2" MaxLength="12" />
+          <Property Name="SPSJ" Type="date" />
+          <Property Name="SPSECOND" Type="number" Precision="38" Scale="0" />
+          <Property Name="JSDAY" Type="varchar2" MaxLength="12" />
+          <Property Name="JSSJ" Type="date" />
+          <Property Name="JSSECOND" Type="number" Precision="38" Scale="0" />
+          <Property Name="ADDLX" Type="varchar2" MaxLength="50" />
+          <Property Name="IMG1" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG2" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG3" Type="varchar2" MaxLength="100" />
+          <Property Name="IMG4" Type="varchar2" MaxLength="100" />
+          <Property Name="CAUSE" Type="varchar2" MaxLength="4000" />
+          <Property Name="ZT" Type="varchar2" MaxLength="20" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="2000" />
+          <Property Name="OPLOG" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="TRFFLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="LX" Type="varchar2" MaxLength="20" />
+          <Property Name="IP" Type="varchar2" MaxLength="20" />
+          <Property Name="OPER" Type="varchar2" MaxLength="50" />
+          <Property Name="OPDAY" Type="varchar2" MaxLength="12" />
+          <Property Name="OPSJ" Type="date" />
+          <Property Name="OPSECOND" Type="number" Precision="38" Scale="0" />
+          <Property Name="KEYS" Type="varchar2" MaxLength="500" />
+          <Property Name="RETS" Type="varchar2" MaxLength="4000" />
+          <Property Name="SECOND" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZT" Type="varchar2" MaxLength="50" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="AGENT" EntityType="Self.AGENT" Schema="CGSJGPT" store:Type="Tables" />
+          <EntitySet Name="DWBADB" EntityType="Self.DWBADB" Schema="CGSJGPT" store:Type="Tables" />
+          <EntitySet Name="RBLIST" EntityType="Self.RBLIST" Schema="CGSJGPT" store:Type="Tables" />
+          <EntitySet Name="TRFFLOG" EntityType="Self.TRFFLOG" Schema="CGSJGPT" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntitiesHmd" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TRFFLOG" EntityType="Model1.TRFFLOG" />
+          <EntitySet Name="AGENT" EntityType="Model1.AGENT" />
+          <EntitySet Name="RBLIST" EntityType="Model1.RBLIST" />
+          <EntitySet Name="DWBADB" EntityType="Model1.DWBADB" />
+        </EntityContainer>
+        <EntityType Name="TRFFLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="OPSJ" Type="DateTime" />
+          <Property Name="OPSECOND" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="KEYS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="RETS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AGENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="YWZL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DLRNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADDLX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADDDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ADDTIME" Type="DateTime" />
+          <Property Name="ADDTIMESECONDS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RBLIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLFW" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SFZHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ZZJGDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DWNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LRDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LRSJ" Type="DateTime" />
+          <Property Name="LRSECOND" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="SPSJ" Type="DateTime" />
+          <Property Name="SPSECOND" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="JSDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="JSSJ" Type="DateTime" />
+          <Property Name="JSSECOND" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ADDLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IMG1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CAUSE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ZT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OPLOG" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DWBADB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="BALX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DWLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DWMC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ZZJGDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DWJBR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LXDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IMG1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMG6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OPER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OPTIME" Type="DateTime" />
+          <Property Name="MEMO" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO1" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="EntitiesHmd">
+          <EntitySetMapping Name="TRFFLOG">
+            <EntityTypeMapping TypeName="Model1.TRFFLOG">
+              <MappingFragment StoreEntitySet="TRFFLOG">
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ZT" ColumnName="ZT" />
+                <ScalarProperty Name="SECOND" ColumnName="SECOND" />
+                <ScalarProperty Name="RETS" ColumnName="RETS" />
+                <ScalarProperty Name="KEYS" ColumnName="KEYS" />
+                <ScalarProperty Name="OPSECOND" ColumnName="OPSECOND" />
+                <ScalarProperty Name="OPSJ" ColumnName="OPSJ" />
+                <ScalarProperty Name="OPDAY" ColumnName="OPDAY" />
+                <ScalarProperty Name="OPER" ColumnName="OPER" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="LX" ColumnName="LX" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AGENT">
+            <EntityTypeMapping TypeName="Model1.AGENT">
+              <MappingFragment StoreEntitySet="AGENT">
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ZT" ColumnName="ZT" />
+                <ScalarProperty Name="ADDTIMESECONDS" ColumnName="ADDTIMESECONDS" />
+                <ScalarProperty Name="ADDTIME" ColumnName="ADDTIME" />
+                <ScalarProperty Name="ADDDAY" ColumnName="ADDDAY" />
+                <ScalarProperty Name="ADDRY" ColumnName="ADDRY" />
+                <ScalarProperty Name="ADDLX" ColumnName="ADDLX" />
+                <ScalarProperty Name="DLRZJHM" ColumnName="DLRZJHM" />
+                <ScalarProperty Name="DLRZJLX" ColumnName="DLRZJLX" />
+                <ScalarProperty Name="DLRNAME" ColumnName="DLRNAME" />
+                <ScalarProperty Name="BRZJHM" ColumnName="BRZJHM" />
+                <ScalarProperty Name="BRZJLX" ColumnName="BRZJLX" />
+                <ScalarProperty Name="BRNAME" ColumnName="BRNAME" />
+                <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+                <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+                <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="YWZL" ColumnName="YWZL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBLIST">
+            <EntityTypeMapping TypeName="Model1.RBLIST">
+              <MappingFragment StoreEntitySet="RBLIST">
+                <ScalarProperty Name="OPLOG" ColumnName="OPLOG" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ZT" ColumnName="ZT" />
+                <ScalarProperty Name="CAUSE" ColumnName="CAUSE" />
+                <ScalarProperty Name="IMG4" ColumnName="IMG4" />
+                <ScalarProperty Name="IMG3" ColumnName="IMG3" />
+                <ScalarProperty Name="IMG2" ColumnName="IMG2" />
+                <ScalarProperty Name="IMG1" ColumnName="IMG1" />
+                <ScalarProperty Name="ADDLX" ColumnName="ADDLX" />
+                <ScalarProperty Name="JSSECOND" ColumnName="JSSECOND" />
+                <ScalarProperty Name="JSSJ" ColumnName="JSSJ" />
+                <ScalarProperty Name="JSDAY" ColumnName="JSDAY" />
+                <ScalarProperty Name="SPSECOND" ColumnName="SPSECOND" />
+                <ScalarProperty Name="SPSJ" ColumnName="SPSJ" />
+                <ScalarProperty Name="SPDAY" ColumnName="SPDAY" />
+                <ScalarProperty Name="LRSECOND" ColumnName="LRSECOND" />
+                <ScalarProperty Name="LRSJ" ColumnName="LRSJ" />
+                <ScalarProperty Name="LRDAY" ColumnName="LRDAY" />
+                <ScalarProperty Name="JSER" ColumnName="JSER" />
+                <ScalarProperty Name="SPER" ColumnName="SPER" />
+                <ScalarProperty Name="OPERLX" ColumnName="OPERLX" />
+                <ScalarProperty Name="OPER" ColumnName="OPER" />
+                <ScalarProperty Name="DWNAME" ColumnName="DWNAME" />
+                <ScalarProperty Name="ZZJGDM" ColumnName="ZZJGDM" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="SFZHM" ColumnName="SFZHM" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DLFW" ColumnName="DLFW" />
+                <ScalarProperty Name="LX" ColumnName="LX" />
+                <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+                <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DWBADB">
+            <EntityTypeMapping TypeName="Model1.DWBADB">
+              <MappingFragment StoreEntitySet="DWBADB">
+                <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="OPTIME" ColumnName="OPTIME" />
+                <ScalarProperty Name="OPER" ColumnName="OPER" />
+                <ScalarProperty Name="URL6" ColumnName="URL6" />
+                <ScalarProperty Name="IMG6" ColumnName="IMG6" />
+                <ScalarProperty Name="URL5" ColumnName="URL5" />
+                <ScalarProperty Name="IMG5" ColumnName="IMG5" />
+                <ScalarProperty Name="URL4" ColumnName="URL4" />
+                <ScalarProperty Name="IMG4" ColumnName="IMG4" />
+                <ScalarProperty Name="URL3" ColumnName="URL3" />
+                <ScalarProperty Name="IMG3" ColumnName="IMG3" />
+                <ScalarProperty Name="URL2" ColumnName="URL2" />
+                <ScalarProperty Name="IMG2" ColumnName="IMG2" />
+                <ScalarProperty Name="URL1" ColumnName="URL1" />
+                <ScalarProperty Name="IMG1" ColumnName="IMG1" />
+                <ScalarProperty Name="LXDH" ColumnName="LXDH" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="DWJBR" ColumnName="DWJBR" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ZZJGDM" ColumnName="ZZJGDM" />
+                <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+                <ScalarProperty Name="DWLX" ColumnName="DWLX" />
+                <ScalarProperty Name="BALX" ColumnName="BALX" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

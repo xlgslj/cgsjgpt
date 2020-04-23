@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesXfyw">
+    <EntitySetMapping Name="BUSINESSBM">
+      <EntityTypeMapping TypeName="Model.BUSINESSBM">
+        <MappingFragment StoreEntitySet="BUSINESSBM">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="BIDS" ColumnName="BIDS" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUSINESS_FLOW">
+      <EntityTypeMapping TypeName="Model.BUSINESS_FLOW">
+        <MappingFragment StoreEntitySet="BUSINESS_FLOW">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="QUERYZT" ColumnName="QUERYZT" />
+          <ScalarProperty Name="WARNZT" ColumnName="WARNZT" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="LSHHCZT" ColumnName="LSHHCZT" />
+          <ScalarProperty Name="CJGLSH" ColumnName="CJGLSH" />
+          <ScalarProperty Name="OPER1TIME2" ColumnName="OPER1TIME2" />
+          <ScalarProperty Name="OPER1TIME1" ColumnName="OPER1TIME1" />
+          <ScalarProperty Name="OPER1TIME" ColumnName="OPER1TIME" />
+          <ScalarProperty Name="OPER1" ColumnName="OPER1" />
+          <ScalarProperty Name="SPCONTENT" ColumnName="SPCONTENT" />
+          <ScalarProperty Name="SPTIME2" ColumnName="SPTIME2" />
+          <ScalarProperty Name="SPTIME1" ColumnName="SPTIME1" />
+          <ScalarProperty Name="SPTIME" ColumnName="SPTIME" />
+          <ScalarProperty Name="SPER" ColumnName="SPER" />
+          <ScalarProperty Name="OPERTIME2" ColumnName="OPERTIME2" />
+          <ScalarProperty Name="OPERTIME1" ColumnName="OPERTIME1" />
+          <ScalarProperty Name="OPERTIME" ColumnName="OPERTIME" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="DRVANDVEHINFO" ColumnName="DRVANDVEHINFO" />
+          <ScalarProperty Name="ISHMD" ColumnName="ISHMD" />
+          <ScalarProperty Name="DWZLS" ColumnName="DWZLS" />
+          <ScalarProperty Name="DLRZLS" ColumnName="DLRZLS" />
+          <ScalarProperty Name="BRZLS" ColumnName="BRZLS" />
+          <ScalarProperty Name="BLDWMC" ColumnName="BLDWMC" />
+          <ScalarProperty Name="DWDM" ColumnName="DWDM" />
+          <ScalarProperty Name="DLRTEL" ColumnName="DLRTEL" />
+          <ScalarProperty Name="DLRNAME" ColumnName="DLRNAME" />
+          <ScalarProperty Name="DLRZJHM" ColumnName="DLRZJHM" />
+          <ScalarProperty Name="DLRZJLX" ColumnName="DLRZJLX" />
+          <ScalarProperty Name="BRTEL" ColumnName="BRTEL" />
+          <ScalarProperty Name="BRNAME" ColumnName="BRNAME" />
+          <ScalarProperty Name="BRZJHM" ColumnName="BRZJHM" />
+          <ScalarProperty Name="BRZJLX" ColumnName="BRZJLX" />
+          <ScalarProperty Name="CYLSH" ColumnName="CYLSH" />
+          <ScalarProperty Name="CLSBDH" ColumnName="CLSBDH" />
+          <ScalarProperty Name="HPHM1" ColumnName="HPHM1" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+          <ScalarProperty Name="HPZLNO" ColumnName="HPZLNO" />
+          <ScalarProperty Name="BLMS" ColumnName="BLMS" />
+          <ScalarProperty Name="SHMS" ColumnName="SHMS" />
+          <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+          <ScalarProperty Name="PTLB" ColumnName="PTLB" />
+          <ScalarProperty Name="BID" ColumnName="BID" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUSINESSBASE">
+      <EntityTypeMapping TypeName="Model.BUSINESSBASE">
+        <MappingFragment StoreEntitySet="BUSINESSBASE">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="K3" ColumnName="K3" />
+          <ScalarProperty Name="K2" ColumnName="K2" />
+          <ScalarProperty Name="K1" ColumnName="K1" />
+          <ScalarProperty Name="DWZL" ColumnName="DWZL" />
+          <ScalarProperty Name="DLRZL" ColumnName="DLRZL" />
+          <ScalarProperty Name="BRZL" ColumnName="BRZL" />
+          <ScalarProperty Name="SHMS" ColumnName="SHMS" />
+          <ScalarProperty Name="BLMS" ColumnName="BLMS" />
+          <ScalarProperty Name="ZJCX" ColumnName="ZJCX" />
+          <ScalarProperty Name="SYXZ" ColumnName="SYXZ" />
+          <ScalarProperty Name="CLLX" ColumnName="CLLX" />
+          <ScalarProperty Name="FZX" ColumnName="FZX" />
+          <ScalarProperty Name="YHPHMISNULL" ColumnName="YHPHMISNULL" />
+          <ScalarProperty Name="CYLSHISNULL" ColumnName="CYLSHISNULL" />
+          <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="GNBH" ColumnName="GNBH" />
+          <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+          <ScalarProperty Name="PTLB" ColumnName="PTLB" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

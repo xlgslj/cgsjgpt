@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <div id="app">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">名称：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="中文" v-model="ywlx.NAME" style="width:400px;">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">代码：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="英文" v-model="upcode" :disabled="count>0">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">流水号是否可为空：</td>
+                    <td>
+                        <select class="select swidth" data-value="1" v-model="ywlx.LSHISNULL">
+                            <option value="否">否</option>
+                            <option value="是">是</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="formbtn">
+            <input type="button" value="修改" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="ckywlxpz-edit.js"></script>
+
+</html>
+

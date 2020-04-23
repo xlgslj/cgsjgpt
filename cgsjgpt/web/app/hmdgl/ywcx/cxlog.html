@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .c-ui {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .c-ui > li {
+                line-height: 30px;
+                margin: 1px 1px 1px 1px;
+                vertical-align: middle;
+                position: relative;
+            }
+
+        input[type='text'] {
+            height: 26px;
+            border: solid 1px #c6c6c6;
+            line-height: 26px;
+            text-indent: 8px;
+            font-family: '微软雅黑';
+            color: #585858;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--top-->
+    <div id="app" style="display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <ul class="c-ui">
+            <li>
+                查询状态:&nbsp;
+                <select class="select swidth" style="width:100px;" v-model="zt">
+                    <option value=""></option>
+                    <option value="成功">成功</option>
+                    <option value="失败">失败</option>
+                </select>
+            </li>
+            <li>
+                操作人:&nbsp;<input type="text" v-model="oper" style="width:80px;">
+            </li>
+
+            <li>
+                查询条件:&nbsp;<input type="text" v-model="keys" style="width:200px;">
+            </li>
+            <li>&nbsp;&nbsp;操作日期:&nbsp;<input type="text" id="rqfw" placeholder="选择时间" style="width:160px;">
+        </ul>
+        <ul class="toolbar" style="padding-top:0px;margin-left:10px;">
+            <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+        </ul>
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="cxlog.js"></script>
+</html>
+

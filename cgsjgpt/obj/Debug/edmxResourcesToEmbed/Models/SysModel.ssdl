@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BMDB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="PID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="PNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BMNO" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="BAJGNO" Type="varchar2" MaxLength="50" />
+    <Property Name="BAJGNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BMJB" Type="varchar2" MaxLength="20" />
+    <Property Name="LXR" Type="varchar2" MaxLength="50" />
+    <Property Name="LXDH" Type="varchar2" MaxLength="50" />
+    <Property Name="FZJG" Type="varchar2" MaxLength="20" />
+    <Property Name="LXDZ" Type="varchar2" MaxLength="500" />
+    <Property Name="ISJG" Type="char" MaxLength="1" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="BUSINESSBM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+    <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+    <Property Name="BIDS" Type="varchar2" MaxLength="4000" />
+    <Property Name="K1" Type="varchar2" MaxLength="100" />
+    <Property Name="K2" Type="varchar2" MaxLength="200" />
+    <Property Name="K3" Type="varchar2" MaxLength="300" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CKSET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="BMNO" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="BMMC" Type="varchar2" MaxLength="102" Nullable="false" />
+    <Property Name="CKMC" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="IP" Type="varchar2" MaxLength="50" />
+    <Property Name="KZKDZ" Type="varchar2" MaxLength="50" />
+    <Property Name="WDBH" Type="varchar2" MaxLength="50" />
+    <Property Name="ZCCKH" Type="varchar2" MaxLength="50" />
+    <Property Name="PJCOM" Type="varchar2" MaxLength="50" />
+    <Property Name="YWLXS" Type="varchar2" MaxLength="2000" />
+    <Property Name="CZRY" Type="varchar2" MaxLength="50" />
+    <Property Name="CZSJ" Type="date" />
+    <Property Name="ZT" Type="varchar2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CODE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="PTLB" Type="varchar2" MaxLength="50" />
+    <Property Name="XTLB" Type="varchar2" MaxLength="50" />
+    <Property Name="LB" Type="varchar2" MaxLength="100" />
+    <Property Name="CODE" Type="varchar2" MaxLength="20" />
+    <Property Name="NAME" Type="varchar2" MaxLength="200" />
+    <Property Name="K1" Type="varchar2" MaxLength="100" />
+    <Property Name="K2" Type="varchar2" MaxLength="100" />
+    <Property Name="K3" Type="varchar2" MaxLength="100" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CODEYWLX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="200" Nullable="false" />
+    <Property Name="CODE" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="LSHISNULL" Type="varchar2" MaxLength="50" />
+    <Property Name="K1" Type="varchar2" MaxLength="100" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CONFIGBASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="LX" Type="varchar2" MaxLength="50" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="KEYWORD" Type="varchar2" MaxLength="100" />
+    <Property Name="NAME" Type="varchar2" MaxLength="200" />
+    <Property Name="K1" Type="varchar2" MaxLength="50" />
+    <Property Name="LX1" Type="varchar2" MaxLength="20" />
+    <Property Name="V1" Type="varchar2" MaxLength="100" />
+    <Property Name="K2" Type="varchar2" MaxLength="50" />
+    <Property Name="LX2" Type="varchar2" MaxLength="20" />
+    <Property Name="V2" Type="varchar2" MaxLength="100" />
+    <Property Name="K3" Type="varchar2" MaxLength="50" />
+    <Property Name="LX3" Type="varchar2" MaxLength="20" />
+    <Property Name="V3" Type="varchar2" MaxLength="100" />
+    <Property Name="K4" Type="varchar2" MaxLength="50" />
+    <Property Name="LX4" Type="varchar2" MaxLength="20" />
+    <Property Name="V4" Type="varchar2" MaxLength="100" />
+    <Property Name="K5" Type="varchar2" MaxLength="50" />
+    <Property Name="LX5" Type="varchar2" MaxLength="20" />
+    <Property Name="V5" Type="varchar2" MaxLength="100" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CONFIGBM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="CID" Type="varchar2" MaxLength="10" />
+    <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+    <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="KEYWORD" Type="varchar2" MaxLength="100" />
+    <Property Name="NAME" Type="varchar2" MaxLength="200" />
+    <Property Name="K1" Type="varchar2" MaxLength="50" />
+    <Property Name="LX1" Type="varchar2" MaxLength="20" />
+    <Property Name="V1" Type="varchar2" MaxLength="100" />
+    <Property Name="K2" Type="varchar2" MaxLength="50" />
+    <Property Name="LX2" Type="varchar2" MaxLength="20" />
+    <Property Name="V2" Type="varchar2" MaxLength="100" />
+    <Property Name="K3" Type="varchar2" MaxLength="50" />
+    <Property Name="LX3" Type="varchar2" MaxLength="20" />
+    <Property Name="V3" Type="varchar2" MaxLength="100" />
+    <Property Name="K4" Type="varchar2" MaxLength="50" />
+    <Property Name="LX4" Type="varchar2" MaxLength="20" />
+    <Property Name="V4" Type="varchar2" MaxLength="100" />
+    <Property Name="K5" Type="varchar2" MaxLength="50" />
+    <Property Name="LX5" Type="varchar2" MaxLength="20" />
+    <Property Name="V5" Type="varchar2" MaxLength="100" />
+    <Property Name="OPTIME" Type="date" />
+    <Property Name="OPERID" Type="varchar2" MaxLength="50" />
+    <Property Name="OPER" Type="varchar2" MaxLength="50" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="LB" Type="varchar2" MaxLength="50" />
+    <Property Name="LOGLEVEL" Type="number" Precision="38" Scale="0" />
+    <Property Name="SOURCE" Type="varchar2" MaxLength="50" />
+    <Property Name="SOURCEID" Type="varchar2" MaxLength="20" />
+    <Property Name="LX" Type="varchar2" MaxLength="50" />
+    <Property Name="CONN" Type="varchar2" MaxLength="500" />
+    <Property Name="OPERID" Type="varchar2" MaxLength="12" />
+    <Property Name="OPER" Type="varchar2" MaxLength="50" />
+    <Property Name="IP" Type="varchar2" MaxLength="30" />
+    <Property Name="K1" Type="varchar2" MaxLength="100" />
+    <Property Name="K2" Type="varchar2" MaxLength="100" />
+    <Property Name="K3" Type="varchar2" MaxLength="100" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="4000" />
+    <Property Name="CREATETIME" Type="date" />
+  </EntityType>
+  <EntityType Name="MENUDB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="PID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="PNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="NAME" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="ICON" Type="varchar2" MaxLength="50" />
+    <Property Name="OPENMODE" Type="varchar2" MaxLength="10" />
+    <Property Name="AUTO" Type="char" MaxLength="1" />
+    <Property Name="MINWIDTH" Type="number" Precision="38" Scale="0" />
+    <Property Name="WIDTH" Type="number" Precision="38" Scale="0" />
+    <Property Name="MINHEIGHT" Type="number" Precision="38" Scale="0" />
+    <Property Name="HEIGHT" Type="number" Precision="38" Scale="0" />
+    <Property Name="FSCREEN" Type="varchar2" MaxLength="10" />
+    <Property Name="URL" Type="varchar2" MaxLength="100" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="2000" />
+    <Property Name="ADMIN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="50" />
+    <Property Name="LX" Type="varchar2" MaxLength="20" />
+    <Property Name="CJ" Type="varchar2" MaxLength="100" />
+    <Property Name="IDS" Type="varchar2" MaxLength="4000" />
+    <Property Name="ZT" Type="varchar2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="USERDB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+    <Property Name="DWNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="LOGINNAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="PWD" Type="varchar2" MaxLength="100" />
+    <Property Name="SFZHM" Type="varchar2" MaxLength="20" />
+    <Property Name="MMYXQ" Type="date" />
+    <Property Name="TEL" Type="varchar2" MaxLength="20" />
+    <Property Name="IPXZ" Type="varchar2" MaxLength="10" />
+    <Property Name="IP1" Type="varchar2" MaxLength="20" />
+    <Property Name="IP2" Type="varchar2" MaxLength="20" />
+    <Property Name="IP3" Type="varchar2" MaxLength="20" />
+    <Property Name="PJXTZH" Type="varchar2" MaxLength="100" />
+    <Property Name="LXDZ" Type="varchar2" MaxLength="200" />
+    <Property Name="QD" Type="varchar2" MaxLength="10" />
+    <Property Name="STATE" Type="varchar2" MaxLength="10" />
+    <Property Name="BM" Type="varchar2" MaxLength="20" />
+    <Property Name="QXLX" Type="varchar2" MaxLength="10" />
+    <Property Name="QXS" Type="varchar2" MaxLength="4000" />
+    <Property Name="JGDWS" Type="varchar2" MaxLength="4000" />
+    <Property Name="FASTMENU" Type="varchar2" MaxLength="500" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BMDB" EntityType="Self.BMDB" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="BUSINESSBM" EntityType="Self.BUSINESSBM" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="CKSET" EntityType="Self.CKSET" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="CODE" EntityType="Self.CODE" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="CODEYWLX" EntityType="Self.CODEYWLX" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="CONFIGBASE" EntityType="Self.CONFIGBASE" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="CONFIGBM" EntityType="Self.CONFIGBM" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="LOG" EntityType="Self.LOG" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="MENUDB" EntityType="Self.MENUDB" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="USERDB" EntityType="Self.USERDB" Schema="CGSJGPT" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

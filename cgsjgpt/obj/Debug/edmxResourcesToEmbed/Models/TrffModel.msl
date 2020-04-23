@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesTrff">
+    <EntitySetMapping Name="DRIVINGLICENSE">
+      <EntityTypeMapping TypeName="Model.DRIVINGLICENSE">
+        <MappingFragment StoreEntitySet="DRIVINGLICENSE">
+          <ScalarProperty Name="DABH" ColumnName="DABH" />
+          <ScalarProperty Name="SFZMHM" ColumnName="SFZMHM" />
+          <ScalarProperty Name="ZJCX" ColumnName="ZJCX" />
+          <ScalarProperty Name="YZJCX" ColumnName="YZJCX" />
+          <ScalarProperty Name="QFRQ" ColumnName="QFRQ" />
+          <ScalarProperty Name="SYRQ" ColumnName="SYRQ" />
+          <ScalarProperty Name="CCLZRQ" ColumnName="CCLZRQ" />
+          <ScalarProperty Name="CCFZJG" ColumnName="CCFZJG" />
+          <ScalarProperty Name="JZQX" ColumnName="JZQX" />
+          <ScalarProperty Name="YXQS" ColumnName="YXQS" />
+          <ScalarProperty Name="YXQZ" ColumnName="YXQZ" />
+          <ScalarProperty Name="LJJF" ColumnName="LJJF" />
+          <ScalarProperty Name="CFRQ" ColumnName="CFRQ" />
+          <ScalarProperty Name="XXTZRQ" ColumnName="XXTZRQ" />
+          <ScalarProperty Name="BZCS" ColumnName="BZCS" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="LY" ColumnName="LY" />
+          <ScalarProperty Name="JXMC" ColumnName="JXMC" />
+          <ScalarProperty Name="JLY" ColumnName="JLY" />
+          <ScalarProperty Name="XZQH" ColumnName="XZQH" />
+          <ScalarProperty Name="XZQJ" ColumnName="XZQJ" />
+          <ScalarProperty Name="FZRQ" ColumnName="FZRQ" />
+          <ScalarProperty Name="JBR" ColumnName="JBR" />
+          <ScalarProperty Name="GLBM" ColumnName="GLBM" />
+          <ScalarProperty Name="FZJG" ColumnName="FZJG" />
+          <ScalarProperty Name="GXSJ" ColumnName="GXSJ" />
+          <ScalarProperty Name="LSH" ColumnName="LSH" />
+          <ScalarProperty Name="XGZL" ColumnName="XGZL" />
+          <ScalarProperty Name="BZ" ColumnName="BZ" />
+          <ScalarProperty Name="JYW" ColumnName="JYW" />
+          <ScalarProperty Name="YDABH" ColumnName="YDABH" />
+          <ScalarProperty Name="SQDM" ColumnName="SQDM" />
+          <ScalarProperty Name="ZXBH" ColumnName="ZXBH" />
+          <ScalarProperty Name="XH" ColumnName="XH" />
+          <ScalarProperty Name="SFZMMC" ColumnName="SFZMMC" />
+          <ScalarProperty Name="HMCD" ColumnName="HMCD" />
+          <ScalarProperty Name="XM" ColumnName="XM" />
+          <ScalarProperty Name="XB" ColumnName="XB" />
+          <ScalarProperty Name="CSRQ" ColumnName="CSRQ" />
+          <ScalarProperty Name="GJ" ColumnName="GJ" />
+          <ScalarProperty Name="DJZSXZQH" ColumnName="DJZSXZQH" />
+          <ScalarProperty Name="DJZSXXDZ" ColumnName="DJZSXXDZ" />
+          <ScalarProperty Name="LXZSXZQH" ColumnName="LXZSXZQH" />
+          <ScalarProperty Name="LXZSXXDZ" ColumnName="LXZSXXDZ" />
+          <ScalarProperty Name="LXZSYZBM" ColumnName="LXZSYZBM" />
+          <ScalarProperty Name="LXDH" ColumnName="LXDH" />
+          <ScalarProperty Name="SJHM" ColumnName="SJHM" />
+          <ScalarProperty Name="DZYX" ColumnName="DZYX" />
+          <ScalarProperty Name="ZZZM" ColumnName="ZZZM" />
+          <ScalarProperty Name="ZZFZJG" ColumnName="ZZFZJG" />
+          <ScalarProperty Name="ZZFZRQ" ColumnName="ZZFZRQ" />
+          <ScalarProperty Name="SFBD" ColumnName="SFBD" />
+          <ScalarProperty Name="DWBH" ColumnName="DWBH" />
+          <ScalarProperty Name="SYYXQZ" ColumnName="SYYXQZ" />
+          <ScalarProperty Name="XCZG" ColumnName="XCZG" />
+          <ScalarProperty Name="XCZJCX" ColumnName="XCZJCX" />
+          <ScalarProperty Name="RYZT" ColumnName="RYZT" />
+          <ScalarProperty Name="SXBJ" ColumnName="SXBJ" />
+          <ScalarProperty Name="XZCRQ" ColumnName="XZCRQ" />
+          <ScalarProperty Name="SXQKSBJ" ColumnName="SXQKSBJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICLE">
+      <EntityTypeMapping TypeName="Model.VEHICLE">
+        <MappingFragment StoreEntitySet="VEHICLE">
+          <ScalarProperty Name="CDQDXSLCDS" ColumnName="CDQDXSLCDS" />
+          <ScalarProperty Name="CDQDXSLCGK" ColumnName="CDQDXSLCGK" />
+          <ScalarProperty Name="HDWJCD" ColumnName="HDWJCD" />
+          <ScalarProperty Name="CNZZDTDY" ColumnName="CNZZDTDY" />
+          <ScalarProperty Name="CNZZZDY" ColumnName="CNZZZDY" />
+          <ScalarProperty Name="CNZZZDL" ColumnName="CNZZZDL" />
+          <ScalarProperty Name="CNZZXS" ColumnName="CNZZXS" />
+          <ScalarProperty Name="CNZZZL" ColumnName="CNZZZL" />
+          <ScalarProperty Name="QDDJGL" ColumnName="QDDJGL" />
+          <ScalarProperty Name="QDDJH" ColumnName="QDDJH" />
+          <ScalarProperty Name="QDDJXH" ColumnName="QDDJXH" />
+          <ScalarProperty Name="XNYZL" ColumnName="XNYZL" />
+          <ScalarProperty Name="SFXNY" ColumnName="SFXNY" />
+          <ScalarProperty Name="DZBSXLH" ColumnName="DZBSXLH" />
+          <ScalarProperty Name="HPQYSJ" ColumnName="HPQYSJ" />
+          <ScalarProperty Name="NCDQSY" ColumnName="NCDQSY" />
+          <ScalarProperty Name="WXMBC" ColumnName="WXMBC" />
+          <ScalarProperty Name="ZZJGLX" ColumnName="ZZJGLX" />
+          <ScalarProperty Name="SFYZHGN" ColumnName="SFYZHGN" />
+          <ScalarProperty Name="FDJGS" ColumnName="FDJGS" />
+          <ScalarProperty Name="YQJYQZ2" ColumnName="YQJYQZ2" />
+          <ScalarProperty Name="YQJYQZBFQZ" ColumnName="YQJYQZBFQZ" />
+          <ScalarProperty Name="SYQSRQ" ColumnName="SYQSRQ" />
+          <ScalarProperty Name="DWBH" ColumnName="DWBH" />
+          <ScalarProperty Name="JYHGBZBH" ColumnName="JYHGBZBH" />
+          <ScalarProperty Name="SJHM" ColumnName="SJHM" />
+          <ScalarProperty Name="XSZBH" ColumnName="XSZBH" />
+          <ScalarProperty Name="DZYX" ColumnName="DZYX" />
+          <ScalarProperty Name="YTSX" ColumnName="YTSX" />
+          <ScalarProperty Name="CLYT" ColumnName="CLYT" />
+          <ScalarProperty Name="SQDM" ColumnName="SQDM" />
+          <ScalarProperty Name="DPHGZBH" ColumnName="DPHGZBH" />
+          <ScalarProperty Name="CYRY" ColumnName="CYRY" />
+          <ScalarProperty Name="YXH" ColumnName="YXH" />
+          <ScalarProperty Name="ZDYZT" ColumnName="ZDYZT" />
+          <ScalarProperty Name="YZBM2" ColumnName="YZBM2" />
+          <ScalarProperty Name="ZZXXDZ" ColumnName="ZZXXDZ" />
+          <ScalarProperty Name="ZZXZQH" ColumnName="ZZXZQH" />
+          <ScalarProperty Name="ZZZ" ColumnName="ZZZ" />
+          <ScalarProperty Name="LXDH" ColumnName="LXDH" />
+          <ScalarProperty Name="YZBM1" ColumnName="YZBM1" />
+          <ScalarProperty Name="ZSXXDZ" ColumnName="ZSXXDZ" />
+          <ScalarProperty Name="ZSXZQH" ColumnName="ZSXZQH" />
+          <ScalarProperty Name="JYW" ColumnName="JYW" />
+          <ScalarProperty Name="BZ" ColumnName="BZ" />
+          <ScalarProperty Name="HMBH" ColumnName="HMBH" />
+          <ScalarProperty Name="QMBH" ColumnName="QMBH" />
+          <ScalarProperty Name="XGZL" ColumnName="XGZL" />
+          <ScalarProperty Name="GXRQ" ColumnName="GXRQ" />
+          <ScalarProperty Name="NSZMBH" ColumnName="NSZMBH" />
+          <ScalarProperty Name="NSZM" ColumnName="NSZM" />
+          <ScalarProperty Name="HGZBH" ColumnName="HGZBH" />
+          <ScalarProperty Name="JKPZHM" ColumnName="JKPZHM" />
+          <ScalarProperty Name="JKPZ" ColumnName="JKPZ" />
+          <ScalarProperty Name="XSRQ" ColumnName="XSRQ" />
+          <ScalarProperty Name="XSJG" ColumnName="XSJG" />
+          <ScalarProperty Name="XSDW" ColumnName="XSDW" />
+          <ScalarProperty Name="PZBH2" ColumnName="PZBH2" />
+          <ScalarProperty Name="LLPZ2" ColumnName="LLPZ2" />
+          <ScalarProperty Name="PZBH1" ColumnName="PZBH1" />
+          <ScalarProperty Name="LLPZ1" ColumnName="LLPZ1" />
+          <ScalarProperty Name="HDFS" ColumnName="HDFS" />
+          <ScalarProperty Name="CCRQ" ColumnName="CCRQ" />
+          <ScalarProperty Name="HBDBQK" ColumnName="HBDBQK" />
+          <ScalarProperty Name="HPZK" ColumnName="HPZK" />
+          <ScalarProperty Name="QPZK" ColumnName="QPZK" />
+          <ScalarProperty Name="ZQYZL" ColumnName="ZQYZL" />
+          <ScalarProperty Name="HDZK" ColumnName="HDZK" />
+          <ScalarProperty Name="HDZZL" ColumnName="HDZZL" />
+          <ScalarProperty Name="ZBZL" ColumnName="ZBZL" />
+          <ScalarProperty Name="ZZL" ColumnName="ZZL" />
+          <ScalarProperty Name="LTS" ColumnName="LTS" />
+          <ScalarProperty Name="LTGG" ColumnName="LTGG" />
+          <ScalarProperty Name="HLJ" ColumnName="HLJ" />
+          <ScalarProperty Name="QLJ" ColumnName="QLJ" />
+          <ScalarProperty Name="ZJ" ColumnName="ZJ" />
+          <ScalarProperty Name="ZS" ColumnName="ZS" />
+          <ScalarProperty Name="GBTHPS" ColumnName="GBTHPS" />
+          <ScalarProperty Name="HXNBGD" ColumnName="HXNBGD" />
+          <ScalarProperty Name="HXNBKD" ColumnName="HXNBKD" />
+          <ScalarProperty Name="HXNBCD" ColumnName="HXNBCD" />
+          <ScalarProperty Name="CWKG" ColumnName="CWKG" />
+          <ScalarProperty Name="CWKK" ColumnName="CWKK" />
+          <ScalarProperty Name="CWKC" ColumnName="CWKC" />
+          <ScalarProperty Name="ZXXS" ColumnName="ZXXS" />
+          <ScalarProperty Name="GL" ColumnName="GL" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="RLZL" ColumnName="RLZL" />
+          <ScalarProperty Name="FDJXH" ColumnName="FDJXH" />
+          <ScalarProperty Name="LSH" ColumnName="LSH" />
+          <ScalarProperty Name="CLLY" ColumnName="CLLY" />
+          <ScalarProperty Name="JBR" ColumnName="JBR" />
+          <ScalarProperty Name="DYBJ" ColumnName="DYBJ" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="XZQH" ColumnName="XZQH" />
+          <ScalarProperty Name="DABH" ColumnName="DABH" />
+          <ScalarProperty Name="ZDJZSHS" ColumnName="ZDJZSHS" />
+          <ScalarProperty Name="DJZSBH" ColumnName="DJZSBH" />
+          <ScalarProperty Name="BDJCS" ColumnName="BDJCS" />
+          <ScalarProperty Name="BZCS" ColumnName="BZCS" />
+          <ScalarProperty Name="BPCS" ColumnName="BPCS" />
+          <ScalarProperty Name="BXZZRQ" ColumnName="BXZZRQ" />
+          <ScalarProperty Name="FHGZRQ" ColumnName="FHGZRQ" />
+          <ScalarProperty Name="FDJRQ" ColumnName="FDJRQ" />
+          <ScalarProperty Name="FZRQ" ColumnName="FZRQ" />
+          <ScalarProperty Name="FPRQ" ColumnName="FPRQ" />
+          <ScalarProperty Name="GLBM" ColumnName="GLBM" />
+          <ScalarProperty Name="FZJG" ColumnName="FZJG" />
+          <ScalarProperty Name="QZBFQZ" ColumnName="QZBFQZ" />
+          <ScalarProperty Name="YXQZ" ColumnName="YXQZ" />
+          <ScalarProperty Name="DJRQ" ColumnName="DJRQ" />
+          <ScalarProperty Name="CCDJRQ" ColumnName="CCDJRQ" />
+          <ScalarProperty Name="SYQ" ColumnName="SYQ" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="SFZMMC" ColumnName="SFZMMC" />
+          <ScalarProperty Name="SFZMHM" ColumnName="SFZMHM" />
+          <ScalarProperty Name="SYXZ" ColumnName="SYXZ" />
+          <ScalarProperty Name="CSYS" ColumnName="CSYS" />
+          <ScalarProperty Name="CLLX" ColumnName="CLLX" />
+          <ScalarProperty Name="FDJH" ColumnName="FDJH" />
+          <ScalarProperty Name="CLSBDH" ColumnName="CLSBDH" />
+          <ScalarProperty Name="ZZCMC" ColumnName="ZZCMC" />
+          <ScalarProperty Name="ZZG" ColumnName="ZZG" />
+          <ScalarProperty Name="GCJK" ColumnName="GCJK" />
+          <ScalarProperty Name="CLPP2" ColumnName="CLPP2" />
+          <ScalarProperty Name="CLXH" ColumnName="CLXH" />
+          <ScalarProperty Name="CLPP1" ColumnName="CLPP1" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+          <ScalarProperty Name="XH" ColumnName="XH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRV_FLOW">
+      <EntityTypeMapping TypeName="Model.DRV_FLOW">
+        <MappingFragment StoreEntitySet="DRV_FLOW">
+          <ScalarProperty Name="DCBJ" ColumnName="DCBJ" />
+          <ScalarProperty Name="FZJG" ColumnName="FZJG" />
+          <ScalarProperty Name="YWBLBM" ColumnName="YWBLBM" />
+          <ScalarProperty Name="YWZT" ColumnName="YWZT" />
+          <ScalarProperty Name="ZJCX" ColumnName="ZJCX" />
+          <ScalarProperty Name="XGZL" ColumnName="XGZL" />
+          <ScalarProperty Name="HDBZ" ColumnName="HDBZ" />
+          <ScalarProperty Name="RKBZ" ColumnName="RKBZ" />
+          <ScalarProperty Name="FFBZ" ColumnName="FFBZ" />
+          <ScalarProperty Name="GLBM" ColumnName="GLBM" />
+          <ScalarProperty Name="XYGW" ColumnName="XYGW" />
+          <ScalarProperty Name="KSKM" ColumnName="KSKM" />
+          <ScalarProperty Name="YWGW" ColumnName="YWGW" />
+          <ScalarProperty Name="JSSJ" ColumnName="JSSJ" />
+          <ScalarProperty Name="KSSJ" ColumnName="KSSJ" />
+          <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="XM" ColumnName="XM" />
+          <ScalarProperty Name="DABH" ColumnName="DABH" />
+          <ScalarProperty Name="SFZMHM" ColumnName="SFZMHM" />
+          <ScalarProperty Name="LSH" ColumnName="LSH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEH_FLOW">
+      <EntityTypeMapping TypeName="Model.VEH_FLOW">
+        <MappingFragment StoreEntitySet="VEH_FLOW">
+          <ScalarProperty Name="LY" ColumnName="LY" />
+          <ScalarProperty Name="CLSBDH" ColumnName="CLSBDH" />
+          <ScalarProperty Name="RKBJ" ColumnName="RKBJ" />
+          <ScalarProperty Name="FFBJ" ColumnName="FFBJ" />
+          <ScalarProperty Name="FPBJ" ColumnName="FPBJ" />
+          <ScalarProperty Name="GLBM" ColumnName="GLBM" />
+          <ScalarProperty Name="LSZT" ColumnName="LSZT" />
+          <ScalarProperty Name="YWLC" ColumnName="YWLC" />
+          <ScalarProperty Name="XYGW" ColumnName="XYGW" />
+          <ScalarProperty Name="BJRQ" ColumnName="BJRQ" />
+          <ScalarProperty Name="SQRQ" ColumnName="SQRQ" />
+          <ScalarProperty Name="XZQH" ColumnName="XZQH" />
+          <ScalarProperty Name="CLLX" ColumnName="CLLX" />
+          <ScalarProperty Name="CLXH" ColumnName="CLXH" />
+          <ScalarProperty Name="CLPP1" ColumnName="CLPP1" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="XH" ColumnName="XH" />
+          <ScalarProperty Name="LSH" ColumnName="LSH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

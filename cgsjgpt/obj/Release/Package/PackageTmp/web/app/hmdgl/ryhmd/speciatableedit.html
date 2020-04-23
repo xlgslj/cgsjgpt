@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable" style="width:780px;">
+            <tbody>
+                <tr>
+                    <td class="tlabel">号牌号码：</td>
+                    <td>
+                        <select class="select swidth" v-model="hpzlno">
+                            <option v-for="item in hpzls" :value="item.hpzlno">{{item.hpname}}</option>
+                        </select>
+                        <input type="text" class="forminput inputstyle" style="width:200px" v-model.lazy="uphphm">&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">机动车所有人：</td>
+                    <td><input type="text" class="forminput inputstyle" style="width:90%" disabled v-model="jdcsyr">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">干系人：</td>
+                    <td><input type="text" class="forminput inputstyle" style="width:90%" v-model="gxr">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">有效期类型：</td>
+                    <td>
+                        <input type="radio" value="固定" v-model="yxqlx">固定
+                        <input type="radio" value="永久" v-model="yxqlx">永久
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">有效期止：</td>
+                    <td><input type="text" id="jssj" class="forminput inputstyle" style="width:200px" v-model="jssj" :disabled="yxqlx==='永久'">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">备注：</td>
+                    <td><input type="text" class="forminput inputstyle" style="width:90%" v-model="memo">&nbsp;&nbsp;*</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="修改" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../js/jquery.select.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="speciatableedit.js"></script>
+
+</html>
+

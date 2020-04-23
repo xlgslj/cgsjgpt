@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable" style="width:780px;">
+            <tbody>
+                <tr>
+                    <td class="tlabel">父id：</td>
+                    <td>{{pid}}</td>
+                    <td class="tlabel">父名称：</td>
+                    <td>{{pname}}</td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">菜单名称：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="菜单姓名" v-model="name">&nbsp;&nbsp;*</td>
+                    <td class="tlabel">菜单图标：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="菜单图标" v-model="icon">&nbsp;&nbsp;*</td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">打开模式：</td>
+                    <td>
+                        <select class="select swidth" v-model="openmode" data-value="弹层">
+                            <option value="弹层">弹层</option>
+                            <option value="弹窗">弹窗</option>
+                        </select>
+                    </td>
+                    <td class="tlabel">是否全屏：</td>
+                    <td>
+                        <select class="select swidth" v-model="fscreen" data-value="否">
+                            <option value="否">否</option>
+                            <option value="是">是</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">是否自适应：</td>
+                    <td colspan="3">
+                        <input name="auto" type="radio" v-model="auto" value="1">是
+                        <input name="auto" type="radio" v-model="auto" value="0">否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">宽：</td>
+                    <td colspan="3">
+                        最小:<input type="range" min="100" max="2000" step="100" class="forminput inputstyle" placeholder="宽" v-model="minwidth">&nbsp;&nbsp;{{minwidth}}&nbsp;&nbsp;
+                        最大:<input type="range" min="100" max="2000" step="100" class="forminput inputstyle" placeholder="宽" v-model="width">&nbsp;&nbsp;{{width}}
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="tlabel">高：</td>
+                    <td colspan="3">
+                        最小: <input type="range" min="100" max="2000" step="100" class="forminput inputstyle" placeholder="高" v-model="minheight">&nbsp;&nbsp;{{minheight}}&nbsp;&nbsp;
+                        最大: <input type="range" min="100" max="2000" step="100" class="forminput inputstyle" placeholder="高" v-model="height">&nbsp;&nbsp;{{height}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">URL：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="url"></td>
+                    <td class="tlabel">排序：</td>
+                    <td><input type="text" class="forminput inputstyle" disabled v-model="sort"></td>
+                </tr>
+                <tr>
+                    <td class="tlabel">备注：</td>
+                    <td colspan="3">
+                        <input type="text" class="forminput inputstyle inputadress" v-model="memo">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="保存" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/jquery.select.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="Menuedit.js"></script>
+
+</html>
+

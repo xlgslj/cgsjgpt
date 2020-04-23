@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EntitiesHmd" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TRFFLOG" EntityType="Model1.TRFFLOG" />
+    <EntitySet Name="AGENT" EntityType="Model1.AGENT" />
+    <EntitySet Name="RBLIST" EntityType="Model1.RBLIST" />
+    <EntitySet Name="DWBADB" EntityType="Model1.DWBADB" />
+  </EntityContainer>
+  <EntityType Name="TRFFLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="OPSJ" Type="DateTime" />
+    <Property Name="OPSECOND" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="KEYS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RETS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AGENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="YWZL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DLRNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDLX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="ADDTIME" Type="DateTime" />
+    <Property Name="ADDTIMESECONDS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RBLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DLFW" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SFZHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ZZJGDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DWNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPERLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LRDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="LRSJ" Type="DateTime" />
+    <Property Name="LRSECOND" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SPDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="SPSJ" Type="DateTime" />
+    <Property Name="SPSECOND" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JSDAY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="JSSJ" Type="DateTime" />
+    <Property Name="JSSECOND" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ADDLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMG1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAUSE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ZT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OPLOG" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DWBADB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="BALX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DWLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DWMC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ZZJGDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DWJBR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LXDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMG1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IMG6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OPER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OPTIME" Type="DateTime" />
+    <Property Name="MEMO" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO1" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

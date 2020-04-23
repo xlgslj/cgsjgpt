@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BUSINESS_FLOW">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+          <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+          <Property Name="BID" Type="varchar2" MaxLength="10" />
+          <Property Name="PTLB" Type="varchar2" MaxLength="50" />
+          <Property Name="XTLB" Type="varchar2" MaxLength="50" />
+          <Property Name="YWLX" Type="varchar2" MaxLength="100" />
+          <Property Name="YWYY" Type="varchar2" MaxLength="100" />
+          <Property Name="SHMS" Type="varchar2" MaxLength="20" />
+          <Property Name="BLMS" Type="varchar2" MaxLength="20" />
+          <Property Name="HPZLNO" Type="varchar2" MaxLength="10" />
+          <Property Name="HPZL" Type="varchar2" MaxLength="20" />
+          <Property Name="HPHM" Type="varchar2" MaxLength="20" />
+          <Property Name="HPHM1" Type="varchar2" MaxLength="20" />
+          <Property Name="CLSBDH" Type="varchar2" MaxLength="100" />
+          <Property Name="CYLSH" Type="varchar2" MaxLength="100" />
+          <Property Name="BRZJLX" Type="varchar2" MaxLength="100" />
+          <Property Name="BRZJHM" Type="varchar2" MaxLength="100" />
+          <Property Name="BRNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="BRTEL" Type="varchar2" MaxLength="30" />
+          <Property Name="DLRZJLX" Type="varchar2" MaxLength="100" />
+          <Property Name="DLRZJHM" Type="varchar2" MaxLength="100" />
+          <Property Name="DLRNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="DLRTEL" Type="varchar2" MaxLength="100" />
+          <Property Name="DWDM" Type="varchar2" MaxLength="100" />
+          <Property Name="BLDWMC" Type="varchar2" MaxLength="100" />
+          <Property Name="BRZLS" Type="varchar2" MaxLength="4000" />
+          <Property Name="DLRZLS" Type="varchar2" MaxLength="4000" />
+          <Property Name="DWZLS" Type="varchar2" MaxLength="4000" />
+          <Property Name="ISHMD" Type="varchar2" MaxLength="4" />
+          <Property Name="DRVANDVEHINFO" Type="varchar2" MaxLength="4000" />
+          <Property Name="OPERID" Type="varchar2" MaxLength="20" />
+          <Property Name="OPER" Type="varchar2" MaxLength="50" />
+          <Property Name="OPERTIME" Type="varchar2" MaxLength="30" />
+          <Property Name="OPERTIME1" Type="date" />
+          <Property Name="OPERTIME2" Type="number" Precision="38" Scale="0" />
+          <Property Name="SPER" Type="varchar2" MaxLength="50" />
+          <Property Name="SPTIME" Type="varchar2" MaxLength="30" />
+          <Property Name="SPTIME1" Type="date" />
+          <Property Name="SPTIME2" Type="number" Precision="38" Scale="0" />
+          <Property Name="SPCONTENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="OPER1" Type="varchar2" MaxLength="50" />
+          <Property Name="OPER1TIME" Type="varchar2" MaxLength="30" />
+          <Property Name="OPER1TIME1" Type="date" />
+          <Property Name="OPER1TIME2" Type="number" Precision="38" Scale="0" />
+          <Property Name="CJGLSH" Type="varchar2" MaxLength="100" />
+          <Property Name="LSHHCZT" Type="char" MaxLength="1" />
+          <Property Name="ZT" Type="varchar2" MaxLength="2" />
+          <Property Name="WARNZT" Type="varchar2" MaxLength="10" />
+          <Property Name="QUERYZT" Type="varchar2" MaxLength="10" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="BUSINESSBASE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="PTLB" Type="varchar2" MaxLength="50" />
+          <Property Name="XTLB" Type="varchar2" MaxLength="50" />
+          <Property Name="GNBH" Type="varchar2" MaxLength="50" />
+          <Property Name="YWLX" Type="varchar2" MaxLength="100" />
+          <Property Name="YWYY" Type="varchar2" MaxLength="100" />
+          <Property Name="CYLSHISNULL" Type="varchar2" MaxLength="10" />
+          <Property Name="YHPHMISNULL" Type="varchar2" MaxLength="10" />
+          <Property Name="FZX" Type="varchar2" MaxLength="200" />
+          <Property Name="CLLX" Type="varchar2" MaxLength="50" />
+          <Property Name="SYXZ" Type="varchar2" MaxLength="50" />
+          <Property Name="ZJCX" Type="varchar2" MaxLength="50" />
+          <Property Name="BLMS" Type="varchar2" MaxLength="200" />
+          <Property Name="SHMS" Type="varchar2" MaxLength="50" />
+          <Property Name="BRZL" Type="varchar2" MaxLength="4000" />
+          <Property Name="DLRZL" Type="varchar2" MaxLength="4000" />
+          <Property Name="DWZL" Type="varchar2" MaxLength="4000" />
+          <Property Name="K1" Type="varchar2" MaxLength="200" />
+          <Property Name="K2" Type="varchar2" MaxLength="200" />
+          <Property Name="K3" Type="varchar2" MaxLength="200" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BUSINESSBM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+          <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+          <Property Name="BIDS" Type="varchar2" MaxLength="4000" />
+          <Property Name="K1" Type="varchar2" MaxLength="100" />
+          <Property Name="K2" Type="varchar2" MaxLength="200" />
+          <Property Name="K3" Type="varchar2" MaxLength="300" />
+          <Property Name="MEMO" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BUSINESS_FLOW" EntityType="Self.BUSINESS_FLOW" Schema="CGSJGPT" store:Type="Tables" />
+          <EntitySet Name="BUSINESSBASE" EntityType="Self.BUSINESSBASE" Schema="CGSJGPT" store:Type="Tables" />
+          <EntitySet Name="BUSINESSBM" EntityType="Self.BUSINESSBM" Schema="CGSJGPT" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntitiesXfyw" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BUSINESSBM" EntityType="Model.BUSINESSBM" />
+          <EntitySet Name="BUSINESS_FLOW" EntityType="Model.BUSINESS_FLOW" />
+          <EntitySet Name="BUSINESSBASE" EntityType="Model.BUSINESSBASE" />
+        </EntityContainer>
+        <EntityType Name="BUSINESSBM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BIDS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="K1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="K2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="K3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BUSINESS_FLOW">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="XTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YWYY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SHMS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BLMS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HPZLNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HPZL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HPHM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HPHM1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLSBDH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CYLSH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRTEL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DLRNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DLRTEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DWDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BLDWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="DWZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ISHMD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DRVANDVEHINFO" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="OPERID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERTIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OPERTIME1" Type="DateTime" />
+          <Property Name="OPERTIME2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SPTIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SPTIME1" Type="DateTime" />
+          <Property Name="SPTIME2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPCONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="OPER1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPER1TIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OPER1TIME1" Type="DateTime" />
+          <Property Name="OPER1TIME2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CJGLSH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LSHHCZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ZT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="WARNZT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="QUERYZT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BUSINESSBASE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="XTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GNBH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YWYY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CYLSHISNULL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="YHPHMISNULL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FZX" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CLLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYXZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZJCX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BLMS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SHMS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="DLRZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="DWZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="K1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="K2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="K3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesXfyw">
+          <EntitySetMapping Name="BUSINESSBM">
+            <EntityTypeMapping TypeName="Model.BUSINESSBM">
+              <MappingFragment StoreEntitySet="BUSINESSBM">
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="K3" ColumnName="K3" />
+                <ScalarProperty Name="K2" ColumnName="K2" />
+                <ScalarProperty Name="K1" ColumnName="K1" />
+                <ScalarProperty Name="BIDS" ColumnName="BIDS" />
+                <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+                <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BUSINESS_FLOW">
+            <EntityTypeMapping TypeName="Model.BUSINESS_FLOW">
+              <MappingFragment StoreEntitySet="BUSINESS_FLOW">
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="QUERYZT" ColumnName="QUERYZT" />
+                <ScalarProperty Name="WARNZT" ColumnName="WARNZT" />
+                <ScalarProperty Name="ZT" ColumnName="ZT" />
+                <ScalarProperty Name="LSHHCZT" ColumnName="LSHHCZT" />
+                <ScalarProperty Name="CJGLSH" ColumnName="CJGLSH" />
+                <ScalarProperty Name="OPER1TIME2" ColumnName="OPER1TIME2" />
+                <ScalarProperty Name="OPER1TIME1" ColumnName="OPER1TIME1" />
+                <ScalarProperty Name="OPER1TIME" ColumnName="OPER1TIME" />
+                <ScalarProperty Name="OPER1" ColumnName="OPER1" />
+                <ScalarProperty Name="SPCONTENT" ColumnName="SPCONTENT" />
+                <ScalarProperty Name="SPTIME2" ColumnName="SPTIME2" />
+                <ScalarProperty Name="SPTIME1" ColumnName="SPTIME1" />
+                <ScalarProperty Name="SPTIME" ColumnName="SPTIME" />
+                <ScalarProperty Name="SPER" ColumnName="SPER" />
+                <ScalarProperty Name="OPERTIME2" ColumnName="OPERTIME2" />
+                <ScalarProperty Name="OPERTIME1" ColumnName="OPERTIME1" />
+                <ScalarProperty Name="OPERTIME" ColumnName="OPERTIME" />
+                <ScalarProperty Name="OPER" ColumnName="OPER" />
+                <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+                <ScalarProperty Name="DRVANDVEHINFO" ColumnName="DRVANDVEHINFO" />
+                <ScalarProperty Name="ISHMD" ColumnName="ISHMD" />
+                <ScalarProperty Name="DWZLS" ColumnName="DWZLS" />
+                <ScalarProperty Name="DLRZLS" ColumnName="DLRZLS" />
+                <ScalarProperty Name="BRZLS" ColumnName="BRZLS" />
+                <ScalarProperty Name="BLDWMC" ColumnName="BLDWMC" />
+                <ScalarProperty Name="DWDM" ColumnName="DWDM" />
+                <ScalarProperty Name="DLRTEL" ColumnName="DLRTEL" />
+                <ScalarProperty Name="DLRNAME" ColumnName="DLRNAME" />
+                <ScalarProperty Name="DLRZJHM" ColumnName="DLRZJHM" />
+                <ScalarProperty Name="DLRZJLX" ColumnName="DLRZJLX" />
+                <ScalarProperty Name="BRTEL" ColumnName="BRTEL" />
+                <ScalarProperty Name="BRNAME" ColumnName="BRNAME" />
+                <ScalarProperty Name="BRZJHM" ColumnName="BRZJHM" />
+                <ScalarProperty Name="BRZJLX" ColumnName="BRZJLX" />
+                <ScalarProperty Name="CYLSH" ColumnName="CYLSH" />
+                <ScalarProperty Name="CLSBDH" ColumnName="CLSBDH" />
+                <ScalarProperty Name="HPHM1" ColumnName="HPHM1" />
+                <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+                <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+                <ScalarProperty Name="HPZLNO" ColumnName="HPZLNO" />
+                <ScalarProperty Name="BLMS" ColumnName="BLMS" />
+                <ScalarProperty Name="SHMS" ColumnName="SHMS" />
+                <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+                <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+                <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+                <ScalarProperty Name="PTLB" ColumnName="PTLB" />
+                <ScalarProperty Name="BID" ColumnName="BID" />
+                <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+                <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BUSINESSBASE">
+            <EntityTypeMapping TypeName="Model.BUSINESSBASE">
+              <MappingFragment StoreEntitySet="BUSINESSBASE">
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="K3" ColumnName="K3" />
+                <ScalarProperty Name="K2" ColumnName="K2" />
+                <ScalarProperty Name="K1" ColumnName="K1" />
+                <ScalarProperty Name="DWZL" ColumnName="DWZL" />
+                <ScalarProperty Name="DLRZL" ColumnName="DLRZL" />
+                <ScalarProperty Name="BRZL" ColumnName="BRZL" />
+                <ScalarProperty Name="SHMS" ColumnName="SHMS" />
+                <ScalarProperty Name="BLMS" ColumnName="BLMS" />
+                <ScalarProperty Name="ZJCX" ColumnName="ZJCX" />
+                <ScalarProperty Name="SYXZ" ColumnName="SYXZ" />
+                <ScalarProperty Name="CLLX" ColumnName="CLLX" />
+                <ScalarProperty Name="FZX" ColumnName="FZX" />
+                <ScalarProperty Name="YHPHMISNULL" ColumnName="YHPHMISNULL" />
+                <ScalarProperty Name="CYLSHISNULL" ColumnName="CYLSHISNULL" />
+                <ScalarProperty Name="YWYY" ColumnName="YWYY" />
+                <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+                <ScalarProperty Name="GNBH" ColumnName="GNBH" />
+                <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+                <ScalarProperty Name="PTLB" ColumnName="PTLB" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

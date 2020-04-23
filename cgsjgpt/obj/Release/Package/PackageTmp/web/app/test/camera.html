@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>影像采集</title>
+    <style>
+        .btnsave {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            display: block;
+            width: 74px;
+            border-radius: 2px;
+            cursor: pointer;
+            background: #227447;
+            border: solid 1px #227447;
+            margin-left: 10px;
+            margin-right: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body style="min-width:490px;" onload="load()">
+    <div style="text-align:center;">
+        <object classid="clsid:454C18E2-8B7D-43C6-8C17-B1825B49D7DE" id="captrue" width="480px" height="360px"></object>
+    </div>
+    <div style="text-align:center;">
+        <div style="float:left;">
+            <input name="mode" type="radio" value="0" checked onClick="changemode(this)">默认
+            <input name="mode" type="radio" value="4" onClick="changemode(this)">证件
+        </div>
+        <input type="button" value="切换摄像头" class="btnsave" onClick="changedev()">
+        <input type="button" value="拍照" class="btnsave" onClick="saveandup()">
+    </div>
+</body>
+</html>
+<script language="JavaScript1.2">
+    var str;
+    var dev;
+    var mode = 0;
+    var direxit = false;
+    var fso;
+    var token = GetUrlPara();
+    var cs = 0;
+    //获取url参数
+    function GetUrlPara() {
+        var url = document.location.toString();
+        var arrUrl = url.split("?");
+        var p = arrUrl[1];
+        return p;
+    }
+    function load() {
+        str = captrue.bStopPlay();
+        str = captrue.bStartPlay();
+        dev = 0;
+    }
+    function changedev() {
+        if (dev == 0) {
+            str = captrue.bStopPlay();
+            str = captrue.bStartPlay2(0);
+            dev = 1;
+        }
+        else {
+            str = captrue.bStopPlay();
+            str = captrue.bStartPlay();
+            dev = 0;
+        }
+    }
+    function changemode(el) {
+        mode = el.value;
+        captrue.bSetMode(el.value);
+    }
+    function saveandup() {
+        /*if (direxit == undefined) {
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            direxit = fso.FolderExists("C:\\camera");
+            alert(direxit);
+        }*/
+
+        if (!direxit) {
+            direxit = captrue.bCreateDir("C:\\camera");
+        }
+        if (direxit) {
+            str = captrue.bSaveJPG("C:\\camera\\", token);
+            cs++;
+            if ((str & mode == 0 & cs == 1) || (str & mode == 4 & cs == 2)) {
+                cs = 0;
+                str = captrue.sUpLoadImageEx2("C:\\camera\\" + token + ".jpg", "192.168.2.240", 80, "/api/FileManger/PostFilesForActivex", true, false);
+                if (str) {
+                    //alert("采集成功!");
+                }
+
+            }
+            else if (str & mode == 4 & cs == 1) {
+                alert("请将证件翻面!");
+            }
+        }
+        else {
+            alert("文件夹创建错误");
+        }
+    }
+</script>

@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <style>
+        .c-ui {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+            .c-ui > li {
+                line-height: 30px;
+                margin: 1px 1px 1px 1px;
+                vertical-align: middle;
+                position: relative;
+                width: 250px;
+            }
+
+        input[type='text'] {
+            height: 26px;
+            border: solid 1px #c6c6c6;
+            line-height: 26px;
+            text-indent: 8px;
+            font-family: '微软雅黑';
+            color: #585858;
+            width: 200px;
+        }
+
+        .layui-table-cell-bak {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex;flex-direction:row;">
+        <div id="bmtree" style="width:19.8%;border: solid 1px #d4d4d4;margin-top:2px;margin-bottom:2px;margin-left:0.2%;">
+            <lj-tree :initnodes="nodes"></lj-tree>
+        </div>
+        <div style=" width:80%;">
+            <!--top-->
+            <div id="app" style="display:flex;flex-direction:row;flex-wrap: wrap;align-items:center;padding:10px 0 0 10px;">
+                <ul class="c-ui">
+                    <li>
+                        <span>平台类别:&nbsp;</span>
+                        <select class="select swidth" style="width:150px;" v-model="ptlb">
+                            <option v-for="item in code.ptlbs" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>系统类别:&nbsp;</span>
+                        <select class="select swidth" style="width:150px;" v-model="xtlb">
+                            <option v-for="item in xtlbs1" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>业务类型:&nbsp;</span><input type="text" v-model="ywlx" style="width:150px;">
+                    </li>
+
+                    <li>
+                        <span>业务原因:&nbsp;</span><input type="text" v-model="ywyy" style="width:150px;">
+                    </li>
+                    <li>
+                        <span>办理模式:&nbsp;</span>
+                        <select class="select swidth" style="width:150px;" v-model="blms">
+                            <option v-for="item in code.blmss" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <ul class="toolbar" style="padding-top:0px;margin-left:10px;">
+                        <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+                        <li v-if="dbclicked"><a href="#" class="selected" @click="save"><i class="toolico iconfont">&#9807;</i>业务授权</a></li>
+                    </ul>
+                </ul>
+            </div>
+            <!--top end-->
+            <div style="padding:0 5px 0 5px">
+                <table id="demo" lay-filter="test"></table>
+            </div>
+        </div>
+    </div>
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" class="headtop" lay-event="show">查看</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="xfywsq.js"></script>
+</html>
+

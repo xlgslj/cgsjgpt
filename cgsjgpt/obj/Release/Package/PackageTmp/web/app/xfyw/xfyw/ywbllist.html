@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .c-ui {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .c-ui > li {
+                line-height: 30px;
+                margin: 1px 1px 1px 1px;
+                vertical-align: middle;
+                position: relative;
+            }
+
+        input[type='text'] {
+            height: 26px;
+            border: solid 1px #c6c6c6;
+            line-height: 26px;
+            text-indent: 8px;
+            font-family: '微软雅黑';
+            color: #585858;
+            width: 200px;
+        }
+
+        .layui-table-cell-bak {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        {{d.ZT=="待审核"?"":(d.ZT=="审核不通过"?'<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="cxcj">重新采集</a>':'<a class="layui-btn layui-btn-danger layui-btn-xs" style="background-color: green;" lay-event="bl">补&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</a>')}}
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="ywbllist.js"></script>
+</html>
+

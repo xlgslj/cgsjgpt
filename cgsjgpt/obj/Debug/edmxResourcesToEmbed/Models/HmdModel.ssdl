@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AGENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="YWZL" Type="varchar2" MaxLength="50" />
+    <Property Name="PID" Type="varchar2" MaxLength="10" />
+    <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+    <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+    <Property Name="YWLX" Type="varchar2" MaxLength="100" />
+    <Property Name="BRNAME" Type="varchar2" MaxLength="50" />
+    <Property Name="BRZJLX" Type="varchar2" MaxLength="100" />
+    <Property Name="BRZJHM" Type="varchar2" MaxLength="100" />
+    <Property Name="DLRNAME" Type="varchar2" MaxLength="50" />
+    <Property Name="DLRZJLX" Type="varchar2" MaxLength="100" />
+    <Property Name="DLRZJHM" Type="varchar2" MaxLength="100" />
+    <Property Name="ADDLX" Type="varchar2" MaxLength="20" />
+    <Property Name="ADDRY" Type="varchar2" MaxLength="50" />
+    <Property Name="ADDDAY" Type="varchar2" MaxLength="12" />
+    <Property Name="ADDTIME" Type="date" />
+    <Property Name="ADDTIMESECONDS" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZT" Type="varchar2" MaxLength="20" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="DWBADB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="BALX" Type="varchar2" MaxLength="20" />
+    <Property Name="DWLX" Type="varchar2" MaxLength="50" />
+    <Property Name="DWMC" Type="varchar2" MaxLength="200" />
+    <Property Name="ZZJGDM" Type="varchar2" MaxLength="100" />
+    <Property Name="ADDRESS" Type="varchar2" MaxLength="200" />
+    <Property Name="DWJBR" Type="varchar2" MaxLength="50" />
+    <Property Name="TEL" Type="varchar2" MaxLength="50" />
+    <Property Name="LXDH" Type="varchar2" MaxLength="50" />
+    <Property Name="IMG1" Type="varchar2" MaxLength="100" />
+    <Property Name="URL1" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG2" Type="varchar2" MaxLength="100" />
+    <Property Name="URL2" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG3" Type="varchar2" MaxLength="100" />
+    <Property Name="URL3" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG4" Type="varchar2" MaxLength="100" />
+    <Property Name="URL4" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG5" Type="varchar2" MaxLength="100" />
+    <Property Name="URL5" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG6" Type="varchar2" MaxLength="100" />
+    <Property Name="URL6" Type="varchar2" MaxLength="100" />
+    <Property Name="OPER" Type="varchar2" MaxLength="100" />
+    <Property Name="OPTIME" Type="date" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="4000" />
+    <Property Name="MEMO1" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="RBLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="DWNO" Type="varchar2" MaxLength="10" />
+    <Property Name="DWMC" Type="varchar2" MaxLength="100" />
+    <Property Name="LX" Type="varchar2" MaxLength="50" />
+    <Property Name="DLFW" Type="varchar2" MaxLength="10" />
+    <Property Name="NAME" Type="varchar2" MaxLength="50" />
+    <Property Name="SFZHM" Type="varchar2" MaxLength="100" />
+    <Property Name="TEL" Type="varchar2" MaxLength="100" />
+    <Property Name="ZZJGDM" Type="varchar2" MaxLength="100" />
+    <Property Name="DWNAME" Type="varchar2" MaxLength="200" />
+    <Property Name="OPER" Type="varchar2" MaxLength="50" />
+    <Property Name="OPERLX" Type="varchar2" MaxLength="100" />
+    <Property Name="SPER" Type="varchar2" MaxLength="50" />
+    <Property Name="JSER" Type="varchar2" MaxLength="50" />
+    <Property Name="LRDAY" Type="varchar2" MaxLength="12" />
+    <Property Name="LRSJ" Type="date" />
+    <Property Name="LRSECOND" Type="number" Precision="38" Scale="0" />
+    <Property Name="SPDAY" Type="varchar2" MaxLength="12" />
+    <Property Name="SPSJ" Type="date" />
+    <Property Name="SPSECOND" Type="number" Precision="38" Scale="0" />
+    <Property Name="JSDAY" Type="varchar2" MaxLength="12" />
+    <Property Name="JSSJ" Type="date" />
+    <Property Name="JSSECOND" Type="number" Precision="38" Scale="0" />
+    <Property Name="ADDLX" Type="varchar2" MaxLength="50" />
+    <Property Name="IMG1" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG2" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG3" Type="varchar2" MaxLength="100" />
+    <Property Name="IMG4" Type="varchar2" MaxLength="100" />
+    <Property Name="CAUSE" Type="varchar2" MaxLength="4000" />
+    <Property Name="ZT" Type="varchar2" MaxLength="20" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="2000" />
+    <Property Name="OPLOG" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="TRFFLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="LX" Type="varchar2" MaxLength="20" />
+    <Property Name="IP" Type="varchar2" MaxLength="20" />
+    <Property Name="OPER" Type="varchar2" MaxLength="50" />
+    <Property Name="OPDAY" Type="varchar2" MaxLength="12" />
+    <Property Name="OPSJ" Type="date" />
+    <Property Name="OPSECOND" Type="number" Precision="38" Scale="0" />
+    <Property Name="KEYS" Type="varchar2" MaxLength="500" />
+    <Property Name="RETS" Type="varchar2" MaxLength="4000" />
+    <Property Name="SECOND" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZT" Type="varchar2" MaxLength="50" />
+    <Property Name="MEMO" Type="varchar2" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="AGENT" EntityType="Self.AGENT" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="DWBADB" EntityType="Self.DWBADB" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="RBLIST" EntityType="Self.RBLIST" Schema="CGSJGPT" store:Type="Tables" />
+    <EntitySet Name="TRFFLOG" EntityType="Self.TRFFLOG" Schema="CGSJGPT" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

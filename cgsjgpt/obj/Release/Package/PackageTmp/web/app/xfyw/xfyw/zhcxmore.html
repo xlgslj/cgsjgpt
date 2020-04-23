@@ -1,0 +1,284 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/viewer/viewer.min.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .w-e-icon-upload2 {
+            font-size: 60px;
+        }
+
+        .w-e-text-container {
+            min-height: 450px;
+        }
+
+        .classify {
+            background-color: #ffffff;
+            margin-bottom: 0px;
+            border-bottom: none;
+            line-height: 20px;
+            height: 20px;
+            margin-top: 15px;
+        }
+
+        img {
+            width: 230px;
+            height: 180px;
+            border: solid 1px #d4d4d4;
+        }
+
+            img:hover {
+                cursor: pointer;
+            }
+
+        .showimg {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 850px;
+        }
+
+        .viewer-title {
+            font-size: 30px;
+            color: red;
+        }
+
+        .viewer-toolbar > li {
+            width: 36px;
+            height: 36px;
+        }
+
+            .viewer-toolbar > li:before {
+                margin: 9px 2px 2px 8px;
+            }
+
+        .viewer-toolbar {
+            width: 250px;
+        }
+
+            .viewer-toolbar > .viewer-play {
+                width: 36px;
+                height: 36px;
+                margin: 0px;
+            }
+
+        .viewer-container {
+            background-color: rgba(0,0,0,0);
+        }
+
+        .w-e-toolbar {
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body style="padding:2px 8px 0px 8px;">
+    <div id="root" style="display:flex;flex-direction:row;width:100%;">
+        <div style="position:relative;width:50%;height:850px;overflow:auto;padding-right:1%;margin-right:1%;border-right: solid 0.2px #d4d4d4;">
+            <div class="classify">业务信息</div>
+            <table class="formtable" style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td class="tlabel">办理单位</td>
+                        <td>{{main.DWMC}}</td>
+                        <td class="tlabel">系统类别</td>
+                        <td>{{main.XTLB}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">业务类型</td>
+                        <td>{{main.YWLX}}</td>
+                        <td class="tlabel">业务原因</td>
+                        <td>{{main.YWYY}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">审核模式</td>
+                        <td>{{main.SHMS}}</td>
+                        <td class="tlabel">办理模式</td>
+                        <td>{{main.BLMS}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">本人姓名</td>
+                        <td>{{main.BRNAME}}</td>
+                        <td class="tlabel">本人证件号码</td>
+                        <td>{{main.BRZJHM+'  '+ main.BRZJLX}}</td>
+                    </tr>
+                    <tr v-if="main.BLMS=='代理个人业务'">
+                        <td class="tlabel">代理人姓名</td>
+                        <td>{{main.DLRNAME}}</td>
+                        <td class="tlabel">代理人证件号码</td>
+                        <td>{{main.DLRZJHM+'  '+ main.DLRZJLX}}</td>
+                    </tr>
+                    <tr v-if="main.BLMS=='代理单位业务'">
+                        <td class="tlabel">单位名称</td>
+                        <td>{{main.BLDWMC}}</td>
+                        <td class="tlabel">单位号码</td>
+                        <td>{{main.DWDM}}</td>
+                    </tr>
+                    <tr v-if="main.XTLB=='机动车'">
+                        <td class="tlabel">号牌种类</td>
+                        <td>{{main.HPZL}}</td>
+                        <td class="tlabel">号牌号码</td>
+                        <td>{{main.HPHM}}</td>
+                    </tr>
+                    <tr v-if="main.XTLB=='机动车'">
+                        <td class="tlabel">车辆识别代号</td>
+                        <td>{{main.CLSBDH}}</td>
+                        <td class="tlabel">查验流水号</td>
+                        <td>{{main.CYLSH}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">信息采集人</td>
+                        <td>{{main.OPER}}</td>
+                        <td class="tlabel">信息采集时间</td>
+                        <td>{{main.OPERTIME1}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">信息审核人</td>
+                        <td>{{main.SPER}}</td>
+                        <td class="tlabel">信息审核时间</td>
+                        <td>{{main.SPTIME1}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">办结补录人</td>
+                        <td>{{main.OPER1}}</td>
+                        <td class="tlabel">办结补录时间</td>
+                        <td>{{main.OPER1TIME1}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">最后状态</td>
+                        <td colspan="3">{{main.ZT.substring(0,1)=="0"?"采集完成":(main.ZT.substring(0,1)=="1"?"审核完成":(main.ZT.substring(0,1)=="2"?"补录完成":(main.ZT.substring(0,1)=="4"?"禁止办理":"未知")))}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <template v-if="flow!=null">
+                <div class="classify">关联同步库业务流水信息</div>
+                <template v-if="flow.LSH.substring(0,1)=='1'">
+                    <table class="formtable" style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td class="tlabel">系统类型</td>
+                                <td>机动车</td>
+                                <td class="tlabel">流水号</td>
+                                <td>{{flow.LSH}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">业务类型</td>
+                                <td>{{flow.YWLX}}</td>
+                                <td class="tlabel">业务原因</td>
+                                <td>{{flow.YWYY}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">所有人</td>
+                                <td colspan="3">{{flow.SYR}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">号牌种类</td>
+                                <td>{{flow.HPZL}}</td>
+                                <td class="tlabel">号牌号码</td>
+                                <td>{{flow.HPHM}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">车辆品牌</td>
+                                <td>{{flow.CLPP1}}</td>
+                                <td class="tlabel">车辆类型</td>
+                                <td>{{flow.CLLX}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tlabel">车辆序号</td>
+                                <td>{{flow.CLXH}}</td>
+                                <td class="tlabel">车辆识别代号</td>
+                                <td>{{flow.CLSBDH}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">办理部门</td>
+                                <td colspan="3">{{flow.GLBM}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">申请时间</td>
+                                <td>{{flow.SQRQ}}</td>
+                                <td class="tlabel">办结时间</td>
+                                <td>{{flow.BJRQ}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+                <template v-else>
+                    <table class="formtable" style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td class="tlabel">系统类型</td>
+                                <td>驾驶人</td>
+                                <td class="tlabel">流水号</td>
+                                <td>{{flow.LSH}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">业务类型</td>
+                                <td>{{flow.YWLX}}</td>
+                                <td class="tlabel">业务原因</td>
+                                <td>{{flow.YWYY}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">姓名</td>
+                                <td>{{flow.XM}}</td>
+                                <td class="tlabel">发证机关</td>
+                                <td>{{flow.FZJG}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tlabel">身份证明号码</td>
+                                <td>{{flow.SFZMHM}}</td>
+                                <td class="tlabel">档案编号</td>
+                                <td>{{flow.DABH}}</td>
+                            </tr>
+                            <tr>
+                                <td class="tlabel">管理部门</td>
+                                <td>{{flow.GLBM}}</td>
+                                <td class="tlabel">业务办理部门</td>
+                                <td>{{flow.YWBLBM}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tlabel">开始时间</td>
+                                <td>{{flow.KSSJ}}</td>
+                                <td class="tlabel">办结时间</td>
+                                <td>{{flow.JSSJ}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+            </template>
+            <template v-else>
+                <div class="classify" style="border-bottom: solid 1px #d4d4d4;">关联同步库业务流水信息</div>
+                <span style="margin:15px;display:inline-block;">无</span>
+            </template>
+        </div>
+        <div style="width:48%">
+            <div class="classify" style=" border-bottom: solid 1px #d4d4d4;">办理资料<span style="margin-left:100px;color:red;">图片放大时是否同时打开参照图：</span><input type="checkbox" v-model="showbg" /></div>
+            <div id="view" style="width:100%;display:flex;display: flex;flex-direction: row;flex-wrap: wrap;height:800px;overflow:auto;">
+                <div style="margin-top:5px;	margin-bottom:20px;margin-right:10px;" v-for="(item,index) in blzls" :title="item.NAME">
+                    <template v-if="item.SRC!='../../../images/zwtp.png'">
+                        <img :src="item.SRC" :alt="item.NAME" @click="showimg($event)" :title="item.NAME" />
+                        <div style="width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" :style="{'color':(item.bx?'red':'black')}">{{item.NAME}}</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/viewer/viewer.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="zhcxmore.js"></script>
+
+</html>
+

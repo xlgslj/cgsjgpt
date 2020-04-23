@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        .website, .userinfo {
+            min-height: 240px;
+        }
+
+        .tablebox > table:first-child {
+            border-top: 1px solid #bfbfbf;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root" style="width:80%;">
+        <table class="formtable" style="width:100%;">
+            <tbody>
+                <tr>
+                    <td class="tlabel" style="width:10%;">部门代码：</td>
+                    <td style="width:30%;">{{config.DWNO}}</td>
+                    <td class="tlabel" style="width:10%;">部门名称：</td>
+                    <td>{{config.DWMC}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">关键字：</td>
+                    <td>{{config.KEYWORD}}</td>
+                    <td class="tlabel">参数名：</td>
+                    <td>{{config.NAME}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">参数说明：</td>
+                    <td style="height:100px;" colspan="3">{{config.MEMO}}</td>
+                </tr>
+                <tr v-if="config.K1!=null">
+                    <td class="tlabel">{{config.K1}}</td>
+                    <td colspan="3">
+                        <input :type="config.LX1" class="forminput inputstyle" v-model="config.V1">
+                    </td>
+                </tr>
+                <tr v-if="config.K2!=null">
+                    <td class="tlabel">{{config.K2}}</td>
+                    <td colspan="3">
+                        <input :type="config.LX2" class="forminput inputstyle" v-model="config.V2">
+                    </td>
+                </tr>
+                <tr v-if="config.K3!=null">
+                    <td class="tlabel">{{config.K3}}</td>
+                    <td colspan="3">
+                        <input :type="config.LX3" class="forminput inputstyle" v-model="config.V3">
+                    </td>
+                </tr>
+                <tr v-if="config.K4!=null">
+                    <td class="tlabel">{{config.K4}}</td>
+                    <td colspan="3">
+                        <input :type="config.LX4" class="forminput inputstyle" v-model="config.V4">
+                    </td>
+                </tr>
+                <tr v-if="config.K5!=null">
+                    <td class="tlabel">{{config.K5}}</td>
+                    <td colspan="3">
+                        <input :type="config.LX5" class="forminput inputstyle" v-model="config.V5">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="保存" class="btnsave" @click="save">
+            <input type="reset" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="editbmsignconfig.js"></script>
+
+</html>
+

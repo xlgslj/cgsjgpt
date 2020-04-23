@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .website, .userinfo {
+            min-height: 480px;
+        }
+
+        .formtable td {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s;
+        }
+
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body style="padding:15px 8px 0px 8px;">
+    <div id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">平台类别：</td>
+                    <td>
+                        <select class="select swidth" style="width:100px;" v-model="ptlb">
+                            <option v-for="item in code.ptlbs" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </td>
+                    <td class="tlabel">系统类别：</td>
+                    <td>
+                        <select class="select swidth" style="width:100px;" v-model="xtlb">
+                            <option v-for="item in xtlbs1" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">业务类型：</td>
+                    <td>
+                        <select class="select swidth" style="width:100px;" v-model="ywlx">
+                            <option v-for="item in ywlxs1" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </td>
+                    <td class="tlabel">业务原因：</td>
+                    <td>
+                        <input type="text" class="forminput inputstyle" placeholder="业务原因" v-model="ywyy">
+                    </td>
+                </tr>
+                <tr v-if="xtlb=='机动车'">
+                    <td class="tlabel">查验号可为空：</td>
+                    <td>
+                        <input name="cyh" type="radio" v-model="cylshisnull" value="是">是&nbsp;&nbsp;
+                        <input name="cyh" type="radio" v-model="cylshisnull" value="否">否&nbsp;&nbsp;
+                    </td>
+                    <td class="tlabel">原号牌可为空：</td>
+                    <td>
+                        <input name="yhphm" type="radio" v-model="yhphmisnull" value="是">是&nbsp;&nbsp;
+                        <input name="yhphm" type="radio" v-model="yhphmisnull" value="否">否&nbsp;&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">办理模式：</td>
+                    <td>
+                        <template v-for="item in code.blmss">
+                            <input type="checkbox" :disabled="item.NAME=='本人办理'" v-model="blms" :value="item.NAME">{{item.NAME}}&nbsp;&nbsp;
+                        </template>
+
+                    </td>
+                    <td class="tlabel">审核模式：</td>
+                    <td>
+                        <template v-for="item in code.shmss">
+                            <input name="shms" type="radio" v-model="shms" :value="item.NAME">{{item.NAME}}&nbsp;&nbsp;
+                        </template>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div style="display:flex;flex-direction:row;">
+
+            <div style="width:41.8%; border: solid 1px #d4d4d4;margin-top:2px;margin-right:0.2%;height:525px;padding-left:3%;overflow:auto;" v-show="mode">
+                <div style="position: fixed; top: 150px; left: 10px; display: flex;flex-direction: column;width: 20px;">
+                    <a :href="'#'+item" v-for="item in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" style="background: #227447;border-radius: 3px;color:#000000;margin-bottom:3px;background: #8ec1a5;padding-left:2px;padding-right:2px;">{{item}}</a>
+                </div>
+                <div>
+                    <div v-for="(item,index) in photos1" style="margin-bottom:5px;line-height:20px;">
+                        <span :id="item.K1" v-if="item.ID=='split'" style="color:red;margin-top:20px;margin-bottom:10px;display: inline-block;">------------{{item.K1}}--------------</span>
+                        <span v-else style="display:block;" @mouseenter="mouseover(item.ID,index)" @mouseleave="mouseout(item.ID,index)">{{item.NAME}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position:relative;" :style="{width:(mode?'55':'100')+'%'}">
+                <div style="position:absolute;left:10px;top:508px;">
+                    <span class="menutoleft"><a href="#" @click="ChangeMode" style="height:40px;"><i class="mright iconfont" style="font-size:20px;" v-html="mode?'&#xe61f;':'&#xe620;'"></i></a></span>
+                </div>
+                <ul class="tab" style="margin-top:2px;">
+                    <li name="brzl" class="tabcurrent" v-show="ExitBlms('本人办理')"><a href="javascript:;">本人业务所需资料</a></li>
+                    <transition name="fade">
+                        <li name="dlrzl" v-show="ExitBlms('代理个人业务')"><a href="javascript:;">代理人业务所需资料</a></li>
+                    </transition>
+                    <transition name="fade">
+                        <li name="dwzl" v-show="ExitBlms('代理单位业务')"><a href="javascript:;">单位业务所需资料</a></li>
+                    </transition>
+                </ul>
+
+                <div class="website" style="padding:5px;" id="brzl">
+                    <div class="tablebox">
+                        <div v-for="(item,index) in brzls" style="margin-bottom:5px;line-height:20px;" @mouseenter="mouseover1(item.ID,index)" @mouseleave="mouseout1(item.ID,index)">
+                            <span> <input type="checkbox" style="vertical-align: middle;" v-model="item.bx">{{item.NAME}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userinfo" style="padding:5px;" id="dlrzl">
+
+                    <div class="tablebox">
+                        <div v-for="(item,index) in dlrzls" style="margin-bottom:5px;line-height:20px;" @mouseenter="mouseover1(item.ID,index)" @mouseleave="mouseout1(item.ID,index)">
+                            <span><input type="checkbox" style="vertical-align: middle;" v-model="item.bx">{{item.NAME}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userinfo" style="padding:5px;" id="dwzl">
+
+                    <div class="tablebox">
+                        <div v-for="(item,index) in dwzls" style="margin-bottom:5px;line-height:20px;" @mouseenter="mouseover1(item.ID,index)" @mouseleave="mouseout1(item.ID,index)">
+                            <span><input type="checkbox" style="vertical-align: middle;" v-model="item.bx">{{item.NAME}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formbtn" style="position:fixed;bottom:10px;">
+            <input type="button" value="添加配置" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="addbusiness.js"></script>
+
+</html>
+

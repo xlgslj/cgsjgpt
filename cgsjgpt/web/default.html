@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+
+<body style="overflow-x:hidden; overflow-y:auto;">
+    <ul class="toollist" id="app1">
+        <!---<li><div class="listbox"><i class="iconfont">&#xe6da;</i><em>25<p>待办事项</p></em></div></li>
+              <li><div class="listbox"><i class="iconfont">&#xe648;</i><em>16<p>档案管理</p></em></div></li>
+              <li><div class="listbox"><i class="iconfont">&#xe619;</i><em>198<p>大数据统计</p></em></div></li>
+              <li><div class="listbox"><i class="iconfont">&#xe6c9;</i><em>10<p>项目信息</p></em></div></li>
+              <li><div class="listbox"><i class="iconfont">&#xe624;</i><em>15<p>日程管理</p></em></div></li>
+              <li><div class="listbox"><i class="iconfont">&#xe6bf;</i><em>7<p>云计算</p></em></div></li>
+        -->
+        <template v-for="(item,index) in ywlxgroup">
+            <li><div class="listbox"><i class="iconfont" v-html="icon[index]"></i><em style="width:50%;">{{item.count1+'/'+item.count2}}<p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{item.name.length<10?item.name:item.name.substring(0,10)}}</p></em></div></li>
+        </template>
+
+    </ul>
+
+    <ul class="chartlist">
+        <li>
+            <div class="chartbox">
+                <div class="boxtitle"><span>大厅实时等候人数</span><a href="#">更多<i class="iconfont">&#xe620;</i></a></div>
+                <div id="chart1" class="charts"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="chartbox">
+                <div class="boxtitle"><span>当日各时段等候/处理量</span><a href="#">更多<i class="iconfont">&#xe620;</i></a></div>
+                <div id="chart2" class="charts"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="chartbox">
+                <div class="boxtitle"><span>当日各窗口处理情况</span><a href="#">更多<i class="iconfont">&#xe620;</i></a></div>
+                <div id="chart3" class="charts"></div>
+
+                <script type="text/javascript">
+
+                </script>
+
+            </div>
+        </li>
+    </ul>
+
+    <div class="infolist" id="app">
+
+        <div class="infoleft">
+            <div class="infoboxleft">
+                <div class="boxtitle"><span>最近办理情况</span><a href="#">更多<i class="iconfont">&#xe620;</i></a></div>
+
+                <div class="boxdown">
+                    <table class="simpletable">
+
+                        <thead>
+                        <th>办理窗口</th>
+                        <th>排队号码</th>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                        <th>状态</th>
+                        <th>用时</th>
+                        </thead>
+
+                        <tbody>
+                            <tr v-for="(item,index) in procdata">
+                                <td>{{item.CK}}</td>
+                                <td>{{item.PDHM}}</td>
+                                <td>{{item.STARTTIME}}</td>
+                                <td>{{item.ENDTITIME}}</td>
+                                <td>{{item.ZT}}</td>
+                                <td :style="{'color':((item.ZT=='办结'&&item.SECOND>PJYWBLSJBZXZ)||(item.ZT=='正在办理'&&(item.SECOND+second)>PJYWBLSJBZXZ)?'red':'green')}">{{item.ZT=='办结'?formattime(item.SECOND):formattime(item.SECOND+second)}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="inforight">
+            <div class="infoboxright">
+                <div class="boxtitle"><span>当日大厅业务统计</span><a href="#">更多<i class="iconfont">&#xe620;</i></a></div>
+                <template v-show="rightAndBottom!=null">
+                    <div class="boxdown">
+                        <table class="simpletable">
+                            <thead>
+                            <th>姓名</th>
+                            <th>总数({{ywhzsj.zs}})</th>
+                            <th>平均时间</th>
+                            <th>超时({{ywhzsj.cs}})</th>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item,index) in rightAndBottom">
+                                    <td>{{item.ry+"("+item.ck.substring(0,2)+")"}}</td>
+                                    <td>{{item.zs}}</td>
+                                    <td>{{formattime(item.pjblsj)}}</td>
+                                    <td>{{item.blcsrs}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<script src="js/echarts.min.js"></script>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/skin.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script src="default.js"></script>
+</html>

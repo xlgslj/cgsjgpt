@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/viewer/viewer.min.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .w-e-icon-upload2 {
+            font-size: 60px;
+        }
+
+        .w-e-text-container {
+            height: 450px;
+        }
+
+        img {
+            width: 240px;
+            height: 180px;
+            border: solid 1px #d4d4d4;
+        }
+
+        .currentphoto {
+            border: dashed 1px red;
+        }
+
+        .hiddiv {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.3;
+            z-index: 100000;
+        }
+
+        .camera {
+            text-align: center;
+            background-color: #ffffff;
+            width: 480px;
+            height: 450px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -225px;
+            margin-left: -240px;
+            border: #ffffff solid 2px;
+            z-index: 100001;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <div id="root">
+        <div v-if="db!=null">
+            <table class="formtable" style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td class="tlabel">备案类型：</td>
+                        <td>
+                            {{db.BALX}}
+                        </td>
+                        <td class="tlabel">机构类型：</td>
+                        <td>
+                            {{db.DWLX}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">组织机构代码：</td>
+                        <td>{{db.ZZJGDM}}</td>
+                        <td class="tlabel">单位名称：</td>
+                        <td>{{db.DWMC}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">单位经办人：</td>
+                        <td>{{db.DWJBR}}</td>
+                        <td class="tlabel">经办人联系电话：</td>
+                        <td>{{db.LXDH}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">单位地址：</td>
+                        <td>{{db.ADDRESS}}</td>
+                        <td class="tlabel">单位电话：</td>
+                        <td>{{db.TEL}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">说明：</td>
+                        <td colspan="3" style="padding-top: 10px;">
+                            {{db.MEMO}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <div class="classify" style=" border-bottom: solid 1px #d4d4d4;">资料</div>
+                <div  style="display:flex;display: flex;flex-direction: row;flex-wrap: wrap;">
+                    <div style="margin-right:5px;">
+                        <img :src="db.URL1" :title="db.IMG1" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG1}}</div>
+                    </div>
+                    <div style="margin-right:5px;">
+                        <img :src="db.URL2" :title="db.IMG2" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG2}}</div>
+                    </div>
+                    <div v-if="db.IMG3!=''&&db.IMG3!=null&&db.IMG3!=undefined" style="margin-right:5px;">
+                        <img :src="db.URL3" :title="db.IMG3" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG3}}</div>
+                    </div>
+                    <div v-if="db.IMG4!=''&&db.IMG4!=null&&db.IMG4!=undefined" style="margin-right:5px;">
+                        <img :src="db.URL4" :title="db.IMG4" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG4}}</div>
+                    </div>
+                    <div v-if="db.IMG5!=''&&db.IMG5!=null&&db.IMG5!=undefined" style="margin-right:5px;">
+                        <img :src="db.URL5" :title="db.IMG5" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG5}}</div>
+                    </div>
+                    <div v-if="db.IMG6!=''&&db.IMG6!=null&&db.IMG6!=undefined" style="margin-right:5px;">
+                        <img :src="db.URL6" :title="db.IMG6" />
+                        <div style="width:240PX;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{db.IMG6}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <span v-else style="font-size:30px;color:red;font-weight:700;margin:100px;">无该单位备案信息</span>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../wangEditor/wangEditor.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/viewer/viewer.min.js"></script>
+<script type="text/javascript" src="bainfo.js"></script>
+
+</html>
+

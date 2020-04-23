@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesDtgl">
+    <EntitySetMapping Name="OPLOG">
+      <EntityTypeMapping TypeName="Model.OPLOG">
+        <MappingFragment StoreEntitySet="OPLOG">
+          <ScalarProperty Name="MEMO2" ColumnName="MEMO2" />
+          <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="OPEZT" ColumnName="OPEZT" />
+          <ScalarProperty Name="OPSZT" ColumnName="OPSZT" />
+          <ScalarProperty Name="SECOND" ColumnName="SECOND" />
+          <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+          <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+          <ScalarProperty Name="OPERNAME" ColumnName="OPERNAME" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="KEY6" ColumnName="KEY6" />
+          <ScalarProperty Name="KEY5" ColumnName="KEY5" />
+          <ScalarProperty Name="KEY4" ColumnName="KEY4" />
+          <ScalarProperty Name="KEY3" ColumnName="KEY3" />
+          <ScalarProperty Name="KEY2" ColumnName="KEY2" />
+          <ScalarProperty Name="KEY1" ColumnName="KEY1" />
+          <ScalarProperty Name="OPLX1" ColumnName="OPLX1" />
+          <ScalarProperty Name="OPLX" ColumnName="OPLX" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WARNEVENT">
+      <EntityTypeMapping TypeName="Model.WARNEVENT">
+        <MappingFragment StoreEntitySet="WARNEVENT">
+          <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="CONTENT2" ColumnName="CONTENT2" />
+          <ScalarProperty Name="SECOND" ColumnName="SECOND" />
+          <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+          <ScalarProperty Name="OPERNAME" ColumnName="OPERNAME" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="KEY4" ColumnName="KEY4" />
+          <ScalarProperty Name="KEY3" ColumnName="KEY3" />
+          <ScalarProperty Name="KEY2" ColumnName="KEY2" />
+          <ScalarProperty Name="KEY1" ColumnName="KEY1" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="WARNLX" ColumnName="WARNLX" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICENSE">
+      <EntityTypeMapping TypeName="Model.LICENSE">
+        <MappingFragment StoreEntitySet="LICENSE">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="FFTIME" ColumnName="FFTIME" />
+          <ScalarProperty Name="FFER" ColumnName="FFER" />
+          <ScalarProperty Name="ZZTIME" ColumnName="ZZTIME" />
+          <ScalarProperty Name="ZZER" ColumnName="ZZER" />
+          <ScalarProperty Name="OPTIME" ColumnName="OPTIME" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="DLRZJHM" ColumnName="DLRZJHM" />
+          <ScalarProperty Name="DLRZJLX" ColumnName="DLRZJLX" />
+          <ScalarProperty Name="DLRNAME" ColumnName="DLRNAME" />
+          <ScalarProperty Name="ZJHM" ColumnName="ZJHM" />
+          <ScalarProperty Name="ZJLX" ColumnName="ZJLX" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PZHM" ColumnName="PZHM" />
+          <ScalarProperty Name="PZLX" ColumnName="PZLX" />
+          <ScalarProperty Name="BLLX" ColumnName="BLLX" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WARNLOG">
+      <EntityTypeMapping TypeName="Model.WARNLOG">
+        <MappingFragment StoreEntitySet="WARNLOG">
+          <ScalarProperty Name="MEMO2" ColumnName="MEMO2" />
+          <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="HCSJ" ColumnName="HCSJ" />
+          <ScalarProperty Name="HCOPER" ColumnName="HCOPER" />
+          <ScalarProperty Name="HCJG" ColumnName="HCJG" />
+          <ScalarProperty Name="HCZT" ColumnName="HCZT" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="OPEZT" ColumnName="OPEZT" />
+          <ScalarProperty Name="OPSZT" ColumnName="OPSZT" />
+          <ScalarProperty Name="SECOND" ColumnName="SECOND" />
+          <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+          <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+          <ScalarProperty Name="OPERNAME" ColumnName="OPERNAME" />
+          <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+          <ScalarProperty Name="KEY6" ColumnName="KEY6" />
+          <ScalarProperty Name="KEY5" ColumnName="KEY5" />
+          <ScalarProperty Name="KEY4" ColumnName="KEY4" />
+          <ScalarProperty Name="KEY3" ColumnName="KEY3" />
+          <ScalarProperty Name="KEY2" ColumnName="KEY2" />
+          <ScalarProperty Name="KEY1" ColumnName="KEY1" />
+          <ScalarProperty Name="OPLX1" ColumnName="OPLX1" />
+          <ScalarProperty Name="OPLX" ColumnName="OPLX" />
+          <ScalarProperty Name="GLLSH" ColumnName="GLLSH" />
+          <ScalarProperty Name="REGTIME" ColumnName="REGTIME" />
+          <ScalarProperty Name="DVZT" ColumnName="DVZT" />
+          <ScalarProperty Name="SYXZ" ColumnName="SYXZ" />
+          <ScalarProperty Name="CJH" ColumnName="CJH" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZLNAME" ColumnName="HPZLNAME" />
+          <ScalarProperty Name="SFZMHM" ColumnName="SFZMHM" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="XTLB" ColumnName="XTLB" />
+          <ScalarProperty Name="WARNLX1" ColumnName="WARNLX1" />
+          <ScalarProperty Name="WARNLX" ColumnName="WARNLX" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTICE">
+      <EntityTypeMapping TypeName="Model.NOTICE">
+        <MappingFragment StoreEntitySet="NOTICE">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="GZSJ" ColumnName="GZSJ" />
+          <ScalarProperty Name="GZRQ" ColumnName="GZRQ" />
+          <ScalarProperty Name="JBR" ColumnName="JBR" />
+          <ScalarProperty Name="FILES" ColumnName="FILES" />
+          <ScalarProperty Name="CLSBHM" ColumnName="CLSBHM" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+          <ScalarProperty Name="HPZLNO" ColumnName="HPZLNO" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="YWLXNO" ColumnName="YWLXNO" />
+          <ScalarProperty Name="KEY5" ColumnName="KEY5" />
+          <ScalarProperty Name="KEY4" ColumnName="KEY4" />
+          <ScalarProperty Name="KEY3" ColumnName="KEY3" />
+          <ScalarProperty Name="KEY2" ColumnName="KEY2" />
+          <ScalarProperty Name="KEY1" ColumnName="KEY1" />
+          <ScalarProperty Name="ZJCX" ColumnName="ZJCX" />
+          <ScalarProperty Name="DABH" ColumnName="DABH" />
+          <ScalarProperty Name="SFZMHM" ColumnName="SFZMHM" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="QHRQ" ColumnName="QHRQ" />
+          <ScalarProperty Name="PDHM" ColumnName="PDHM" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="LB" ColumnName="LB" />
+          <ScalarProperty Name="BH" ColumnName="BH" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="TBLX" ColumnName="TBLX" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDXX">
+      <EntityTypeMapping TypeName="Model.PDXX">
+        <MappingFragment StoreEntitySet="PDXX">
+          <ScalarProperty Name="LSHISNULL" ColumnName="LSHISNULL" />
+          <ScalarProperty Name="TBZL" ColumnName="TBZL" />
+          <ScalarProperty Name="PZID" ColumnName="PZID" />
+          <ScalarProperty Name="ZZPZ" ColumnName="ZZPZ" />
+          <ScalarProperty Name="GZSID" ColumnName="GZSID" />
+          <ScalarProperty Name="TBYJ" ColumnName="TBYJ" />
+          <ScalarProperty Name="TBLX" ColumnName="TBLX" />
+          <ScalarProperty Name="QUERYZT" ColumnName="QUERYZT" />
+          <ScalarProperty Name="ZT" ColumnName="ZT" />
+          <ScalarProperty Name="LSHHCZT" ColumnName="LSHHCZT" />
+          <ScalarProperty Name="YWLSH" ColumnName="YWLSH" />
+          <ScalarProperty Name="BLYJ" ColumnName="BLYJ" />
+          <ScalarProperty Name="SECOND" ColumnName="SECOND" />
+          <ScalarProperty Name="ENDTITIME" ColumnName="ENDTITIME" />
+          <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+          <ScalarProperty Name="JBR" ColumnName="JBR" />
+          <ScalarProperty Name="JBRID" ColumnName="JBRID" />
+          <ScalarProperty Name="CK" ColumnName="CK" />
+          <ScalarProperty Name="OPLOGID" ColumnName="OPLOGID" />
+          <ScalarProperty Name="JHQK" ColumnName="JHQK" />
+          <ScalarProperty Name="JHSJ" ColumnName="JHSJ" />
+          <ScalarProperty Name="JHCS" ColumnName="JHCS" />
+          <ScalarProperty Name="DHYJ" ColumnName="DHYJ" />
+          <ScalarProperty Name="WAITSECOND" ColumnName="WAITSECOND" />
+          <ScalarProperty Name="DRVANDVEHINFO" ColumnName="DRVANDVEHINFO" />
+          <ScalarProperty Name="ISHMD" ColumnName="ISHMD" />
+          <ScalarProperty Name="DLRZJHM" ColumnName="DLRZJHM" />
+          <ScalarProperty Name="DLRZJLX" ColumnName="DLRZJLX" />
+          <ScalarProperty Name="DLRNAME" ColumnName="DLRNAME" />
+          <ScalarProperty Name="BRZJHM" ColumnName="BRZJHM" />
+          <ScalarProperty Name="BRZJLX" ColumnName="BRZJLX" />
+          <ScalarProperty Name="BRNAME" ColumnName="BRNAME" />
+          <ScalarProperty Name="BLLX" ColumnName="BLLX" />
+          <ScalarProperty Name="QHSJ" ColumnName="QHSJ" />
+          <ScalarProperty Name="QHRQ" ColumnName="QHRQ" />
+          <ScalarProperty Name="PDHM" ColumnName="PDHM" />
+          <ScalarProperty Name="DBR" ColumnName="DBR" />
+          <ScalarProperty Name="DBRID" ColumnName="DBRID" />
+          <ScalarProperty Name="YWLXMC" ColumnName="YWLXMC" />
+          <ScalarProperty Name="YWLXCODE" ColumnName="YWLXCODE" />
+          <ScalarProperty Name="DWMC" ColumnName="DWMC" />
+          <ScalarProperty Name="DWNO" ColumnName="DWNO" />
+          <ScalarProperty Name="XH" ColumnName="XH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

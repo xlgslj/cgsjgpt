@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/style/green.css" rel="stylesheet" type="text/css" id = 'link'>
+<script src="js/echarts/echarts.js"></script>
+<script src="js/echarts/uimaker.js"></script>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+
+<div class="chartbox1">
+<div class="boxtitle"><span>数据统计</span></div>
+<div id="chart2" class="charts1"></div>
+</div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('chart2'),'uimaker');
+        // 指定图表的配置项和数据        
+option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+        type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+	
+	grid:{
+		x:60,
+		x2:40,
+		y:10,
+		height:200
+	},
+
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data : ['周一','周二','周三','周四','周五','周六','周日']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'邮件营销',
+            type:'bar',
+            stack: '广告',
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'bar',
+            stack: '广告',
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'bar',
+            stack: '广告',
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'搜索引擎',
+            type:'bar',
+            data:[862, 1018, 964, 1026, 1679, 1600, 1570],
+            markLine : {
+                itemStyle:{
+                    normal:{
+                        lineStyle:{
+                            type: 'dashed'
+                        }
+                    }
+                },
+                data : [
+                    [{type : 'min'}, {type : 'max'}]
+                ]
+            }
+        },
+        {
+            name:'百度',
+            type:'bar',
+            barWidth : 5,
+            stack: '搜索引擎',
+            data:[620, 732, 701, 734, 1090, 1130, 1120]
+        },
+        {
+            name:'谷歌',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[120, 132, 101, 134, 290, 230, 220]
+        },
+        {
+            name:'必应',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[60, 72, 71, 74, 190, 130, 110]
+        },
+        {
+            name:'其他',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[62, 82, 91, 84, 109, 110, 120]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option);
+		window.addEventListener("resize",function(){
+        myChart1.resize();
+                });
+    </script>
+
+<div class="divbox">
+
+	<div class="boxleft">
+        <div class="leftbox">
+        <div class="boxtitle"><span>最新订单</span></div>
+        
+         <div class="boxdown">
+            <table class="simpletable">
+            
+            <thead>
+            <th>订单编号</th>
+            <th>订单金额(元)</th>
+            <th>下单时间</th>
+            <th>交易完成日期</th>
+            <th>卖家ID</th>
+            <th>操作</th>
+        	</thead>
+            
+            <tbody>
+            
+            <tr>
+                <td>20171101</td>
+                <td>256</td>
+                <td>2017-11-01 16:35:26</td>
+                <td>2017-11-01</td>
+                <td>uimaker</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171102</td>
+                <td>300</td>
+                <td>2017-11-02 10:50:08</td>
+                <td>2017-11-02</td>
+                <td>admin</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171103</td>
+                <td>500</td>
+                <td>2017-11-03 00:00:14</td>
+                <td>2017-11-03</td>
+                <td>nanjing</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171104</td>
+                <td>1000</td>
+                <td>2017-11-04 16:22:00</td>
+                <td>2017-11-04</td>
+                <td>office</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171105</td>
+                <td>200</td>
+                <td>2017-11-05 04:00:00</td>
+                <td>2017-11-05</td>
+                <td>uimaker</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171106</td>
+                <td>150</td>
+                <td>2017-11-06 18:20:10</td>
+                <td>2017-11-06</td>
+                <td>guanliyuan</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171107</td>
+                <td>450</td>
+                <td>2017-11-07 08:34:00</td>
+                <td>2017-11-07</td>
+                <td>moodoc</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            <tr>
+                <td>20171108</td>
+                <td>500</td>
+                <td>2017-11-08 19:00:14</td>
+                <td>2017-11-08</td>
+                <td>iphonex</td>
+                <td><a href="#" >查看</a></td>
+            </tr>
+            
+            </tbody>
+            
+            </table>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="boxright">
+        <div class="rightbox">
+        <div class="boxtitle"><span>新闻列表</span></div>
+              
+        <ul class="textlist">
+        <li><span></span><a href="#">uimaker网站最新office2016风格模板上线</a><i>11-10</i></li>
+        <li><span></span><a href="#">2017年度公司现金个人表彰大会即将召开</a><i>11-09</i></li>
+        <li><span></span><a href="#">订单管理系统功能升级效率大幅提升</a><i>11-08</i></li>
+        <li><span></span><a href="#">精美后台管理系统模板html免费下载-uimaker</a><i>11-07</i></li>
+        <li><span></span><a href="#">大学生职场新人产品经理晋级课堂</a><i>11-06</i></li>
+        <li><span></span><a href="#">卡通头像设计ui教程-您身边最好的在线课堂</a><i>11-05</i></li>
+        <li><span></span><a href="#">uimaker分享-最全面最基础的ui设计知识</a><i>11-04</i></li>
+        <li><span></span><a href="#">漂亮大数据可视化大屏展示ui设计</a><i>11-03</i></li>
+        <li><span></span><a href="#">严厉鄙视一切倒卖模板的行为-强烈谴责！</a><i>11-02</i></li>
+        </ul>
+        
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/skin.js"></script>
+</html>

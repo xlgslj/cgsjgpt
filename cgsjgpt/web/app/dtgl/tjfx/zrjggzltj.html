@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        .c-ui {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .c-ui > li {
+                line-height: 30px;
+                margin: 1px 1px 1px 1px;
+                vertical-align: middle;
+                position: relative;
+            }
+
+
+                .c-ui > li input[type='text'] {
+                    height: 26px;
+                    border: solid 1px #c6c6c6;
+                    line-height: 26px;
+                    text-indent: 8px;
+                    font-family: '微软雅黑';
+                    color: #585858;
+                    width: 200px;
+                }
+
+        .vue-treeselect__control {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--top-->
+    <div id="app" style="display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <div style="float:left;">
+            <treeselect placeholder="选择单位..." v-model="bmno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:200px;height:32px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+        </div>
+        <ul class="c-ui">
+            <li>&nbsp;&nbsp;统计时间:&nbsp;<input type="text" id="rqfw" placeholder="选择时间"><span class="searchico"><i class="iconfont">&#x343e;</i></span></li>
+        </ul>
+        <ul class="toolbar" style="padding-top:0px;">
+            <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+        </ul>
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">查看</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="zrjggzltj.js"></script>
+</html>
+

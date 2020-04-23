@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+    </style>
+</head>
+<body style="padding:15px 8px 0px 8px;min-width:100px;">
+        <div  id="root" class="tablebox" style="padding-top:0px;height:700px;overflow:auto;">
+            <div v-if="where.blms=='代理个人业务'" style="text-align:center;font-weight: bold;height:30px;">代&nbsp;&nbsp;&nbsp;&nbsp;理&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+            <table v-if="where.blms=='代理个人业务'" style="margin-bottom:0px;">
+                <thead>
+                <th class="num"></th>
+                <th>信息类型</th>
+                <th style="width:60%;">基本信息</th>
+                <th style="width:20%;">状态</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="tdnum">1</td>
+                        <td>代理人</td>
+                        <td><a href="#">{{where.dlrzjlx}}:{{where.dlrzjhm}}</a></td>
+                        <td></td>
+                    </tr>
+                    <tr v-if="driverandvehicle.rblist2!=null">
+                        <td class="tdnum">2</td>
+                        <td>红/黑名单</td>
+                        <td><a href="#" style="color:red;">{{driverandvehicle.rblist2.LX+(driverandvehicle.rblist2.LX=="红名单"?("-代理范围:"+(driverandvehicle.rblist2.DLFW=="本单位"?driverandvehicle.rblist2.DWNAME:"所有")):"")}}</a></td>
+                        <td>{{driverandvehicle.rblist2.ZT}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td class="tdnum">2</td>
+                        <td>红/黑名单</td>
+                        <td><a href="#">既不是红名单也不是黑名单</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align:center;font-weight: bold;height:30px;">当&nbsp;&nbsp;&nbsp;&nbsp;事&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+            <table>
+                <thead>
+                <th class="num"></th>
+                <th>信息类型</th>
+                <th style="width:60%;">基本信息</th>
+                <th style="width:20%;">状态</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="tdnum">1</td>
+                        <td>当事人</td>
+                        <td><a href="#">{{where.brzjlx}}:{{where.brzjhm}}</a></td>
+                        <td></td>
+                    </tr>
+                    <tr v-if="driverandvehicle.rblist1.LX.length>0">
+                        <td class="tdnum">2</td>
+                        <td>红/黑名单</td>
+                        <td><a href="#" style="color:red;">{{driverandvehicle.rblist1.LX}}{{driverandvehicle.rblist1.LX.indexOf("红名单")>-1?("   (代理范围:"+(driverandvehicle.rblist1.DLFW=="本单位"?driverandvehicle.rblist1.DWNAME:"所有")+")"):""}}</a></td>
+                        <td>{{driverandvehicle.rblist1.ZT}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td class="tdnum">2</td>
+                        <td>红/黑名单</td>
+                        <td><a href="#">既不是红名单也不是黑名单</a></td>
+                        <td></td>
+                    </tr>
+                    <tr v-if="driverandvehicle.driver1!=null&&driverandvehicle.driver1!=undefined">
+                        <td class="tdnum">3</td>
+                        <td>驾驶人</td>
+                        <td><a href="#">初次领证日期:{{driverandvehicle.driver1.CCLZRQ==undefined?"":driverandvehicle.driver1.CCLZRQ.substring(0,10)}};有效期止：{{driverandvehicle.driver1.YXQZ==undefined?"":driverandvehicle.driver1.YXQZ.substring(0,10)}}；积分：{{driverandvehicle.driver1.LJJF}}</a></td>
+                        <td>{{driverandvehicle.driver1.ZT}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td class="tdnum">3</td>
+                        <td>驾驶人</td>
+                        <td><a href="#">不是有效驾驶人</a></td>
+                        <td></td>
+                    </tr>
+                    <tr v-for="(item,index) in driverandvehicle.vehicles1">
+                        <td class="tdnum">{{index+3}}</td>
+                        <td>机动车</td>
+                        <td><a href="#">{{item.HPHM}}（{{item.HPZL}}）;检验有效期止：{{item.YXQZ==undefined?"":item.YXQZ.substring(0,10)}}</a></td>
+                        <td>{{item.ZT}}</td>
+                    </tr>
+
+                    <tr v-if="driverandvehicle.vehicles1.length==0">
+                        <td class="tdnum">4</td>
+                        <td>机动车</td>
+                        <td><a href="#">无所属机动车或所属机动车信息正常</a></td>
+                        <td></td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="hmdcx.js"></script>
+
+</html>
+

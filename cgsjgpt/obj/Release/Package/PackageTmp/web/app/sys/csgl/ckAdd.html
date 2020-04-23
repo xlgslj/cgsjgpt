@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable" style="width:780px;">
+            <tbody>
+                <tr>
+                    <td class="tlabel">
+                        部门名称：
+                    </td>
+                    <td style="position:relative;">
+                        <treeselect placeholder="选择单位..." v-model="bmno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:250px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+                    </td>
+                    <td class="tlabel">窗口名称：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="ckmc">&nbsp;&nbsp;*</td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">IP地址：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="eg:x.x.x.x" v-model="ip">&nbsp;&nbsp;*</td>
+                    <td class="tlabel">控制卡地址：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="kzkdz">&nbsp;&nbsp;*</td>
+
+                </tr>
+
+                <tr>
+                    <td class="tlabel">所在网点编号：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="wdbh"></td>
+                    <td class="tlabel">注册窗口号：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="zcckh"></td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">评价器COM口：</td>
+                    <td colspan="3"><input type="text" class="forminput inputstyle" v-model="pjcom"></td>
+                </tr>
+                <tr>
+                    <td class="tlabel">已选业务类型：</td>
+                    <td colspan="3">
+                        <div v-for="(item,index) in yxywlxs" style="margin:0 0 0 10px;padding:0;height:30px;" @mouseenter="mouseover(item.ID,index)" @mouseleave="mouseout(item.ID,index)">
+                            <input type="checkbox" v-model="dellx" :value="item">{{item.NAME}}
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">功能：</td>
+                    <td colspan="3" align="center">
+                        <input type="button" value="↑" style="float:none;margin-top:5px;display:inline;" :disabled="!up" :class="{ 'btnsave': up, 'btncancel': !up }" @click="faddlx">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="↓" style="float:none;margin-top:5px;display:inline;" :disabled="!down" :class="{ 'btnsave': down, 'btncancel': !down }" @click="fdellx">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">备选业务类型：</td>
+                    <td colspan="3">
+                        <div v-for="(item,index) in bxywlxs" style="margin:0 0 0 10px;padding:0;height:30px;">
+                            <input type="checkbox" v-model="addlx" :value="item">{{item.NAME}}
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="保存" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/jquery.select.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="ckadd.js"></script>
+
+</html>
+

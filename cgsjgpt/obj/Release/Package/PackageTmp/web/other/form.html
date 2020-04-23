@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/style/green.css" rel="stylesheet" type="text/css" id = 'link'>
+<link href="js/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+	<form>
+    <table class="formtable">
+    
+    <tbody>
+    
+    	<tr>
+        <td class="tlabel">用户名：</td>
+        <td colspan="3">uimaker</td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">姓名(中文)：</td>
+        <td>孙中山</td>
+        <td class="tlabel">公司：</td>
+        <td>江苏省南京市雨花台区</td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">联系人：</td>
+        <td><input type="text" class="forminput inputstyle" value="孙中山"></td>
+        <td class="tlabel">姓名(拼音)：</td>
+        <td><input type="text" class="forminput inputstyle" value="sunzhongshan"></td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">省份：</td>
+        <td>
+        <select class="select swidth" name="state" data-value="0" >
+            <option value ="0">请选择</option>
+            <option value ="1" >江苏省</option>
+            <option value ="2" >山东省</option>
+            <option value ="3" >北京市</option>
+            <option value ="4" >上海市</option>
+        </select>
+        </td>
+        <td class="tlabel">城市：</td>
+        <td><input type="text" class="forminput inputstyle" value="南京"></td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">电话：</td>
+        <td><input type="text" class="forminput inputstyle" value="18652072457"></td>
+        <td class="tlabel">传真：</td>
+        <td><input type="text" class="forminput inputstyle" value="025-85423587"></td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">地址：</td>
+        <td colspan="3"><input type="text" class="forminput inputstyle inputadress"  value=""></td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">电子邮件：</td>
+        <td colspan="3">admin@uimaker.com&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">修改</a>&nbsp;&nbsp;<em>* 请填写常用电子邮件</em></td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">QQ号：</td>
+        <td colspan="3">32534386</td>
+        </tr>
+        
+        <tr>
+        <td class="tlabel">个人简介：</td>        
+        <td colspan="3" style="padding:10px;line-height:15px;">
+        <div id="editor-state" class="formeditor">
+        
+        </div>	
+        </td>
+        </tr>
+        
+    </tbody>
+    
+    </table>
+    
+    <div class="formbtn">
+    <input type="button" value="保存"  class="btnsave">
+    <input type="button" value="重置"  class="btncancel">
+    </div>
+    
+</form>
+</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/skin.js"></script>
+    <script type="text/javascript" src="js/jquery.select.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/umeditor/umeditor.config.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/umeditor/umeditor.min.js"></script>
+        <script type="text/javascript" src="js/umeditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript">
+         var state = UM.getEditor('editor-state');
+         state.setWidth("99.91%");
+         $(".edui-body-container").css("width", "99.91%");  
+		 $('select.select').select(); 
+    </script>
+</html>
+

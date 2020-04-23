@@ -1,0 +1,310 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../step-lay/step.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/viewer/viewer.min.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .website, .userinfo {
+            height: 200px;
+        }
+
+        .btnsave {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            display: block;
+            width: 74px;
+            border-radius: 2px;
+            cursor: pointer;
+            background: #227447;
+            border: solid 1px #227447;
+            margin-left: 10px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .currentyw {
+            background-color: red;
+        }
+
+        .currentphoto {
+            border: dashed 1px red;
+        }
+
+        .tlabel {
+            background-color: #ffffff;
+        }
+
+        .classify {
+            background-color: #ffffff;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            border-bottom: none;
+        }
+
+        .inputstyle {
+            width: 90%;
+            background-color: #ffffff;
+        }
+
+        .pre {
+            float: none;
+        }
+
+        img {
+            width: 240px;
+            height: 180px;
+            border: solid 1px #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-carousel" id="stepForm" lay-filter="stepForm" style="margin: 10px 0px auto;height:800px;">
+        <div carousel-item>
+            <div>
+                <div style="display:flex;flex-direction: column;align-items: center;margin-top:30px;">
+                    <div style="width:60%;">
+                        <table class="formtable">
+                            <tbody>
+                                <tr>
+                                    <td class="tlabel" style="width:15%">平台类别：</td>
+                                    <td style="width:30%"> <input type="text" class="forminput inputstyle" disabled v-model="business_flow.PTLB"></td>
+                                    <td class="tlabel" style="width:15%">系统类别：</td>
+                                    <td style="width:40%"> <input type="text" class="forminput inputstyle" disabled v-model="business_flow.XTLB"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tlabel">业务类型：</td>
+                                    <td> <input type="text" class="forminput inputstyle" placeholder="业务类型" disabled v-model="business_flow.YWLX"></td>
+                                    <td class="tlabel">业务原因：</td>
+                                    <td> <input type="text" class="forminput inputstyle" placeholder="无" disabled v-model="business_flow.YWYY"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tlabel">审核模式：</td>
+                                    <td :style="{color:business_flow.SHMS=='不需要审核'?'#000000':'red'}">{{business_flow.SHMS}}</td>
+                                    <td class="tlabel">办理模式：</td>
+                                    <td>{{business_flow.BLMS}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="tlabel">审核不通过原因：</td>
+                                    <td colspan="3" style="color:red;font-size:30px;font-weight:600;">{{business_flow.SPCONTENT}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="position:fixed;bottom:20px;width:100%;text-align:center;">
+                    <button class="layui-btn next" data-page="page1">
+                        &emsp;下一步&emsp;
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div style="display:flex;flex-direction: column;align-items: center;margin-top:30px;">
+                    <div style="width:60%;">
+                        <template v-if="business_flow.XTLB=='机动车'">
+                            <div class="classify">机动车信息</div>
+                            <table class="formtable">
+                                <tbody>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">号牌种类：</td>
+                                        <td style="width:30%">
+                                            <select class="select swidth" v-model="business_flow.HPZL">
+                                                <option v-for="item in code.hpzls" :value="item.CODE1+' '+item.NAME">{{item.CODE1+" "+item.NAME}}</option>
+                                            </select>
+                                        </td>
+                                        <td class="tlabel" style="width:15%">号牌号码：</td>
+                                        <td style="width:40%">
+                                            <select class="select swidth" style="width:40px;min-width:40px;" v-model="sfjc">
+                                                <option v-for="item in code.sfjcs" :value="item">{{item}}</option>
+                                            </select>
+                                            <input type="text" class="forminput inputstyle" style="width:120px;" placeholder="不需要输入省份汉字" v-model="hphm1">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">车辆识别代号：</td>
+                                        <td style="width:30%"> <input type="text" class="forminput inputstyle" v-model="business_flow.CLSBDH"></td>
+                                        <td class="tlabel" style="width:15%"><span v-if="base.CYLSHISNULL=='否'">查验流水号：</span></td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.CYLSH" v-if="base.CYLSHISNULL=='否'"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%"><span v-if="base.YHPHMISNULL=='否'">原号牌号码：</span></td>
+                                        <td style="width:30%">
+                                            <select class="select swidth" style="width:40px;min-width:40px;" v-model="ysfjc" v-if="base.YHPHMISNULL=='否'">
+                                                <option v-for="item in code.sfjcs" :value="item">{{item}}</option>
+                                            </select>
+                                            <input type="text" class="forminput inputstyle" style="width:120px;" placeholder="不需要输入省份汉字" v-model="yhphm1" v-if="base.YHPHMISNULL=='否'">
+                                        </td>
+                                        <td colspan="2"></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template v-if="business_flow.BLMS=='本人办理'||business_flow.BLMS=='代理个人业务'">
+                            <div class="classify">本人信息</div>
+                            <table class="formtable">
+                                <tbody>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">证件类型：</td>
+                                        <td style="width:30%">
+                                            <select class="select swidth" v-model="business_flow.BRZJLX">
+                                                <option v-for="item in code.zjlxs" :value="item">{{item}}</option>
+                                            </select>
+                                        </td>
+                                        <td class="tlabel" style="width:15%">证件号码：</td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.BRZJHM"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">姓名：</td>
+                                        <td style="width:30%"> <input type="text" class="forminput inputstyle" v-model="business_flow.BRNAME"></td>
+                                        <td class="tlabel" style="width:15%">手机号码：</td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.BRTEL"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template v-if="business_flow.BLMS=='代理个人业务'||business_flow.BLMS=='代理单位业务'">
+                            <div class="classify">代理人信息</div>
+                            <table class="formtable">
+                                <tbody>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">证件类型：</td>
+                                        <td style="width:30%">
+                                            <select class="select swidth" v-model="business_flow.DLRZJLX">
+                                                <option v-for="item in code.zjlxs" :value="item">{{item}}</option>
+                                            </select>
+                                        </td>
+                                        <td class="tlabel" style="width:15%">证件号码：</td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.DLRZJHM"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">姓名：</td>
+                                        <td style="width:30%"> <input type="text" class="forminput inputstyle" v-model="business_flow.DLRNAME"></td>
+                                        <td class="tlabel" style="width:15%">手机号码：</td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.DLRTEL"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template v-if="business_flow.BLMS=='代理单位业务'">
+                            <div class="classify">单位信息</div>
+                            <table class="formtable">
+                                <tbody>
+                                    <tr>
+                                        <td class="tlabel" style="width:15%">单位代码：</td>
+                                        <td style="width:30%"> <input type="text" class="forminput inputstyle" v-model="business_flow.DWDM"></td>
+                                        <td class="tlabel" style="width:15%">单位名称：</td>
+                                        <td style="width:40%"> <input type="text" class="forminput inputstyle" v-model="business_flow.BLDWMC"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </template>
+                    </div>
+                </div>
+                <div style="position:fixed;bottom:20px;width:100%;text-align:center;">
+                    <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
+                    <button class="layui-btn next" data-page="page2">
+                        &emsp;下一步&emsp;
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div style="display:flex;flex-direction: row;align-items: flex-start;margin-left:5px;margin-right:5px;">
+                    <div style="width:60%;">
+                        <template v-if="business_flow.BLMS=='本人办理'">
+                            <div class="classify" style="border-bottom: solid 0.2px #d4d4d4;">本人办理资料</div>
+                            <div  id="images" style="width:100%;display:flex;display: flex;flex-direction: row;flex-wrap: wrap;border-right: solid 0.2px #d4d4d4;height:550px;overflow:auto;">
+                                <div style="margin-top:5px;	margin-bottom:20px;margin-right:10px;" v-for="(item,index) in business_flow.BRZLS">
+                                    <img :src="item.SRC" :title="item.NAME" />
+                                    <div style="display:flex;flex-direction:row;width:100%;justify-content:space-between;">
+                                        <div style="width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" :style="{'color':(item.bx?'red':'black')}">{{item.NAME}}</div>
+                                        <a href="#" style="color:green;" @click="choosephoto(index,$event)">采集</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-if="business_flow.BLMS=='代理个人业务'">
+                            <div class="classify" style="border-bottom: solid 0.2px #d4d4d4;">代理个人业务资料</div>
+                            <div  id="images" style="width:100%;display:flex;display: flex;flex-direction: row;flex-wrap: wrap;border-right: solid 0.2px #d4d4d4;height:550px;overflow:auto;">
+                                <div style="margin-top:5px;	margin-bottom:20px;margin-right:10px;" v-for="(item,index) in business_flow.DLRZLS">
+                                    <img :src="item.SRC" :title="item.NAME" />
+                                    <div style="display:flex;flex-direction:row;width:100%;justify-content:space-between;">
+                                        <div style="width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" :style="{'color':(item.bx?'red':'black')}">{{item.NAME}}</div>
+                                        <a href="#" style="color:green;" @click="choosephoto(index,$event)">采集</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-if="business_flow.BLMS=='代理单位业务'">
+                            <div class="classify" style="border-bottom: solid 0.2px #d4d4d4;">代理单位业务资料</div>
+                            <div  id="images" style="width:100%;display:flex;display: flex;flex-direction: row;flex-wrap: wrap;border-right: solid 0.2px #d4d4d4;height:550px;overflow:auto;">
+                                <div style="margin-top:5px;	margin-bottom:20px;margin-right:10px;" v-for="(item,index) in business_flow.DWZLS">
+                                    <img :src="item.SRC" :title="item.NAME" />
+                                    <div style="display:flex;flex-direction:row;width:100%;justify-content:space-between;">
+                                        <div style="width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" :style="{'color':(item.bx?'red':'black')}">{{item.NAME}}</div>
+                                        <a href="#" style="color:green;" @click="choosephoto(index,$event)">采集</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div style="width:40%;">
+                        <div class="classify" style="border-bottom: solid 0.2px #d4d4d4;">采集窗口</div>
+                        <div style="text-align:center;background-color:#696969;margin:5px;padding:10px;">
+                            <object classid="clsid:454C18E2-8B7D-43C6-8C17-B1825B49D7DE" id="captrue" width="480px" height="360px"></object>
+                        </div>
+                        <div style="text-align:center;margin:0 10px;" v-show="idx>=0">
+                            <div style="float:left;line-height:34px;">
+                                <input name="mode" type="radio" value="0" checked onClick="changemode(this)">默认
+                                <input name="mode" type="radio" value="4" onClick="changemode(this)">证件
+                            </div>
+                            <input type="button" value="切换摄像头" class="btnsave" onClick="changedev()">
+                            <input type="button" value="拍照" class="btnsave" onClick="camera()">
+                            <input id="rdev" type="button" value="关闭设备" class="btnsave" style="float:right;margin-right:10px;" onClick="rdev()">
+                        </div>
+                    </div>
+                </div>
+                <div style="position:fixed;bottom:20px;width:100%;text-align:center;">
+                    <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
+                    <button class="layui-btn next" data-page="page3">
+                        &emsp;{{business_flow.SHMS=="不需要审核"?"保存":"提交审核"}}&emsp;
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <div style="text-align: center;margin-top: 90px;">
+                    <i class="layui-icon layui-circle"
+                       style="color: white;font-size:30px;font-weight:bold;background: #52C41A;padding: 20px;line-height: 80px;">&#xe605;</i>
+                    <div style="font-size: 24px;color: #333;font-weight: 500;margin-top: 30px;">
+                        {{business_flow.SHMS=="不需要审核"?"保存成功,请继续办理业务":"已提交审核,请关注审核结果!"}}
+                    </div>
+                    <div style="font-size: 14px;color: #666;margin-top: 20px;">成功</div>
+                </div>
+                <div style="position:fixed;bottom:20px;width:100%;text-align:center;">
+                    <button class="layui-btn next" data-page="page4">办理下一笔</button>
+                    <button class="layui-btn layui-btn-primary">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.all.js"></script>
+<script type="text/javascript" src="../../../js/viewer/viewer.min.js"></script>
+<script type="text/javascript" src="../../../step-lay/step.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/AppData.js"></script>
+<script type="text/javascript" src="ywbledit.js"></script>
+
+</html>
+

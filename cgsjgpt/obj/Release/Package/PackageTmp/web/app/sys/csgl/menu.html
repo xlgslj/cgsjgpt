@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE> 菜单管理</TITLE>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <style type="text/css">
+        .ztree li span.button.add {
+            margin-left: 2px;
+            margin-right: -1px;
+            background-position: -144px 0;
+            vertical-align: top;
+            *vertical-align: middle
+        }
+    </style>
+</HEAD>
+
+<BODY>
+
+    <!--main start-->
+    <div class="main">
+        <!--left start-->
+        <div class="left" style="width:400px;">
+            <ul id="treeDemo" class="ztree"></ul>
+
+        </div>
+        <!--left end-->
+        <!--right start-->
+        <div class="right" style="padding:10px;" id="info">
+            <table class="formtable" style="width:600px;">
+                <tbody>
+                    <tr>
+                        <td class="tlabel">部门代码：</td>
+                        <td>
+                            <span v-show="formmode">
+                                <input type="text" class="forminput inputstyle" placeholder="例：510402000400" v-model="bmno">
+                                &nbsp;&nbsp;*
+                            </span>
+                            <span v-show="pagemode">{{bmno}}</span>
+                        </td>
+                        <td class="tlabel">部门名称：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="bmmc">&nbsp;&nbsp;*</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">备案机构：</td>
+                        <td colspan="3"><input type="text" class="forminput inputstyle" placeholder="中文姓名" v-model="bajgmc">&nbsp;&nbsp;*</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">部门级别：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="bmjb"></td>
+                        <td class="tlabel">上级指导部门：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="pname"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">联系人：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="lxr"></td>
+                        <td class="tlabel">联系电话：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="lxdh"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">发证机关：</td>
+                        <td>
+                            <select class="select swidth" v-model="fzjg" data-value="0">
+                                
+                            </select>
+                        </td>
+                        <td class="tlabel">传真：</td>
+                        <td><input type="text" class="forminput inputstyle" v-model="fax"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">联系地址：</td>
+                        <td colspan="3">
+                            <input type="text" class="forminput inputstyle" v-model="lxdz">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="tlabel">备注：</td>
+                        <td colspan="3">
+                            <input type="text" class="forminput inputstyle inputadress" v-model="memo">
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+        <!--right end-->
+
+    </div>
+    <!--main end-->
+</BODY>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="../../../zTree/js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+
+</HTML>

@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <title>车驾管综合服务管理系统</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/element.css" rel="stylesheet" type="text/css">
+    <link href="css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+
+</head>
+
+<body>
+
+    <!--loginbox start-->
+    <div class="loginbox" id="login">
+
+        <div class="login" style="width:547px; ">
+            <div class="loginlogo"></div>
+            <div class="loginpanel">
+                <h2>车驾管综合服务管理系统</h2>
+                <ul class="userlogin">
+                    <li><i class="iconfont">&#xe600;</i><input type="text" id="name" class="loginuser" v-model.lazy="name" placeholder="用户名" v-on:keyup.enter="next" v-focus="focusIndex === 0"></li>
+                    <li><i class="iconfont">&#xe616;</i><input type="password" id="pwd" class="loginpassword" v-model.lazy="pwd" placeholder="密码" v-on:keyup.enter="next" v-focus="focusIndex === 1"></li>
+                    <li><a href="#" @click="login" id="login">登录</a></li>
+                    <li><span><input type="checkbox" class="logincheck" v-model="saved"></span>记住我的信息</li>
+                </ul>
+            </div>
+            <div class="logininfo">CopyRight 2017  版权所有  攀枝花市车管所</div>
+        </div>
+
+    </div>
+    <!--loginbox end-->
+
+</body>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/skin.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/element.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/AppData.js"></script>
+<script type="text/javascript" src="login.js"></script>
+</html>

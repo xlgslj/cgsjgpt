@@ -1,0 +1,166 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        .website, .userinfo {
+            min-height: 240px;
+        }
+
+        .tablebox > table:first-child {
+            border-top: 1px solid #bfbfbf;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">单位：</td>
+                    <td style="position:relative;">
+                        <treeselect placeholder="选择单位..." v-model="dwno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:300px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+                    </td>
+                    <td class="tlabel">用户名：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="警号或编号" v-model="loginname">&nbsp;&nbsp;*</td>
+                    <td class="tlabel">监管单位</td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">姓名(中文)：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="中文姓名" v-model="name">&nbsp;&nbsp;*</td>
+                    <td class="tlabel">身份证号：</td>
+                    <td><input type="number" class="forminput inputstyle" placeholder="18位身份证号" v-model="sfzhm">&nbsp;&nbsp;*</td>
+                    <td rowspan="8">
+                        <treeselect placeholder="选择单位..." v-model="jgdws" :flat="true"
+                                    :multiple="true" :options="dws1"  style="margin-left:2px;width:300px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">密码有效期：</td>
+                    <td><div class="data"><input type="text" class="forminput" id="start"><i class="iconfont">&#xe624;</i></div></td>
+                    <td class="tlabel">联系电话：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="lxdh"></td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">开启IP限制：</td>
+                    <td><input type="checkbox" v-model="kqipxz"></td>
+                    <td class="tlabel">固定IP1：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="ip1"></td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">固定IP2：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="ip2"></td>
+                    <td class="tlabel">固定IP3：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="ip3"></td>
+
+                </tr>
+
+                <tr>
+                    <td class="tlabel">账号状态：</td>
+                    <td>
+                        <select class="select swidth" data-value="1" v-model="zhzt">
+                            <option v-for="item in AccountStatus" :value="item.name">{{item.name}}</option>
+                        </select>
+                    </td>
+                    <td class="tlabel">评价系统账号：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="pjxtzh"></td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">联系地址：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="lxdz"></td>
+                    <td class="tlabel">签到：</td>
+                    <td><input type="checkbox" v-model="qd"></td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">备注：</td>
+                    <td><input type="text" class="forminput inputstyle inputadress" value="" v-model="memo"></td>
+                    <td class="tlabel">所属科室：</td>
+                    <td>
+                        <select class="select swidth" v-model="ssks" data-value="0">
+                            <option v-for="item in Office" :value="item.value">{{item.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">权限类型：</td>
+                    <td colspan="3">
+                        <input name="qxlx" type="radio" value="角色权限" v-model="qxlx">角色权限
+                        <input name="qxlx" type="radio" value="自由权限" v-model="qxlx">自由权限
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" style="padding:10px;line-height:15px;">
+                        <template v-if="qxlx=='角色权限'">
+                            <span v-for="item in roles" style="margin-right:15px;line-height:40px;">
+                                <input type="checkbox" style="vertical-align: middle;" :value="item.ID" v-model="ssqx"><span style="vertical-align: middle;">{{item.NAME}}</span>
+                            </span>
+                        </template>
+                        <template v-else="qxlx=='自由权限'">
+                            <div style="position:relative;">
+                                <ul class="tab" style="margin-top:2px;">
+                                    <li :name="'tab_'+index" :class="index==0?'tabcurrent':''" v-for="(item,index) in menus1"><a href="javascript:;">{{item.self.NAME}}</a></li>
+                                </ul>
+                                <template v-for="(item,index) in menus1">
+                                    <div :class="index==0?'website':'userinfo'" style="padding:5px;" :id="'tab_'+index">
+                                        <div class="tablebox">
+                                            <template v-for="(item1,index2) in item.childs">
+                                                <table class="formtable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="tlabel"><span style="vertical-align: middle;">{{item1.self.NAME}}</span><input type="checkbox" style="vertical-align: middle;"  v-model="item1.self.CK" @change="ckAllChange(index,index2,$event)"></td>
+                                                            <td>
+                                                                <span v-for="item2 in item1.childs" style="margin-right:15px;line-height:40px;">
+                                                                    <input type="checkbox" style="vertical-align: middle;" v-model="item2.CK" @change="checkboxChange($event)"><span style="vertical-align: middle;">{{item2.NAME}}</span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="修改" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../../../js/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../js/jquery.select.js"></script>
+<script type="text/javascript" src="../../../layui/layui.all.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="useredit.js"></script>
+
+</html>
+

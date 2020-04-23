@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SPECIATABLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HPHM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HPZL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DW" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HPZLNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KSSJ" Type="DateTime" />
+    <Property Name="JSSJ" Type="DateTime" />
+    <Property Name="LB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="JDCSYR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SFYDD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GXR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LXR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Entities_wztc" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SPECIATABLE" EntityType="Self.SPECIATABLE" />
+  </EntityContainer>
+</Schema>

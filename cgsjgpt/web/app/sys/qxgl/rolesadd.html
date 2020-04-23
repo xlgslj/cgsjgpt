@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .website, .userinfo {
+            min-height: 480px;
+        }
+
+        .tablebox > table:first-child {
+            border-top: 1px solid #bfbfbf;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">角色名称：</td>
+                    <td><input type="text" class="forminput inputstyle" placeholder="角色名称" v-model="role.NAME"></td>
+                    <td class="tlabel">用户名：</td>
+                    <td>
+                        <select class="select swidth" v-model="role.ZT">
+                            <option value="正常">正常</option>
+                            <option value="停用">停用</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div style="position:relative;">
+                            <ul class="tab" style="margin-top:2px;">
+                                <li :name="'tab_'+index" :class="index==0?'tabcurrent':''" v-for="(item,index) in menus1"><a href="javascript:;">{{item.self.NAME}}</a></li>
+                            </ul>
+                            <template v-for="(item,index) in menus1">
+                                <div :class="index==0?'website':'userinfo'" style="padding:5px;" :id="'tab_'+index">
+                                    <div class="tablebox">
+                                        <template v-for="(item1,index2) in item.childs">
+                                            <table class="formtable">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="tlabel"><span style="vertical-align: middle;">{{item1.self.NAME}}</span><input type="checkbox" style="vertical-align: middle;" @change="ckAllChange(index,index2,$event)"></td>
+                                                        <td>
+                                                            <span v-for="item2 in item1.childs" style="margin-right:15px;line-height:40px;">
+                                                                <input type="checkbox" style="vertical-align: middle;" v-model="item2.CK" @change="checkboxChange($event)"><span style="vertical-align: middle;">{{item2.NAME}}</span>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="保存" class="btnsave" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="rolesadd.js"></script>
+
+</html>
+

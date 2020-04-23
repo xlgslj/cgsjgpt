@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="OracleDbContext-Web.config Connection String" description="OracleDbContext 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="User Id=oracle_user;Password=oracle_user_password;Data Source=oracle" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OracleDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="Entities-Web.config Connection String" description="Entities 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.SysModel.csdl|res://*/Models.SysModel.ssdl|res://*/Models.SysModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=CGSJGPT&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesDtgl-Web.config Connection String" description="EntitiesDtgl 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.DtglModel.csdl|res://*/Models.DtglModel.ssdl|res://*/Models.DtglModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=CGSJGPT&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesDtgl']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesHmd-Web.config Connection String" description="EntitiesHmd 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.HmdModel.csdl|res://*/Models.HmdModel.ssdl|res://*/Models.HmdModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=CGSJGPT&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesHmd']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesTrff-Web.config Connection String" description="EntitiesTrff 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.TrffModel.csdl|res://*/Models.TrffModel.ssdl|res://*/Models.TrffModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=80.7.32.190:1521/orcl;PASSWORD=v222587;STATEMENT CACHE SIZE=10;USER ID=TRFF_PZH&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesTrff']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesXfyw-Web.config Connection String" description="EntitiesXfyw 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.XfywModel.csdl|res://*/Models.XfywModel.ssdl|res://*/Models.XfywModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=CGSJGPT&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesXfyw']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesTrff2-Web.config Connection String" description="EntitiesTrff2 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.Trff2Model.csdl|res://*/Models.Trff2Model.ssdl|res://*/Models.Trff2Model.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.64.16.148:1521/orcl;PASSWORD=v41125918;STATEMENT CACHE SIZE=10;USER ID=TRFF_PZH&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesTrff2']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesSys1-Web.config Connection String" description="EntitiesSys1 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.Sys1Model1.csdl|res://*/Models.Sys1Model1.ssdl|res://*/Models.Sys1Model1.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=CGSJGPT&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesSys1']/@connectionString" />
+  </parameter>
+  <parameter name="Entities_wztc-Web.config Connection String" description="Entities_wztc 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/Models.wztcModel.csdl|res://*/Models.wztcModel.ssdl|res://*/Models.wztcModel.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.68.173.121:1521/pzhjj;PASSWORD=xlgslj;PERSIST SECURITY INFO=True;USER ID=WZTC&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\wwwroot\\cgsjgpt\\cgsjgpt\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities_wztc']/@connectionString" />
+  </parameter>
+</parameters>

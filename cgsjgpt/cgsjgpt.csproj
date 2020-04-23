@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F750FBA-5B49-4640-BDAB-186ACD5347FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cgsjgpt</RootNamespace>
+    <AssemblyName>cgsjgpt</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Fleck, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fleck.1.1.0\lib\net45\Fleck.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentScheduler, Version=5.3.0.0, Culture=neutral, PublicKeyToken=b76503528a14ebd1, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentScheduler.5.3.0\lib\net40\FluentScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DtDataController.cs" />
+    <Compile Include="Controllers\DtglTjfxController.cs" />
+    <Compile Include="Controllers\DtglYwblController.cs" />
+    <Compile Include="Controllers\ExtInfController.cs" />
+    <Compile Include="Controllers\FileMangerController.cs" />
+    <Compile Include="Controllers\Filters\CustomAuthAttribute.cs" />
+    <Compile Include="Controllers\Filters\ExceptionFilterController.cs" />
+    <Compile Include="Controllers\Filters\WebApiExceptionFilter.cs" />
+    <Compile Include="Controllers\HmdglRyhmdController.cs" />
+    <Compile Include="Controllers\HmdglWztcController.cs" />
+    <Compile Include="Controllers\HmdglYwcxController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexFastmenuController.cs" />
+    <Compile Include="Controllers\LedAndAudioController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SysCsCksetController.cs" />
+    <Compile Include="Controllers\SysCsConfigController.cs" />
+    <Compile Include="Controllers\SysCsMenuController.cs" />
+    <Compile Include="Controllers\SysCsYwlxController.cs" />
+    <Compile Include="Controllers\SysPublicMethodController.cs" />
+    <Compile Include="Controllers\SysQxBmController.cs" />
+    <Compile Include="Controllers\SysQxRoleController.cs" />
+    <Compile Include="Controllers\SysQxUserController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\XfywJcpzController.cs" />
+    <Compile Include="Controllers\XfywXfywController.cs" />
+    <Compile Include="Controllers\YjglYjglController.cs" />
+    <Compile Include="Controllers\ZhglBaglController.cs" />
+    <Compile Include="Controllers\ZhglPzglController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AGENT.cs">
+      <DependentUpon>HmdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BMDB.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUSINESSBASE.cs">
+      <DependentUpon>XfywModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUSINESSBM.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUSINESS_FLOW.cs">
+      <DependentUpon>XfywModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CKSET.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CODE.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CODEYWLX.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONFIGBASE.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONFIGBM.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DDRV_FLOW.cs">
+      <DependentUpon>Sys1Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DRIVINGLICENSE.cs">
+      <DependentUpon>TrffModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DRV_FLOW.cs">
+      <DependentUpon>TrffModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DtglModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtglModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DtglModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DtglModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtglModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DWBADB.cs">
+      <DependentUpon>HmdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HmdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HmdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HmdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HmdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HmdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HmdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LICENSE.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOG.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MENUDB.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NOTICE.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPLOG.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PDXX.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RBLIST.cs">
+      <DependentUpon>HmdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROLES.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SPECIATABLE.cs">
+      <DependentUpon>wztcModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sys1Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sys1Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sys1Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sys1Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sys1Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sys1Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TRFFLOG.cs">
+      <DependentUpon>HmdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrffModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrffModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrffModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrffModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrffModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrffModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERDB.cs">
+      <DependentUpon>SysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VEHICLE.cs">
+      <DependentUpon>TrffModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VEH_FLOW.cs">
+      <DependentUpon>TrffModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VVEH_FLOW.cs">
+      <DependentUpon>Sys1Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VVEH_FLOW1.cs">
+      <DependentUpon>Sys1Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WARNEVENT.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WARNLOG.cs">
+      <DependentUpon>DtglModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wztcModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wztcModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wztcModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wztcModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wztcModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wztcModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XfywModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XfywModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XfywModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XfywModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XfywModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XfywModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userclass\data\pubdata.cs" />
+    <Compile Include="userclass\data\wxdata.cs" />
+    <Compile Include="userclass\flow\GetFlows.cs" />
+    <Compile Include="userclass\flow\GetFlows1.cs" />
+    <Compile Include="userclass\method\HttpHelper.cs" />
+    <Compile Include="userclass\method\HttpRuntimeCache.cs" />
+    <Compile Include="userclass\method\MyRegistry.cs" />
+    <Compile Include="userclass\method\PubMethod.cs" />
+    <Compile Include="userclass\method\SecurityHelper.cs" />
+    <Compile Include="userclass\sysFun\Log.cs" />
+    <Compile Include="userclass\warn\DhOrBlOrTb.cs" />
+    <Compile Include="userclass\warn\DtywDefault.cs" />
+    <Compile Include="userclass\warn\hmd.cs" />
+    <Compile Include="userclass\warn\lshp.cs" />
+    <Compile Include="userclass\warn\MorThan60.cs" />
+    <Compile Include="userclass\warn\ywlsh.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\DtglModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DtglModel.edmx</DependentUpon>
+      <LastGenOutput>DtglModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DtglModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DtglModel.edmx</DependentUpon>
+      <LastGenOutput>DtglModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HmdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HmdModel.edmx</DependentUpon>
+      <LastGenOutput>HmdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HmdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HmdModel.edmx</DependentUpon>
+      <LastGenOutput>HmdModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Sys1Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sys1Model1.edmx</DependentUpon>
+      <LastGenOutput>Sys1Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Sys1Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sys1Model1.edmx</DependentUpon>
+      <LastGenOutput>Sys1Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SysModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SysModel.edmx</DependentUpon>
+      <LastGenOutput>SysModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SysModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SysModel.edmx</DependentUpon>
+      <LastGenOutput>SysModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TrffModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrffModel.edmx</DependentUpon>
+      <LastGenOutput>TrffModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TrffModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrffModel.edmx</DependentUpon>
+      <LastGenOutput>TrffModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\wztcModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wztcModel.edmx</DependentUpon>
+      <LastGenOutput>wztcModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\wztcModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wztcModel.edmx</DependentUpon>
+      <LastGenOutput>wztcModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\XfywModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XfywModel.edmx</DependentUpon>
+      <LastGenOutput>XfywModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\XfywModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XfywModel.edmx</DependentUpon>
+      <LastGenOutput>XfywModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="web\app\dtgl\tjfx\ywblyjtj-more.html" />
+    <Content Include="web\app\dtgl\tjfx\ywblyjtj-more.js" />
+    <Content Include="web\app\dtgl\tjfx\ywblyjtj.html" />
+    <Content Include="web\app\dtgl\tjfx\ywblyjtj.js" />
+    <Content Include="web\app\dtgl\tjfx\zrjggzltj-more.html" />
+    <Content Include="web\app\dtgl\tjfx\zrjggzltj-more.js" />
+    <Content Include="web\app\dtgl\tjfx\zrjggzltj.html" />
+    <Content Include="web\app\dtgl\tjfx\zrjggzltj.js" />
+    <Content Include="web\app\dtgl\tjfx\slrygzltj-more.js" />
+    <Content Include="web\app\dtgl\tjfx\slrygzltj-more.html" />
+    <Content Include="web\app\dtgl\tjfx\slrygzltj.html" />
+    <Content Include="web\app\dtgl\tjfx\slrygzltj.js" />
+    <Content Include="web\app\test\pdjh.js" />
+    <Content Include="web\app\test\dbqh - 复制.html" />
+    <Content Include="web\app\test\dbqh - 复制.js" />
+    <Content Include="web\app\test\pdjh - 复制.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs-more-edit.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs-more-edit.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs_edit.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs_edit.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs-more-edit.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs-more-edit.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs_edit.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs_edit.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs-more.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs-more.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjszywgzs.js" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs-more.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs-more.js" />
+    <Content Include="web\app\dtgl\ywbl\pdjh-jszywgzs.html" />
+    <Content Include="web\app\dtgl\ywbl\pdjh-jszywgzs.js" />
+    <Content Include="web\app\dtgl\ywbl\pdjh-jdcywgzs.html" />
+    <Content Include="web\app\dtgl\ywbl\pdjh-jdcywgzs.js" />
+    <Content Include="web\app\dtgl\ywbl\pdjh2.html" />
+    <Content Include="web\app\dtgl\ywbl\pdjh.js" />
+    <Content Include="web\app\dtgl\ywbl\pdxxcx.html" />
+    <Content Include="web\app\dtgl\ywbl\pdxxcx.js" />
+    <Content Include="web\app\dtgl\ywbl\dbqh.html" />
+    <Content Include="web\app\dtgl\ywbl\dbqh.js" />
+    <Content Include="web\app\dtgl\ywbl\pdjh.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs.html" />
+    <Content Include="web\app\dtgl\ywbl\queryjdcywgzs.js" />
+    <Content Include="web\app\dtgl\ywbl\pdxxcx-more.html" />
+    <Content Include="web\app\dtgl\ywbl\pdxxcx-more.js" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatableedit.html" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatableedit.js" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatableadd.html" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatableadd.js" />
+    <Content Include="web\app\hmdgl\ryhmd\rbsplist.html" />
+    <Content Include="web\app\hmdgl\ryhmd\rbsplist.js" />
+    <Content Include="web\app\hmdgl\ryhmd\rbspb.html" />
+    <Content Include="web\app\hmdgl\ryhmd\rbspb.js" />
+    <Content Include="web\app\hmdgl\ryhmd\rbedit.html" />
+    <Content Include="web\app\hmdgl\ryhmd\rbedit.js" />
+    <Content Include="web\app\hmdgl\ryhmd\rbsqb.html" />
+    <Content Include="web\app\hmdgl\ryhmd\rbsqb.js" />
+    <Content Include="web\app\hmdgl\ryhmd\rblist.html" />
+    <Content Include="web\app\hmdgl\ryhmd\rblist.js" />
+    <Content Include="web\app\hmdgl\ryhmd\dbxx.html" />
+    <Content Include="web\app\hmdgl\ryhmd\dbxx.js" />
+    <Content Include="web\app\hmdgl\ryhmd\adddbxx.html" />
+    <Content Include="web\app\hmdgl\ryhmd\adddbxx.js" />
+    <Content Include="web\app\hmdgl\ryhmd\main.js" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatable.html" />
+    <Content Include="web\app\hmdgl\ryhmd\speciatable.js" />
+    <Content Include="web\app\hmdgl\ywcx\cxlog.html" />
+    <Content Include="web\app\hmdgl\ywcx\cxlog.js" />
+    <Content Include="web\app\hmdgl\ywcx\ywcx.html" />
+    <Content Include="web\app\hmdgl\ywcx\ywcx.js" />
+    <Content Include="web\app\index\fastmenu\fastmenu.js" />
+    <Content Include="web\app\index\fastmenu\fastmenu.html" />
+    <Content Include="web\app\sys\csgl\ckEdit.html" />
+    <Content Include="web\app\sys\csgl\ckEdit.js" />
+    <Content Include="web\app\sys\csgl\ckywlxedit.html" />
+    <Content Include="web\app\sys\csgl\ckywlxedit.js" />
+    <Content Include="web\app\sys\csgl\ckywlxpz-edit.js" />
+    <Content Include="web\app\sys\csgl\editsyssignconfig.html" />
+    <Content Include="web\app\sys\csgl\editsyssignconfig.js" />
+    <Content Include="web\app\sys\csgl\ckywlxpz-edit.html" />
+    <Content Include="web\app\sys\csgl\Menuedit.html" />
+    <Content Include="web\app\sys\csgl\Menuedit.js" />
+    <Content Include="web\app\sys\csgl\sysconfiglist.html" />
+    <Content Include="web\app\sys\csgl\sysconfiglist.js" />
+    <Content Include="web\app\sys\csgl\ckAdd.html" />
+    <Content Include="web\app\sys\csgl\ckadd.js" />
+    <Content Include="web\app\sys\csgl\ckset.js" />
+    <Content Include="web\app\sys\csgl\refreshconfig.html" />
+    <Content Include="web\app\sys\csgl\refreshconfig.js" />
+    <Content Include="web\app\sys\csgl\ckywlxpz.html" />
+    <Content Include="web\app\sys\csgl\ckywlxpz.js" />
+    <Content Include="web\app\sys\csgl\ckywlxadd.html" />
+    <Content Include="web\app\sys\csgl\ckywlxadd.js" />
+    <Content Include="web\app\sys\csgl\MenuAdd.html" />
+    <Content Include="web\app\sys\csgl\Menuadd.js" />
+    <Content Include="web\app\sys\csgl\menu.js" />
+    <Content Include="web\app\sys\csgl\menu.html" />
+    <Content Include="web\app\sys\csgl\ckset.html" />
+    <Content Include="web\app\sys\csgl\test.js" />
+    <Content Include="web\app\sys\csgl\bmywcslist.html" />
+    <Content Include="web\app\sys\csgl\bmywcslist.js" />
+    <Content Include="web\app\sys\csgl\editbmsignconfig.html" />
+    <Content Include="web\app\sys\csgl\editbmsignconfig.js" />
+    <Content Include="web\app\sys\qxgl\BmAdd.html" />
+    <Content Include="web\app\sys\qxgl\bmadd.js" />
+    <Content Include="web\app\sys\qxgl\bmgl.html" />
+    <Content Include="web\app\sys\qxgl\bmgl.js" />
+    <Content Include="web\app\sys\qxgl\roles.html" />
+    <Content Include="web\app\sys\qxgl\roles.js" />
+    <Content Include="web\app\sys\qxgl\rolesedit.html" />
+    <Content Include="web\app\sys\qxgl\rolesedit.js" />
+    <Content Include="web\app\sys\qxgl\rolesadd.html" />
+    <Content Include="web\app\sys\qxgl\rolesadd.js" />
+    <Content Include="web\app\sys\qxgl\mmxg.html" />
+    <Content Include="web\app\sys\qxgl\mmxg.js" />
+    <Content Include="web\app\sys\qxgl\useredit.html" />
+    <Content Include="web\app\sys\qxgl\useredit.js" />
+    <Content Include="web\app\sys\qxgl\user.html" />
+    <Content Include="web\app\sys\qxgl\user.js" />
+    <Content Include="web\app\sys\qxgl\usergl.html" />
+    <Content Include="web\app\sys\qxgl\usergl.js" />
+    <Content Include="web\app\test\camera.html" />
+    <Content Include="web\app\test\editorvue.html" />
+    <Content Include="web\app\test\editorvue.js" />
+    <Content Include="web\app\test\imgpreview.html" />
+    <Content Include="web\app\test\postmsg.html" />
+    <Content Include="web\app\test\up.html" />
+    <Content Include="web\app\test\zlcj.html" />
+    <Content Include="web\app\test\zlcj.js" />
+    <Content Include="web\app\xfyw\jcpz\showbusiness.html" />
+    <Content Include="web\app\xfyw\jcpz\showbusiness.js" />
+    <Content Include="web\app\xfyw\jcpz\editbusiness.html" />
+    <Content Include="web\app\xfyw\jcpz\editbusiness.js" />
+    <Content Include="web\app\xfyw\jcpz\addbusiness.html" />
+    <Content Include="web\app\xfyw\jcpz\addbusiness.js" />
+    <Content Include="web\app\xfyw\jcpz\xfywsq.html" />
+    <Content Include="web\app\xfyw\jcpz\xfywsq.js" />
+    <Content Include="web\app\xfyw\jcpz\xfywqjpz.html" />
+    <Content Include="web\app\xfyw\jcpz\xfywqjpz.js" />
+    <Content Include="web\app\xfyw\xfyw\hmdcx.html" />
+    <Content Include="web\app\xfyw\xfyw\hmdcx.js" />
+    <Content Include="web\app\xfyw\xfyw\zhcxmore.html" />
+    <Content Include="web\app\xfyw\xfyw\zhcxmore.js" />
+    <Content Include="web\app\xfyw\xfyw\zhcx.html" />
+    <Content Include="web\app\xfyw\xfyw\zhcx.js" />
+    <Content Include="web\app\xfyw\xfyw\ywbledit.html" />
+    <Content Include="web\app\xfyw\xfyw\ywbledit.js" />
+    <Content Include="web\app\xfyw\xfyw\ywxxbl.html" />
+    <Content Include="web\app\xfyw\xfyw\ywxxbl.js" />
+    <Content Include="web\app\xfyw\xfyw\ywspb.html" />
+    <Content Include="web\app\xfyw\xfyw\ywspb.js" />
+    <Content Include="web\app\xfyw\xfyw\spqkcx.html" />
+    <Content Include="web\app\xfyw\xfyw\spqkcx.js" />
+    <Content Include="web\app\xfyw\xfyw\ywbllist.html" />
+    <Content Include="web\app\xfyw\xfyw\ywbllist.js" />
+    <Content Include="web\app\xfyw\xfyw\ywsplist.html" />
+    <Content Include="web\app\xfyw\xfyw\ywsplist.js" />
+    <Content Include="web\app\xfyw\xfyw\ywbl.html" />
+    <Content Include="web\app\xfyw\xfyw\ywbl.js" />
+    <Content Include="web\app\yjgl\yjgl\hmdcx.html" />
+    <Content Include="web\app\yjgl\yjgl\hmdcx.js" />
+    <Content Include="web\app\yjgl\yjgl\yjzhcxmore.html" />
+    <Content Include="web\app\yjgl\yjgl\yjzhcxmore.js" />
+    <Content Include="web\app\yjgl\yjgl\ywblyjhclist.html" />
+    <Content Include="web\app\yjgl\yjgl\ywblyjhclist.js" />
+    <Content Include="web\app\yjgl\yjgl\ywblyjhc.html" />
+    <Content Include="web\app\yjgl\yjgl\ywblyjhc.js" />
+    <Content Include="web\app\yjgl\yjgl\yjzhcx.html" />
+    <Content Include="web\app\yjgl\yjgl\yjzhcx.js" />
+    <Content Include="web\app\zhgl\bagl\bainfo.html" />
+    <Content Include="web\app\zhgl\bagl\bainfo.js" />
+    <Content Include="web\app\zhgl\bagl\baedit.html" />
+    <Content Include="web\app\zhgl\bagl\baedit.js" />
+    <Content Include="web\app\zhgl\bagl\badj.html" />
+    <Content Include="web\app\zhgl\bagl\badj.js" />
+    <Content Include="web\app\zhgl\bagl\bacx.html" />
+    <Content Include="web\app\zhgl\bagl\bacx.js" />
+    <Content Include="web\app\zhgl\pzgl\sgadd.html" />
+    <Content Include="web\app\zhgl\pzgl\sgadd.js" />
+    <Content Include="web\app\zhgl\pzgl\zhcx.html" />
+    <Content Include="web\app\zhgl\pzgl\zhcx.js" />
+    <Content Include="web\app\zhgl\pzgl\zzff.html" />
+    <Content Include="web\app\zhgl\pzgl\zzff.js" />
+    <Content Include="web\babel\browser.js" />
+    <Content Include="web\babel\browser.min.js" />
+    <Content Include="web\babel\polyfill.js" />
+    <Content Include="web\babel\polyfill.min.js" />
+    <Content Include="web\css\button3D.css" />
+    <Content Include="web\css\default.css" />
+    <Content Include="web\css\element.css" />
+    <Content Include="web\css\ElementAdd.css" />
+    <Content Include="web\css\style\black.css" />
+    <Content Include="web\css\style\darkblue.css" />
+    <Content Include="web\css\style\darkgrey.css" />
+    <Content Include="web\css\style\green.css" />
+    <Content Include="web\css\style\lightblue.css" />
+    <Content Include="web\css\style\lightgreen.css" />
+    <Content Include="web\css\style\orange.css" />
+    <Content Include="web\css\style\red.css" />
+    <Content Include="web\default.html" />
+    <Content Include="web\default.js" />
+    <Content Include="web\font\demo.css" />
+    <Content Include="web\font\demo_fontclass.html" />
+    <Content Include="web\font\demo_symbol.html" />
+    <Content Include="web\font\demo_unicode.html" />
+    <Content Include="web\font\iconfont.css" />
+    <Content Include="web\font\iconfont.js" />
+    <Content Include="web\images\4041.png" />
+    <Content Include="web\images\line.gif" />
+    <Content Include="web\images\load.gif" />
+    <Content Include="web\images\login_logo.png" />
+    <Content Include="web\images\logo.png" />
+    <Content Include="web\images\navbg.png" />
+    <Content Include="web\images\numbg.png" />
+    <Content Include="web\images\tabrightbg.png" />
+    <Content Include="web\images\userbg.png" />
+    <Content Include="web\images\xl.png" />
+    <Content Include="web\images\zwtp.jpeg" />
+    <Content Include="web\images\zwtp.png" />
+    <Content Include="web\js\AppData.js" />
+    <Content Include="web\js\common.js" />
+    <Content Include="web\js\custom\arrayoption.js" />
+    <Content Include="web\js\custom\bmtree.js" />
+    <Content Include="web\js\custom\date.js" />
+    <Content Include="web\js\custom\JsFun.js" />
+    <Content Include="web\js\datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="web\js\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="web\js\datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="web\js\Doccamera\DoccameraOcx.exe" />
+    <Content Include="web\js\echarts.min.js" />
+    <Content Include="web\js\echarts\echarts.js" />
+    <Content Include="web\js\echarts\uimaker.js" />
+    <Content Include="web\js\element.js" />
+    <Content Include="web\js\idcard\ftdi_ft232_drive.exe" />
+    <Content Include="web\js\idcard\HxgcIDReader.exe" />
+    <Content Include="web\js\jquery-1.8.2.min.js" />
+    <Content Include="web\js\jquery.js" />
+    <Content Include="web\js\jquery.select.js" />
+    <Content Include="web\js\layer\layer.js" />
+    <Content Include="web\js\layer\skin\default\icon-ext.png" />
+    <Content Include="web\js\layer\skin\default\icon.png" />
+    <Content Include="web\js\layer\skin\default\layer.css" />
+    <Content Include="web\js\layer\skin\default\loading-0.gif" />
+    <Content Include="web\js\layer\skin\default\loading-1.gif" />
+    <Content Include="web\js\layer\skin\default\loading-2.gif" />
+    <Content Include="web\js\layui_exts\excel.js" />
+    <Content Include="web\js\layui_exts\excel.min.js" />
+    <Content Include="web\js\lodop\CLodop_Setup_for_Win32NT.exe" />
+    <Content Include="web\js\lodop\install_lodop32.exe" />
+    <Content Include="web\js\lodop\install_lodop64.exe" />
+    <Content Include="web\js\lodop\LodopFuncs.js" />
+    <Content Include="web\js\skin.js" />
+    <Content Include="web\js\umeditor\dialogs\emotion\emotion.css" />
+    <Content Include="web\js\umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\0.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="web\js\umeditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="web\js\umeditor\dialogs\formula\formula.css" />
+    <Content Include="web\js\umeditor\dialogs\formula\formula.html" />
+    <Content Include="web\js\umeditor\dialogs\formula\formula.js" />
+    <Content Include="web\js\umeditor\dialogs\formula\images\formula.png" />
+    <Content Include="web\js\umeditor\dialogs\image\image.css" />
+    <Content Include="web\js\umeditor\dialogs\image\image.js" />
+    <Content Include="web\js\umeditor\dialogs\image\images\close.png" />
+    <Content Include="web\js\umeditor\dialogs\image\images\upload1.png" />
+    <Content Include="web\js\umeditor\dialogs\image\images\upload2.png" />
+    <Content Include="web\js\umeditor\dialogs\link\link.js" />
+    <Content Include="web\js\umeditor\dialogs\map\map.html" />
+    <Content Include="web\js\umeditor\dialogs\map\map.js" />
+    <Content Include="web\js\umeditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="web\js\umeditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="web\js\umeditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="web\js\umeditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="web\js\umeditor\dialogs\video\video.css" />
+    <Content Include="web\js\umeditor\dialogs\video\video.js" />
+    <Content Include="web\js\umeditor\index.html" />
+    <Content Include="web\js\umeditor\jsp\commons-fileupload-1.2.2.jar" />
+    <Content Include="web\js\umeditor\jsp\ueditor-mini.jar" />
+    <Content Include="web\js\umeditor\jsp\Uploader.java" />
+    <Content Include="web\js\umeditor\lang\en\en.js" />
+    <Content Include="web\js\umeditor\lang\en\images\addimage.png" />
+    <Content Include="web\js\umeditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="web\js\umeditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="web\js\umeditor\lang\en\images\background.png" />
+    <Content Include="web\js\umeditor\lang\en\images\button.png" />
+    <Content Include="web\js\umeditor\lang\en\images\copy.png" />
+    <Content Include="web\js\umeditor\lang\en\images\deletedisable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\deleteenable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\imglabel.png" />
+    <Content Include="web\js\umeditor\lang\en\images\listbackground.png" />
+    <Content Include="web\js\umeditor\lang\en\images\localimage.png" />
+    <Content Include="web\js\umeditor\lang\en\images\music.png" />
+    <Content Include="web\js\umeditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="web\js\umeditor\lang\en\images\upload.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\images\copy.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\images\music.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\images\upload.png" />
+    <Content Include="web\js\umeditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="web\js\umeditor\themes\default\css\umeditor.css" />
+    <Content Include="web\js\umeditor\themes\default\css\umeditor.min.css" />
+    <Content Include="web\js\umeditor\themes\default\images\caret.png" />
+    <Content Include="web\js\umeditor\themes\default\images\close.png" />
+    <Content Include="web\js\umeditor\themes\default\images\icons.gif" />
+    <Content Include="web\js\umeditor\themes\default\images\icons.png" />
+    <Content Include="web\js\umeditor\themes\default\images\ok.gif" />
+    <Content Include="web\js\umeditor\themes\default\images\pop-bg.png" />
+    <Content Include="web\js\umeditor\themes\default\images\spacer.gif" />
+    <Content Include="web\js\umeditor\themes\default\images\videologo.gif" />
+    <Content Include="web\js\umeditor\third-party\jquery.min.js" />
+    <Content Include="web\js\umeditor\third-party\mathquill\mathquill.css" />
+    <Content Include="web\js\umeditor\third-party\mathquill\mathquill.js" />
+    <Content Include="web\js\umeditor\third-party\mathquill\mathquill.min.js" />
+    <Content Include="web\js\umeditor\umeditor.config.js" />
+    <Content Include="web\js\umeditor\umeditor.js" />
+    <Content Include="web\js\umeditor\umeditor.min.js" />
+    <Content Include="web\js\viewer\viewer.min - 副本 %282%29.js" />
+    <Content Include="web\js\viewer\viewer.min - 副本.css" />
+    <Content Include="web\js\viewer\viewer.min - 副本.js" />
+    <Content Include="web\js\viewer\viewer.min.css" />
+    <Content Include="web\js\viewer\viewer.min.js" />
+    <Content Include="web\js\vue-modules\vue-treeselect.min.css" />
+    <Content Include="web\js\vue-modules\vue-treeselect.min.js" />
+    <Content Include="web\js\vue.js" />
+    <Content Include="web\js\vue.min.js" />
+    <Content Include="web\js\watermark\demo.js" />
+    <Content Include="web\js\watermark\watermark.js" />
+    <Content Include="web\layer\layer.js" />
+    <Content Include="web\layer\mobile\layer.js" />
+    <Content Include="web\layer\mobile\need\layer.css" />
+    <Content Include="web\layer\theme\default\icon-ext.png" />
+    <Content Include="web\layer\theme\default\icon.png" />
+    <Content Include="web\layer\theme\default\layer.css" />
+    <Content Include="web\layer\theme\default\loading-0.gif" />
+    <Content Include="web\layer\theme\default\loading-1.gif" />
+    <Content Include="web\layer\theme\default\loading-2.gif" />
+    <Content Include="web\layui\css\layui.css" />
+    <Content Include="web\layui\css\layui.mobile.css" />
+    <Content Include="web\layui\css\modules\code.css" />
+    <Content Include="web\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="web\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="web\layui\css\modules\layer\default\icon.png" />
+    <Content Include="web\layui\css\modules\layer\default\layer.css" />
+    <Content Include="web\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="web\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="web\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="web\layui\images\face\0.gif" />
+    <Content Include="web\layui\images\face\1.gif" />
+    <Content Include="web\layui\images\face\10.gif" />
+    <Content Include="web\layui\images\face\11.gif" />
+    <Content Include="web\layui\images\face\12.gif" />
+    <Content Include="web\layui\images\face\13.gif" />
+    <Content Include="web\layui\images\face\14.gif" />
+    <Content Include="web\layui\images\face\15.gif" />
+    <Content Include="web\layui\images\face\16.gif" />
+    <Content Include="web\layui\images\face\17.gif" />
+    <Content Include="web\layui\images\face\18.gif" />
+    <Content Include="web\layui\images\face\19.gif" />
+    <Content Include="web\layui\images\face\2.gif" />
+    <Content Include="web\layui\images\face\20.gif" />
+    <Content Include="web\layui\images\face\21.gif" />
+    <Content Include="web\layui\images\face\22.gif" />
+    <Content Include="web\layui\images\face\23.gif" />
+    <Content Include="web\layui\images\face\24.gif" />
+    <Content Include="web\layui\images\face\25.gif" />
+    <Content Include="web\layui\images\face\26.gif" />
+    <Content Include="web\layui\images\face\27.gif" />
+    <Content Include="web\layui\images\face\28.gif" />
+    <Content Include="web\layui\images\face\29.gif" />
+    <Content Include="web\layui\images\face\3.gif" />
+    <Content Include="web\layui\images\face\30.gif" />
+    <Content Include="web\layui\images\face\31.gif" />
+    <Content Include="web\layui\images\face\32.gif" />
+    <Content Include="web\layui\images\face\33.gif" />
+    <Content Include="web\layui\images\face\34.gif" />
+    <Content Include="web\layui\images\face\35.gif" />
+    <Content Include="web\layui\images\face\36.gif" />
+    <Content Include="web\layui\images\face\37.gif" />
+    <Content Include="web\layui\images\face\38.gif" />
+    <Content Include="web\layui\images\face\39.gif" />
+    <Content Include="web\layui\images\face\4.gif" />
+    <Content Include="web\layui\images\face\40.gif" />
+    <Content Include="web\layui\images\face\41.gif" />
+    <Content Include="web\layui\images\face\42.gif" />
+    <Content Include="web\layui\images\face\43.gif" />
+    <Content Include="web\layui\images\face\44.gif" />
+    <Content Include="web\layui\images\face\45.gif" />
+    <Content Include="web\layui\images\face\46.gif" />
+    <Content Include="web\layui\images\face\47.gif" />
+    <Content Include="web\layui\images\face\48.gif" />
+    <Content Include="web\layui\images\face\49.gif" />
+    <Content Include="web\layui\images\face\5.gif" />
+    <Content Include="web\layui\images\face\50.gif" />
+    <Content Include="web\layui\images\face\51.gif" />
+    <Content Include="web\layui\images\face\52.gif" />
+    <Content Include="web\layui\images\face\53.gif" />
+    <Content Include="web\layui\images\face\54.gif" />
+    <Content Include="web\layui\images\face\55.gif" />
+    <Content Include="web\layui\images\face\56.gif" />
+    <Content Include="web\layui\images\face\57.gif" />
+    <Content Include="web\layui\images\face\58.gif" />
+    <Content Include="web\layui\images\face\59.gif" />
+    <Content Include="web\layui\images\face\6.gif" />
+    <Content Include="web\layui\images\face\60.gif" />
+    <Content Include="web\layui\images\face\61.gif" />
+    <Content Include="web\layui\images\face\62.gif" />
+    <Content Include="web\layui\images\face\63.gif" />
+    <Content Include="web\layui\images\face\64.gif" />
+    <Content Include="web\layui\images\face\65.gif" />
+    <Content Include="web\layui\images\face\66.gif" />
+    <Content Include="web\layui\images\face\67.gif" />
+    <Content Include="web\layui\images\face\68.gif" />
+    <Content Include="web\layui\images\face\69.gif" />
+    <Content Include="web\layui\images\face\7.gif" />
+    <Content Include="web\layui\images\face\70.gif" />
+    <Content Include="web\layui\images\face\71.gif" />
+    <Content Include="web\layui\images\face\8.gif" />
+    <Content Include="web\layui\images\face\9.gif" />
+    <Content Include="web\layui\layui.all.js" />
+    <Content Include="web\layui\layui.js" />
+    <Content Include="web\layui\lay\modules\carousel.js" />
+    <Content Include="web\layui\lay\modules\code.js" />
+    <Content Include="web\layui\lay\modules\colorpicker.js" />
+    <Content Include="web\layui\lay\modules\element.js" />
+    <Content Include="web\layui\lay\modules\flow.js" />
+    <Content Include="web\layui\lay\modules\form.js" />
+    <Content Include="web\layui\lay\modules\jquery.js" />
+    <Content Include="web\layui\lay\modules\laydate.js" />
+    <Content Include="web\layui\lay\modules\layedit.js" />
+    <Content Include="web\layui\lay\modules\layer.js" />
+    <Content Include="web\layui\lay\modules\laypage.js" />
+    <Content Include="web\layui\lay\modules\laytpl.js" />
+    <Content Include="web\layui\lay\modules\mobile.js" />
+    <Content Include="web\layui\lay\modules\rate.js" />
+    <Content Include="web\layui\lay\modules\slider.js" />
+    <Content Include="web\layui\lay\modules\table.js" />
+    <Content Include="web\layui\lay\modules\tree.js" />
+    <Content Include="web\layui\lay\modules\upload.js" />
+    <Content Include="web\layui\lay\modules\util.js" />
+    <Content Include="web\layui\lay\mymodules\eleTree.css" />
+    <Content Include="web\layui\lay\mymodules\eleTree.js" />
+    <Content Include="web\login.html" />
+    <Content Include="web\login.js" />
+    <Content Include="web\main.html" />
+    <Content Include="web\main.js" />
+    <Content Include="web\mb.html" />
+    <Content Include="web\other\404.html" />
+    <Content Include="web\other\add.html" />
+    <Content Include="web\other\calendar.html" />
+    <Content Include="web\other\chart.html" />
+    <Content Include="web\other\form.html" />
+    <Content Include="web\other\page.html" />
+    <Content Include="web\other\tab.html" />
+    <Content Include="web\other\table.html" />
+    <Content Include="web\step-lay\step.css" />
+    <Content Include="web\step-lay\step.js" />
+    <Content Include="web\wangEditor\wangEditor.css" />
+    <Content Include="web\wangEditor\wangEditor.js" />
+    <Content Include="web\wangEditor\wangEditor.min.css" />
+    <Content Include="web\wangEditor\wangEditor.min.js" />
+    <Content Include="web\zTree\css\awesomeStyle\awesome.css" />
+    <Content Include="web\zTree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="web\zTree\css\demo.css" />
+    <Content Include="web\zTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="web\zTree\css\metroStyle\img\loading.gif" />
+    <Content Include="web\zTree\css\metroStyle\img\metro.gif" />
+    <Content Include="web\zTree\css\metroStyle\img\metro.png" />
+    <Content Include="web\zTree\css\metroStyle\metroStyle.css" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="web\zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="web\zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="web\zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="web\zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="web\zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="web\zTree\js\jquery-1.4.4.min.js" />
+    <Content Include="web\zTree\js\jquery.ztree.all.js" />
+    <Content Include="web\zTree\js\jquery.ztree.all.min.js" />
+    <Content Include="web\zTree\js\jquery.ztree.core.js" />
+    <Content Include="web\zTree\js\jquery.ztree.core.min.js" />
+    <Content Include="web\zTree\js\jquery.ztree.excheck.js" />
+    <Content Include="web\zTree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="web\zTree\js\jquery.ztree.exedit.js" />
+    <Content Include="web\zTree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="web\zTree\js\jquery.ztree.exhide.js" />
+    <Content Include="web\zTree\js\jquery.ztree.exhide.min.js" />
+    <EntityDeploy Include="Models\SysModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SysModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SysModel.edmx.diagram">
+      <DependentUpon>SysModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DtglModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DtglModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DtglModel.edmx.diagram">
+      <DependentUpon>DtglModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\HmdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HmdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HmdModel.edmx.diagram">
+      <DependentUpon>HmdModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\TrffModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TrffModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TrffModel.edmx.diagram">
+      <DependentUpon>TrffModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\XfywModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XfywModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\XfywModel.edmx.diagram">
+      <DependentUpon>XfywModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Sys1Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sys1Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Sys1Model1.edmx.diagram">
+      <DependentUpon>Sys1Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\wztcModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>wztcModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\wztcModel.edmx.diagram">
+      <DependentUpon>wztcModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\10.68.135.200.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="web\font\iconfont.eot" />
+    <Content Include="web\font\iconfont.svg" />
+    <Content Include="web\font\iconfont.ttf" />
+    <Content Include="web\font\iconfont.woff" />
+    <Content Include="web\js\datepicker\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="web\js\datepicker\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="web\js\datepicker\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="web\js\datepicker\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="web\js\datepicker\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="web\js\umeditor\jsp\getContent.jsp" />
+    <Content Include="web\js\umeditor\jsp\imageUp.jsp" />
+    <Content Include="web\layui\font\iconfont.eot" />
+    <Content Include="web\layui\font\iconfont.svg" />
+    <Content Include="web\layui\font\iconfont.ttf" />
+    <Content Include="web\layui\font\iconfont.woff" />
+    <Content Include="web\css\fonts\element-icons.woff" />
+    <Content Include="web\css\fonts\iconfont.woff" />
+    <Content Include="web\css\fonts\element-icons.ttf" />
+    <Content Include="web\zTree\css\awesomeStyle\awesome.less" />
+    <Content Include="web\zTree\css\awesomeStyle\fa.less" />
+    <Content Include="web\wangEditor\Editor.vue" />
+    <Content Include="web\app\test\lj.vue" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\ExceptionFilter\" />
+    <Folder Include="Views\test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49172</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49172/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

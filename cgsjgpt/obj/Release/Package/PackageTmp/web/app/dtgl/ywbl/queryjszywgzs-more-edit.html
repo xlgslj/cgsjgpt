@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+</head>
+<body style="padding:15px 8px 0px 8px;">
+
+    <form id="root">
+        <table class="formtable" style="width:100%;">
+            <tbody>
+                <tr>
+                    <td class="tlabel">
+                        关联号：
+                    </td>
+                    <td>
+                        {{notice.PID}}
+                    </td>
+                    <td class="tlabel">排队号码：</td>
+                    <td>{{notice.PDHM}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">
+                        申请人：
+                    </td>
+                    <td>
+                        {{notice.NAME}}
+                    </td>
+                    <td class="tlabel">机动车驾驶证业务：</td>
+                    <td>
+                        <select class="select swidth" v-model="notice.YWLXNO">
+                            <option v-for="item in code.ywlxs" :value="item.CODE1">{{item.NAME}}</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tlabel">身份证明号码：</td>
+                    <td>
+                        {{notice.SFZMHM}}
+                    </td>
+                    <td class="tlabel">档案编号：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="notice.DABH"></td>
+
+                </tr>
+
+                <tr>
+                    <td class="tlabel">准驾车型：</td>
+                    <td colspan="3"><input type="text" class="forminput inputstyle" v-model="notice.ZJCX"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <div style="display:flex;flex-direction:row;">
+                            <div style="width:50%">
+                                <div style="line-height:25px;">
+                                    <span style="margin-left:-10px;">备齐</span>
+                                    <span style="margin-left:10px;">缺少</span>
+                                </div>
+                                <div v-for="(item,index) in files" style="line-height:25px;">
+                                    <template v-if="(((item.CODE1*1)<10&&(item.CODE1*1)%2!=0)||(item.CODE1*1)>10)&&item.CODE1!=filescount">
+                                        <input type="checkbox" style="vertical-align: middle;" v-model="item.bq">
+                                        <input type="checkbox" style="margin-left:10px;vertical-align: middle;" v-model="item.qs">
+                                        <span>{{item.CODE1}}、{{item.NAME}}</span>
+                                    </template>
+                                </div>
+                            </div>
+                            <div style="width:50%">
+                                <div style="line-height:25px;">
+                                    <span style="margin-left:-10px;">备齐</span>
+                                    <span style="margin-left:10px;">缺少</span>
+                                </div>
+                                <div v-for="(item,index) in files" style="line-height:25px;">
+                                    <template v-if="((item.CODE1*1)<=10&&(item.CODE1*1)%2==0)&&item.CODE1!=filescount">
+                                        <input type="checkbox" style="vertical-align: middle;" v-model="item.bq">
+                                        <input type="checkbox" style="margin-left:10px;vertical-align: middle;" v-model="item.qs">
+                                        <span>
+                                            {{item.CODE1}}、{{item.NAME}}
+                                        </span>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">{{files[filescount-1].NAME}}</td>
+                    <td colspan="3"><input type="text" class="forminput inputstyle" style="width:90%" v-model="files[filescount-1].CONTENT"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top:10px;">
+            <span style="color:red;">退办类型:</span>
+            <template v-for="item in code.tblx">
+                <input type="radio" name="hczt" :value="item" v-model="notice.TBLX" style="margin-left:10px;">{{item}}
+            </template>
+        </div>
+        <div class="formbtn">
+            <input type="button" value="保存并打印" class="btnsave" @click="saveandprint">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../js/AppData.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/lodop/LodopFuncs.js"></script>
+<script type="text/javascript" src="queryjszywgzs-more-edit.js"></script>
+</html>
+

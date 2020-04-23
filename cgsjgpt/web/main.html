@@ -1,0 +1,195 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>车驾管综合服务管理系统</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        .v-enter-active, .v-leave-active {
+            transition: all .3s ease;
+        }
+
+        .v-enter, .v-leave-to {
+            transition: translateX(10px);
+            opacity: 0;
+        }
+        .menu {
+            min-width:0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <!--header start-->
+        <div class="header">
+
+            <div class="headtop">
+                <span class="logo" id="logo"><img src="images/logo.png"></span>
+                <ul class="nav">
+                    <!--原生模板
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#" >常用</a></li>
+                    <li><a href="#" class="selected">扩展</a></li>
+                    <li><a href="#">页面布局</a></li>
+                    <li><a href="#">定制</a></li>
+                    <li><a href="#">数据管理</a></li>-->
+                    <li v-for="(item,index) in MenuOne" :key="item.ID"><a href="#" v-bind:class="{selected:MenuOneSelectEd==item.ID}" @click="MenuOneClick(item.ID)">{{item.NAME}}</a></li>
+                </ul>
+
+                <div class="topright">
+
+                    <div class="user">
+                        <span><a href="#"><i class="userico iconfont">&#xe600;</i>{{user.NAME}}<i class="userdown iconfont">&#xe709;</i></a></span>
+                        <ul class="userlist">
+                            <li><a href="#"><i class="userxl iconfont">&#xe65b;</i>用户信息</a></li>
+                            <li><a href="#" id="about" @click="xgmm"><i class="userxl iconfont">&#xe616;</i>修改密码</a></li>
+                            <li><a href="login.html"><i class="userxl iconfont">&#xe601;</i>退出</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="skin">
+                        <a href="#">设置</a>
+                        <ul class="skinlist">
+                            <li><a href="#" data-value="green" class="targetElem green"></a></li>
+                            <li><a href="#" data-value="darkblue" class="targetElem darkblue"></a></li>
+                            <li><a href="#" data-value="orange" class="targetElem orange"></a></li>
+                            <li><a href="#" data-value="lightgreen" class="targetElem lightgreen"></a></li>
+                            <li><a href="#" data-value="black" class="targetElem black"></a></li>
+                            <li><a href="#" data-value="darkgrey" class="targetElem darkgrey"></a></li>
+                            <li><a href="#" data-value="lightblue" class="targetElem lightblue"></a></li>
+                            <li><a href="#" data-value="red" class="targetElem red"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <transition>
+                <div class="headdown" v-show="MenuSwitch.up===1">
+                    <!--原生html
+    <ul class="menu">
+    <li><a href="#"><i class="menuico iconfont">&#xe603;</i>表单</a></li>
+
+    <li>
+        <a href="#"><i class="menuico iconfont">&#xe604;</i>项目管理<i class="iconfont menudown">&#xe618;</i></a>
+        <ul class="menuson">
+        <li><a href="#"><i class="iconfont">&#xe60e;</i>数据库</a></li>
+        <li><a href="#"><i class="iconfont">&#xe656;</i>开始日期</a></li>
+        <li><a href="#"><i class="iconfont">&#xe604;</i>应用程序</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#"><i class="menuico iconfont icon1">&#xe607;</i>统计</a></li>
+    <li><a href="#"><i class="menuico iconfont icon2">&#xe608;</i>控制台<i class="iconfont menudown">&#xe618;</i></a></li>
+    <li><a href="#"><i class="menuico iconfont icon3">&#xe606;</i>数据查询<i class="iconfont menudown">&#xe618;</i></a></li>
+    </ul>
+
+
+    <ul class="menu">
+    <li><a href="#"><i class="menuico iconfont">&#xe605;</i>配置</a></li>
+
+    <li>
+        <a href="#"><i class="menuico iconfont icon1">&#xe609;</i>微信管理<i class="iconfont menudown">&#xe618;</i></a>
+        <ul class="menuson">
+        <li><a href="#"><i class="iconfont">&#xe62b;</i>公众号管理</a></li>
+        <li><a href="#"><i class="iconfont">&#xe647;</i>朋友圈</a></li>
+        <li><a href="#"><i class="iconfont">&#xe64b;</i>文章发布</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#"><i class="menuico iconfont icon4">&#xe60a;</i>排序</a></li>
+    <li><a href="#"><i class="menuico iconfont icon5">&#xe60b;</i>文章编辑<i class="iconfont menudown">&#xe618;</i></a></li>
+    </ul>
+
+
+    -->
+                    <ul class="menu">
+                        <li v-for="(item,index) in MenuTwo" :key="item.ID"><a href="#" v-bind:class="{selected:MenuTwoSelectEd==item.ID}" @click="MenuTwoClick(item.ID)"><i class="menuico iconfont" v-html="item.ICON"></i>{{item.NAME}}</a></li>
+                    </ul>
+                    <ul class="menu tools">
+                        <li v-for="(item,index) in fastmenu">
+                            <a href="#" @click="MenuThrClick(item.ID,item.NAME,item.URL)">
+                                <i class="menuico iconfont icon3" v-html="item.ICON"></i>{{item.NAME}}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="menu tools">
+                        <li><a href="#"  @click="xgmm"><i class="menuico iconfont icon3">&#xe616;</i>密码</a></li>
+                        <!--   <li><a href="#"><i class="menuico iconfont icon3">&#xe67c;</i>打印机</a></li>
+    <li><a href="#"><i class="menuico iconfont icon3">&#xe617;</i>设备管理</a></li>
+    <li><a href="www.uimaker.com/office2016" target="_blank"><i class="menuico iconfont icon3">&#xe61b;</i>模板更新</a></li>-->
+                    </ul>
+                        <span class="menuup"><a href="#" @click="menuup"><i class="mright iconfont">&#xe615;</i></a></span>
+
+</div>
+            </transition>
+
+        </div>
+        <!--header end-->
+        <!--main start-->
+        <div class="main">
+
+            <!--left start-->
+            <transition>
+                <div class="left" v-show="MenuSwitch.left===1">
+                    <ul class="leftmenu">
+                        <!--原生html
+                        <li><a href="default.html" target="right"><i class="iconfont">&#xe611;</i>模块管理</a></li>
+                        <li><a href="table.html" target="right" class="selected"><i class="iconfont">&#xe612;</i>插件参数配置</a></li>
+                        <li><a href="form.html" target="right"><i class="iconfont">&#xe60c;</i>会员邮件</a></li>
+                        <li><a href="page.html" target="right"><i class="iconfont">&#xe60e;</i>数据库备份</a></li>
+                        <li><a href="calendar.html" target="right"><i class="iconfont">&#xe60f;</i>产品管理</a></li>
+                        <li><a href="tab.html" target="right"><i class="iconfont">&#xe611;</i>用户管理</a></li>
+                        <li><a href="chart.html" target="right"><i class="iconfont">&#xe60d;</i>智能标签管理</a></li>
+                        <li><a href="404.html" target="right"><i class="iconfont">&#xe613;</i>更新系统缓存</a></li>
+                        -->
+                        <li v-for="item in MenuThr"><a href="default.html" target="right" :class="{selected:MenuThrSelectEd==item.ID}" @click="MenuThrClick(item.ID,item.NAME,item.URL)"><i class="iconfont" v-html="item.ICON"></i>{{item.NAME}}</a></li>
+                    </ul>
+                    <span class="menutoleft"><a href="#" @click="MenuLeftHide"><i class="mright iconfont">&#xe61f;</i></a></span>
+                </div>
+            </transition>
+            <!--left end-->
+            <!--right start-->
+            <div class="right">
+                <!--
+                <div class="righttop">
+                    <ul class="menutab">
+                    <li class="tabselected"><a href="#">工作台<i class="tabclose iconfont">&#xe62d;</i></a></li>
+                    <li><a href="#">项目管理</a></li>
+                    <li><a href="#">设备管理</a></li>
+                    <li><a href="#">用户统计</a></li>
+                    </ul>
+                    <div class="tabbtn"><a href="#"><i class="iconfont">&#xe61f;</i></a><a href="#"><i class="iconfont">&#xe620;</i></a></div>
+                </div>
+                -->
+                <span class="menutoright" v-show="MenuSwitch.left===0"><a href="#" @click="MenuLeftShow"><i class="mright iconfont">&#xe620;</i></a></span>
+                <div class="rightdown"><iframe :src="'default.html?v='+version" id="iframe" name="right" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe></div>
+
+            </div>
+            <!--right end-->
+
+        </div>
+        <!--main end-->
+        <!--footer start-->
+        <div class="footer">
+            <span class="fleft">车驾管综合服务管理系统v1.0</span>
+            <span class="fright">攀枝花车管所版权所有<i class="infoicon iconfont">&#xe620;</i></span>
+        </div>
+        <!--footer end-->
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/skin.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</html>

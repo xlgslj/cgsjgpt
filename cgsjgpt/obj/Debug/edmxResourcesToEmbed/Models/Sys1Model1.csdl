@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EntitiesSys1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DDRV_FLOW" EntityType="Model.DDRV_FLOW" />
+    <EntitySet Name="VVEH_FLOW" EntityType="Model.VVEH_FLOW" />
+    <EntitySet Name="VVEH_FLOW1" EntityType="Model.VVEH_FLOW1" />
+  </EntityContainer>
+  <EntityType Name="DDRV_FLOW">
+    <Key>
+      <PropertyRef Name="LSH" />
+    </Key>
+    <Property Name="LSH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="SFZMHM" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="DABH" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="XM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="YWLX" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWYY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="KSSJ" Type="DateTime" />
+    <Property Name="JSSJ" Type="DateTime" />
+    <Property Name="YWGW" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="KSKM" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="XYGW" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GLBM" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FFBZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RKBZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HDBZ" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="XGZL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ZJCX" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="YWZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWBLBM" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FZJG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DCBJ" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HDBJ" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VVEH_FLOW">
+    <Key>
+      <PropertyRef Name="LSH" />
+    </Key>
+    <Property Name="LSH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="XH" Type="String" Nullable="false" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="YWLX" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWYY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="SYR" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="HPZL" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="HPHM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CLPP1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CLXH" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CLLX" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="XZQH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SQRQ" Type="DateTime" />
+    <Property Name="BJRQ" Type="DateTime" />
+    <Property Name="XYGW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWLC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LSZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GLBM" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FPBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FFBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RKBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CLSBDH" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HDBJ" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VVEH_FLOW1">
+    <Key>
+      <PropertyRef Name="LSH" />
+    </Key>
+    <Property Name="LSH" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="XH" Type="String" Nullable="false" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="YWLX" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWYY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="SYR" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="HPZL" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="HPHM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CLPP1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CLXH" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CLLX" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="XZQH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SQRQ" Type="DateTime" />
+    <Property Name="BJRQ" Type="DateTime" />
+    <Property Name="XYGW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YWLC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LSZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GLBM" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FPBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FFBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RKBJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CLSBDH" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HDBJ" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+</Schema>

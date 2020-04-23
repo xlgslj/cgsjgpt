@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+            ul > li {
+                margin-left: 20px;
+                line-height: 30px;
+            }
+
+                ul > li input[type='text']:not(.vue-treeselect__input) {
+                    height: 26px;
+                    border: solid 1px #c6c6c6;
+                    line-height: 26px;
+                    text-indent: 8px;
+                    font-family: '微软雅黑';
+                    color: #585858;
+                    width: 200px;
+                }
+
+                ul > li a {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    background: #d2d2d2;
+                    color: #000;
+                    border: solid 1px #acacac;
+                    padding: 0 12px;
+                    border-radius: 1px;
+                }
+
+        .layui-table-cell-bak {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <!--top-->
+    <div id="app" style="display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <ul>
+            <li>
+                类型:&nbsp;
+                <select class="select swidth" style="width:100px;" v-model="where.balx">
+                    <option value=""></option>
+                    <option value="多车单位备案">多车单位备案</option>
+                    <option value="抵押备案">抵押备案</option>
+                </select>
+            </li>
+            <li>
+                单位名称:&nbsp;<input type="text" v-model="where.dwmc" style="width:300px;">
+            </li>
+            <li>
+                组织机构代码:&nbsp;<input type="text" v-model="where.zzjgdm" style="width:200px;">
+            </li>
+            <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+        </ul>
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" class="headtop" lay-event="show">查看</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="bacx.js"></script>
+</html>
+

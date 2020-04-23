@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .website, .userinfo {
+            min-height: 480px;
+        }
+
+        .formtable td {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body style="padding:15px 8px 0px 8px;">
+    <div id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">业务种类：</td>
+                    <td colspan="3">
+                        <select class="select swidth" v-model="ywlx">
+                            <option value="机动车业务">机动车业务</option>
+                            <option value="驾驶人业务">驾驶人业务</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr style="color:red;">
+                    <td colspan="2">
+                        输入身份证号即可进行信息查询,如果系统存在对应信息姓名将会自动补录无需手工录入,否则请手工录入姓名!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel" style="line-height:20px;">当事人:</td>
+                    <td>
+                        证件类型：
+                        <select class="select swidth" v-model="zjlx">
+                            <option v-for="item in zjlxs" :value="item">{{item}}</option>
+                        </select>
+                        证件号码:
+                        <input type="text" class="forminput inputstyle" placeholder="-" v-model.trim="brsfzhm">
+                        <input type="button" value="信息查询" :disabled="!brzjhmistrue" :class="{ 'btnsave': brzjhmistrue, 'btncancel': !brzjhmistrue }" style="display:inline;float:none;" @click="queryjbxx">
+                        姓名:
+                        <input type="text" class="forminput inputstyle" placeholder="-" v-model="brname" style="width:100px;">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">代理人:</td>
+                    <td>
+
+                        身份证号码:
+                        <input type="text" class="forminput inputstyle" placeholder="-" v-model.trim="dlrsfzhm">
+                        <input type="button" value="信息查询" :disabled="!dlrzjhmistrue" :class="{ 'btnsave': dlrzjhmistrue, 'btncancel': !dlrzjhmistrue }" style="display:inline;float:none;" @click="querydbjl">
+                        姓名:<input type="text" class="forminput inputstyle" placeholder="-" v-model="dlrname" style="width:100px;">
+
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div style="height:550px;overflow:auto;">
+            <div class="tablebox" v-if="showdsr">
+                <div style="text-align:center;font-weight: bold;height:30px;">当&nbsp;&nbsp;&nbsp;&nbsp;事&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+                <table>
+                    <thead>
+                    <th class="num"></th>
+                    <th>信息类型</th>
+                    <th style="width:70%;">基本信息</th>
+                    <th>状态</th>
+                    </thead>
+                    <tbody>
+                        <tr v-if="jbxx.driver1!=null" :style="{color:jbxx.driver1.ZT.indexOf('正常')>=0?'green':'red'}">
+                            <td class="tdnum">1</td>
+                            <td>驾驶人</td>
+                            <td>初次领证日期:{{jbxx.driver1.CCLZRQ==undefined?"":jbxx.driver1.CCLZRQ.substring(0,10)}};有效期止：{{jbxx.driver1.YXQZ==undefined?"":jbxx.driver1.YXQZ.substring(0,10)}}；积分：{{jbxx.driver1.LJJF}}</td>
+                            <td>{{jbxx.driver1.ZT}}</td>
+                        </tr>
+                        <tr v-else>
+                            <td class="tdnum">1</td>
+                            <td>驾驶人</td>
+                            <td colspan="2">不是有效驾驶人</td>
+                        </tr>
+                        <tr v-for="(item,index) in jbxx.vehicles1" style="color:red;">
+                            <td class="tdnum">{{index+2}}</td>
+                            <td>机动车</td>
+                            <td>{{item.HPHM}}（{{item.HPZL}}）;检验有效期止：{{item.YXQZ==undefined?"":item.YXQZ.substring(0,10)}}</td>
+                            <td>{{item.ZT}}</td>
+                        </tr>
+
+                        <tr v-if="jbxx.vehicles1.length==0">
+                            <td class="tdnum">2</td>
+                            <td>机动车</td>
+                            <td colspan="2">无所属机动车或所属机动车信息正常</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="tablebox" v-if="showdlr">
+                <div style="text-align:center;font-weight: bold;height:30px;">代&nbsp;&nbsp;&nbsp;&nbsp;理&nbsp;&nbsp;&nbsp;&nbsp;人(红/黑名单信息)</div>
+                <table>
+                    <thead>
+                    <th class="num"></th>
+                    <th>信息类型</th>
+                    <th style="width:30%;">种类</th>
+                    <th style="width:30%;">状态</th>
+                    <th style="width:22%;">加入时间</th>
+                    </thead>
+
+                    <tbody>
+                        <tr v-if="rblist!=null" :style="{color:rblist.LX=='红名单'?'green':'red'}">
+                            <td>1</td>
+                            <td>红/黑名单</td>
+                            <td>{{rblist.LX+(rblist.LX==='红名单'?'(代理范围:'+(rblist.DLFW=='所有'?'所有':rblist.DWNAME)+')':'')}}</td>
+                            <td>{{rblist.ZT}}</td>
+                            <td>{{rblist.SPDAY}}</td>
+                        </tr>
+                        <tr v-else>
+                            <td>1</td>
+                            <td colspan="4">即不是红名单也不是黑名单 </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align:center;font-weight: bold;height:30px;">代&nbsp;&nbsp;&nbsp;&nbsp;理&nbsp;&nbsp;&nbsp;&nbsp;人(代办纪录)</div>
+                <table>
+                    <thead>
+                    <th class="num"></th>
+                    <th>业务类型</th>
+                    <th style="width:30%;">代办人信息</th>
+                    <th style="width:30%;">当事人信息</th>
+                    <th style="width:22%;">加入时间</th>
+                    </thead>
+
+                    <tbody>
+                        <tr v-for="(item,index) in agents">
+                            <td>{{index+1}}</td>
+                            <td>{{item.YWLX}}</td>
+                            <td>{{item.DLRNAME}}({{item.DLRZJHM}})</td>
+                            <td>{{item.BRNAME}}({{item.BRZJHM}})</td>
+                            <td>{{item.ADDTIME}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formbtn" style="position:fixed;bottom:10px;">
+            <input type="button" value="添加代办记录" :disabled="!addAllow" :class="{ 'btnsave': addAllow, 'btncancel': !addAllow }" @click="save">
+            <input type="button" value="重置" class="btncancel">
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="adddbxx.js"></script>
+
+</html>
+

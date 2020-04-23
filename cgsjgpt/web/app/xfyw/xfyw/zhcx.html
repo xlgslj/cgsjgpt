@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+            ul > li {
+                margin-left: 20px;
+                line-height: 30px;
+            }
+
+                ul > li input[type='text']:not(.vue-treeselect__input) {
+                    height: 26px;
+                    border: solid 1px #c6c6c6;
+                    line-height: 26px;
+                    text-indent: 8px;
+                    font-family: '微软雅黑';
+                    color: #585858;
+                    width: 200px;
+                }
+
+                ul > li a {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    background: #d2d2d2;
+                    color: #000;
+                    border: solid 1px #acacac;
+                    padding: 0 12px;
+                    border-radius: 1px;
+                }
+
+        .vue-treeselect__control {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex;flex-direction:row;">
+        <div style=" width:100%;">
+            <!--top-->
+            <div id="app" style="display:flex;flex-direction:row;flex-wrap: wrap;align-items:center;padding:10px 0 0 10px;">
+                <ul>
+                    <li>
+                        <treeselect placeholder="选择单位..." v-model="bmno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:250px;height:32px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+                    </li>
+                    <li>
+                        含下级:&nbsp;<input type="checkbox" style="width:20px;" v-model="where.include">
+                    </li>
+                    <li>
+                        <span>平台类别:</span>
+                        <select class="select swidth" style="width:150px;" v-model="where.ptlb">
+                            <option v-for="item in code.ptlbs" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>系统类别:</span>
+                        <select class="select swidth" style="width:150px;" v-model="where.xtlb">
+                            <option v-for="item in xtlbs1" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>业务类型:</span><input type="text" v-model="where.ywlx" style="width:150px;">
+                    </li>
+
+                    <li>
+                        <span>业务原因:</span><input type="text" v-model="where.ywyy" style="width:150px;">
+                    </li>
+                    <li>
+                        <span>办理模式:</span>
+                        <select class="select swidth" style="width:150px;" v-model="where.blms">
+                            <option v-for="item in code.blmss" :value="item.NAME">{{item.NAME}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>审核模式:</span>
+                        <select class="select swidth" style="width:150px;" v-model="where.shms">
+                            <option v-for="item in ['','需要审核','不需要审核']" :value="item">{{item}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>号牌号码:</span><input type="text" v-model="where.hphm" style="width:150px;">
+                    </li>
+                    <li>
+                        <span>本人证件号码:</span><input type="text" v-model="where.brzjhm" style="width:150px;">
+                    </li>
+                    <li>时间:<input type="text" id="rqfw" placeholder="选择时间"></li>
+                    <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+                </ul>
+            </div>
+            <!--top end-->
+            <div style="padding:0 5px 0 5px">
+                <table id="demo" lay-filter="test"></table>
+            </div>
+        </div>
+    </div>
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" lay-event="show">查看</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="zhcx.js"></script>
+</html>
+

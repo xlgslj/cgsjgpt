@@ -1,0 +1,20 @@
+﻿body {
+
+}
+.page-menu {
+    padding: 10px;
+    background:rgba(34,116,71,0.2);/*227447*/
+}
+.page-form {
+    margin-top: 10px;
+    font: 22px;
+    font-weight: 100;
+}
+.page-from .el-row{
+    font:22px;
+}
+.page-form .el-col div {
+    background: rgba(34,116,71,1); /*227447*/
+    font: 22px;
+    font-weight:100;
+}

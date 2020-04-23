@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../js/viewer/viewer.min.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .w-e-icon-upload2 {
+            font-size: 60px;
+        }
+        /*
+        .w-e-text-container {
+            min-height: 450px;
+        }*/
+        img {
+            width: 240px;
+            height: 180px;
+            border: solid 1px #d4d4d4;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable" style="width:100%;">
+            <tbody>
+                <tr>
+                    <td class="tlabel" style="width:200px;">名单类型：</td>
+                    <td style="width:400px;">
+                        {{rbinfo.LX}}
+                    </td>
+                    <td class="tlabel" style="width:200px;">申请人姓名：</td>
+                    <td>{{rbinfo.NAME}}</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">申请人身份证明号码：</td>
+                    <td>{{rbinfo.SFZHM}}</td>
+                    <td class="tlabel">手机号码：</td>
+                    <td>{{rbinfo.TEL}}</td>
+                </tr>
+                <tr v-if="rbinfo.LX=='红名单'">
+                    <td class="tlabel">单位名称：</td>
+                    <td>{{rbinfo.DWNAME}}</td>
+                    <td class="tlabel">组织机构代码：</td>
+                    <td>{{rbinfo.ZZJGDM}}</td>
+                </tr>
+                <tr v-if="rbinfo.LX=='红名单'">
+                    <td class="tlabel">申请书：</td>
+                    <td><img :src="rbinfo.IMG1" /></td>
+                    <td class="tlabel">组织机构代码：</td>
+                    <td><img :src="rbinfo.IMG2" /></td>
+                </tr>
+                <tr>
+                    <td class="tlabel">说明：</td>
+                    <td colspan="3" style="padding-top: 10px;">
+                        {{rbinfo.MEMO}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">其他资料：</td>
+                    <td colspan="3">
+                        <!-- <lj-edit ref="sqzl"></lj-edit>-->
+                        <div v-html="rbinfo.CAUSE" style="width:100%;"></div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="审核通过" class="btnsave" @click="save('有效')">
+            <input type="button" value="审核不通过" class="btnsave" style="margin-left:10px;" @click="save('审核不通过')">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../wangEditor/wangEditor.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/watermark/watermark.js"></script>
+<script type="text/javascript" src="../../../js/viewer/viewer.min.js"></script>
+<script type="text/javascript" src="rbspb.js"></script>
+
+</html>
+

@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .procdiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 80px;
+        }
+    </style>
+</head>
+<body style="padding:15px 8px 0px 8px;">
+
+    <table class="formtable" >
+        <tbody>
+            <tr>
+                <td class="tlabel">等候信息：</td>
+                <td>
+                    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                    <div id="main" style="width: 300px;height:400px;"></div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+    <div id="root">
+        <div v-show="mode=='waiting'">
+            <table class="formtable">
+                <tbody>
+                    <tr>
+                        <td class="tlabel">窗口：</td>
+                        <td colspan="3" style="vertical-align:middle;"><span style="font-size:30px;">{{ckmc===""?"非合法窗口工作站":ckmc}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="tlabel">当前号码：</td>
+                        <td>
+                            <i style="font-size:25px;margin-right:20px;">{{newno}}</i>
+                            <input type="button"  value="顺序叫号"  :disabled="!isck" :class="{ 'btnsave': isck, 'btncancel': !isck }" style="display:inline;float:none;" @click="btnjh">
+                            <input type="button"  value="特呼"   :disabled="!isck" :class="{ 'btnsave': isck, 'btncancel': !isck }" style="display:inline;float:none;margin-left:30px;background-color:red;">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-show="mode=='procing'" class="procdiv">
+            <span style="font-size: 40px;">正在办理{{currno}}号业务</span>
+            <span style="font-size: 40px;color:red;">已进行{{worktime}}</span>
+            <div>
+                <input type="button" class="btnsave" value="空号" style="display:inline;float:none;" @click="btnkh">
+                <input type="button" class="btnsave" value="办结" style="display:inline;float:none;margin-left:30px;">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/echarts.min.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="pdjh.js"></script>
+
+</html>
+

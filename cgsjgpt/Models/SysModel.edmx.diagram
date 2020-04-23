@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2bfa2e772bfc4536b21c4c2844a0d2fc" Name="Diagram1" ZoomLevel="94" >
+        <EntityTypeShape EntityType="Model.CKSET" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.CONFIGBASE" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.CODE" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.ROLES" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.BUSINESSBM" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.CONFIGBM" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.LOG" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.BMDB" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.USERDB" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.CODEYWLX" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.MENUDB" Width="1.5" PointX="2.875" PointY="6.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,148 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .w-e-icon-upload2 {
+            font-size: 60px;
+        }
+
+        .w-e-text-container {
+            height: 450px;
+        }
+
+        img {
+            width: 240px;
+            height: 180px;
+            border: solid 1px #d4d4d4;
+        }
+
+        .currentphoto {
+            border: dashed 1px red;
+        }
+
+        .hiddiv {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.3;
+            z-index: 100000;
+        }
+
+        .camera {
+            text-align: center;
+            background-color: #ffffff;
+            width: 480px;
+            height: 450px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -225px;
+            margin-left: -240px;
+            border: #ffffff solid 2px;
+            z-index: 100001;
+        }
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <div id="root">
+        <table class="formtable" style="width:100%;">
+            <tbody>
+                <tr>
+                    <td class="tlabel" style="width:200px;">名单类型：</td>
+                    <td style="width:400px;">
+                        <select class="select swidth" v-model="rbinfo.LX">
+                            <option value="黑名单">黑名单</option>
+                            <option value="红名单">红名单</option>
+                        </select>
+                        <template v-if="rbinfo.LX=='红名单'">
+                            <span style="margin-left:10px;">范围:</span>
+                            <input name="dlfw" type="radio" value="本单位" v-model="rbinfo.DLFW">本单位
+                            <input name="dlfw" type="radio" value="所有" v-model="rbinfo.DLFW">所有
+                        </template>
+                    </td>
+                    <td class="tlabel" style="width:200px;">申请人姓名：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="rbinfo.NAME">&nbsp;&nbsp;*</td>
+                </tr>
+                <tr>
+                    <td class="tlabel">申请人身份证明号码：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="rbinfo.SFZHM"></td>
+                    <td class="tlabel">手机号码：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="rbinfo.TEL"></td>
+                </tr>
+                <tr v-if="rbinfo.LX=='红名单'">
+                    <td class="tlabel">单位名称：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="rbinfo.DWNAME"></td>
+                    <td class="tlabel">组织机构代码：</td>
+                    <td><input type="text" class="forminput inputstyle" v-model="rbinfo.ZZJGDM"></td>
+                </tr>
+                <tr v-if="rbinfo.LX=='红名单'">
+                    <td class="tlabel">申请书:</td>
+                    <td>
+                        <img :src="rbinfo.IMG1" @click="choosephoto(1,$event)" />
+                    </td>
+                    <td class="tlabel">组织机构代码证:</td>
+                    <td>
+                        <img :src="rbinfo.IMG2" @click="choosephoto(2,$event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">说明：</td>
+                    <td colspan="3" style="padding-top: 10px;">
+                        <textarea class="formarea" style=" width: 95%;height: 80px;" v-model="rbinfo.MEMO"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">其他资料：</td>
+                    <td colspan="3">
+                        <lj-edit ref="sqzl"></lj-edit>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="提请变更" class="btnsave" @click="save('提请变更')">
+            <input type="button" value="提请删除" class="btnsave" style="margin-left:10px;" @click="save('提请删除')">
+        </div>
+
+        <div style="position:absolute;width:100%;height:100%;top:0;" :style="{left:(cameramode?'0':'-100%')}">
+            <div class="hiddiv">
+            </div>
+            <div class="camera">
+                <div class="classify" style="border-bottom: solid 0.2px #d4d4d4;">采集窗口</div>
+                <div style="background-color: #000000;">
+                    <object classid="clsid:454C18E2-8B7D-43C6-8C17-B1825B49D7DE" id="captrue" width="480px" height="360px" style="z-index:100003"></object>
+                </div>
+                <div style="text-align:center;margin:10px 10px;">
+                    <div style="float:left;line-height:34px;">
+                        <input name="mode" type="radio" value="0" checked onClick="changemode(this)">默认
+                        <input name="mode" type="radio" value="2" onClick="changemode(this)">证件
+                    </div>
+                    <input type="button" value="切换摄像头" class="btnsave" onClick="changedev()" style="margin-left:10px;">
+                    <input type="button" value="拍照" class="btnsave" onClick="camera()" style="margin-left:10px;">
+                    <input id="rdev" type="button" value="关闭设备" class="btnsave" style="float:right;margin-right:10px;" onClick="rdev()">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/custom/JsFun.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../wangEditor/wangEditor.min.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="rbedit.js"></script>
+
+</html>
+

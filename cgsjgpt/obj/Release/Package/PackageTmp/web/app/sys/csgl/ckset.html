@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <link rel="stylesheet" href="../../../js//vue-modules/vue-treeselect.min.css">
+    <style>
+        .vue-treeselect__control {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--top-->
+    <div id="app" style="position:relative;display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <div style="float:left;">
+            <treeselect placeholder="选择单位..." v-model="bmno" :multiple="false" :options="dws1" @select="onselect" style="margin-left:2px;width:250px;height:32px;text-indent: 0px; line-height: 20px; border-radius: 5px;border-collapse:separate;" />
+
+        </div>
+        <ul class="rfrom">
+            <li class="searchli" style="height:30px;margin:1px 30px 1px 1px;vertical-align:middle;"><input type="text" class="search" placeholder="窗口名称" v-model="ckmc"><span class="searchico"><i class="iconfont">&#x343e;</i></span></li>
+        </ul>
+        <ul class="toolbar" style="padding-top:0px;">
+            <li><a href="#" class="selected"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+            <li><a href="#" class="selected" id="add" @click="add"><i class="toolico iconfont">&#xe649;</i>添加</a></li>
+        </ul>
+
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/vue-modules/vue-treeselect.min.js"></script>
+<script type="text/javascript" src="ckset.js"></script>
+
+</html>
+

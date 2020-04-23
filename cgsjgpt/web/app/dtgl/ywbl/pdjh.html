@@ -1,0 +1,222 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        input[type=button] {
+            display: block;
+            width: 100%;
+            height: 60px;
+            margin-top: 20px;
+            border-radius: 3px;
+            color: #ffffff;
+            font-size: 25px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 1px white, -1px -1px 1px black;
+            cursor: pointer;
+        }
+
+            input[type=button]:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 24px 80px 0 rgba(0, 0, 0, 0.3);
+                text-shadow: 1px 1px 1px black, -1px -1px 1px white;
+            }
+
+        @keyframes myfirst {
+            from {
+                background: red;
+            }
+
+            to {
+                background: #D1D1D1;
+            }
+        }
+
+        @-webkit-keyframes myfirst /* Safari and Chrome */
+        {
+            from {
+                background: red;
+            }
+
+            to {
+                background: #D1D1D1;
+            }
+        }
+
+        .website, .userinfo {
+            height: 500px;
+            overflow-y: auto
+        }
+
+        #root2 span {
+            line-height: 30px;
+            background: #deefe9;
+            border: solid 1px #bedabf;
+            color: #227447;
+            margin-top: 2px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table class="formtable" style="width:100%;">
+        <tbody>
+            <tr>
+                <td style="width:70%;padding-bottom:10px;vertical-align:top;">
+                    <div id="root2" style="max-height: 80px;padding:1px 10px;">
+                        <span v-for="item in waitinfo">{{item.ywmc}}:<font style="color:red;font-size:18px;font-weight:600;">{{item.count}}</font></span>
+                    </div>
+                    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                    <div id="main" style="width: 695px;height:530px;"></div>
+
+
+
+                    <div id="root1" v-show="mode=='procing'" style="width:99%;margin-left:3px;">
+                        <div v-if="statue=='completed'" class="tablebox" style="padding-top:0px;margin-bottom:30px;height:580px;overflow:auto;">
+                            <div class="tablebox" style="padding-top:0px;">
+                                <div v-if="driverandvehicle.pdxx.BLLX=='代理人业务'" style="text-align:center;font-weight: bold;height:30px;">代&nbsp;&nbsp;&nbsp;&nbsp;理&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+                                <table v-if="driverandvehicle.pdxx.BLLX=='代理人业务'" style="margin-bottom:0px;">
+                                    <thead>
+                                    <th class="num"></th>
+                                    <th>信息类型</th>
+                                    <th style="width:60%;">基本信息</th>
+                                    <th style="width:20%;">状态</th>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td class="tdnum">1</td>
+                                            <td>代理人</td>
+                                            <td><a href="#">名称:{{driverandvehicle.pdxx.DLRNAME}}&nbsp;&nbsp;&nbsp;&nbsp; {{driverandvehicle.pdxx.DLRZJLX}}:{{driverandvehicle.pdxx.DLRZJHM}}</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr v-if="driverandvehicle.rblist2!=null">
+                                            <td class="tdnum">2</td>
+                                            <td>红/黑名单</td>
+                                            <td><a href="#" style="color:red;">{{driverandvehicle.rblist2.LX+(driverandvehicle.rblist2.LX=="红名单"?("-代理范围:"+(driverandvehicle.rblist2.DLFW=="本单位"?driverandvehicle.rblist2.DWNAME:"所有")):"")}}</a></td>
+                                            <td>{{driverandvehicle.rblist2.ZT}}</td>
+                                        </tr>
+                                        <tr v-else>
+                                            <td class="tdnum">2</td>
+                                            <td>红/黑名单</td>
+                                            <td><a href="#">既不是红名单也不是黑名单</a></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div style="text-align:center;font-weight: bold;height:30px;">当&nbsp;&nbsp;&nbsp;&nbsp;事&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+                                <table>
+                                    <thead>
+                                    <th class="num"></th>
+                                    <th>信息类型</th>
+                                    <th style="width:60%;">基本信息</th>
+                                    <th style="width:20%;">状态</th>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td class="tdnum">1</td>
+                                            <td>当事人</td>
+                                            <td><a href="#">名称:{{driverandvehicle.pdxx.BRNAME}}&nbsp;&nbsp;&nbsp;&nbsp; {{driverandvehicle.pdxx.BRZJLX}}:{{driverandvehicle.pdxx.BRZJHM}}</a></td>
+                                            <td><a href="#" v-show="driverandvehicle.pdxx.BRZJLX=='组织机构代码证书'" @click="queryDwba">查备案</a></td>
+                                        </tr>
+                                        <tr v-if="driverandvehicle.rblist1.LX.length>0">
+                                            <td class="tdnum">2</td>
+                                            <td>红/黑名单</td>
+                                            <td><a href="#" style="color:red;">{{driverandvehicle.rblist1.LX}}{{driverandvehicle.rblist1.LX.indexOf("红名单")>-1?("   (代理范围:"+(driverandvehicle.rblist1.DLFW=="本单位"?driverandvehicle.rblist1.DWNAME:"所有")+")"):""}}</a></td>
+                                            <td>{{driverandvehicle.rblist1.ZT}}</td>
+                                        </tr>
+                                        <tr v-else>
+                                            <td class="tdnum">2</td>
+                                            <td>红/黑名单</td>
+                                            <td><a href="#">既不是红名单也不是黑名单</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr v-if="driverandvehicle.driver1!=null&&driverandvehicle.driver1!=undefined">
+                                            <td class="tdnum">3</td>
+                                            <td>驾驶人</td>
+                                            <td><a href="#" :style="{color:driverandvehicle.driver1.ZT.indexOf('正常')>=0?'green':'red'}">初次领证日期:{{driverandvehicle.driver1.CCLZRQ==undefined?"":driverandvehicle.driver1.CCLZRQ.substring(0,10)}};有效期止：{{driverandvehicle.driver1.YXQZ==undefined?"":driverandvehicle.driver1.YXQZ.substring(0,10)}}；积分：{{driverandvehicle.driver1.LJJF}}</a></td>
+                                            <td :style="{color:driverandvehicle.driver1.ZT.indexOf('正常')>=0?'green':'red'}">{{driverandvehicle.driver1.ZT}}</td>
+                                        </tr>
+                                        <tr v-else>
+                                            <td class="tdnum">3</td>
+                                            <td>驾驶人</td>
+                                            <td><a href="#">不是有效驾驶人</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr v-for="(item,index) in driverandvehicle.vehicles1">
+                                            <td class="tdnum">{{index+3}}</td>
+                                            <td>机动车</td>
+                                            <td><a href="#" style="color:red;">{{item.HPHM}}（{{item.HPZL}}）;检验有效期止：{{item.YXQZ==undefined?"":item.YXQZ.substring(0,10)}}</a></td>
+                                            <td style="color:red;">{{item.ZT}}</td>
+                                        </tr>
+
+                                        <tr v-if="driverandvehicle.vehicles1.length==0">
+                                            <td class="tdnum">4</td>
+                                            <td>机动车</td>
+                                            <td><a href="#">无所属机动车或所属机动车信息正常</a></td>
+                                            <td></td>
+                                        </tr>
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <!--tablebox end-->
+                        </div>
+                        <div v-else style="position:relative;left:100px;top:100px;color:red;font-size:40px;font-weight:700;">查询中......</div>
+                    </div>
+                </td>
+                <td style="vertical-align: top;padding: 5px;width:30%;">
+                    <div id="root">
+                        <div v-bind:style="{background:customcolor}" style="line-height: 60px;border-radius: 5px;color: #ffffff;font-size: 50px;text-align: center;">
+                            {{isck?ckmc:"未授权"}}
+                        </div>
+                        <div v-show="mode=='waiting'">
+                            <div style="display: flex; flex-direction: column;justify-content: center;background-color:#D1D1D1;height: 200px;margin-top: 10px;font-size: 60px;text-align: center;">
+                                <span style="font-size:18px;display:block;margin-bottom: 18px;">最新号码</span>
+                                {{newno}}
+                            </div>
+                            <div>
+                                <input type="button" value="顺序叫号" :disabled="!isck||newno=='无业务'" v-bind:style="{background:(isck&&newno!='无业务')?newcolor:'#D1D1D1'}" @click="btnjh">
+                                <input type="button" value="特    呼" :disabled="!isck" v-bind:style="{background:(isck)?newcolor:'#D1D1D1'}" @click="btnth">
+                            </div>
+                        </div>
+                        <div v-show="mode=='procing'">
+                            <div style="display: flex; flex-direction: column;justify-content: center;background-color:#D1D1D1;height: 200px;margin-top: 10px;font-size: 60px;text-align: center;" v-bind:style="{'animation':(second>PJYWBLSJBZXZ)?'myfirst 1s infinite':''}">
+                                <span style="font-size:18px;display:block;margin-bottom: 18px;" v-if="currjhcs<JHBFYYCS">语音呼叫{{currjhcs}}次<i class="iconfont" style="cursor:pointer;font-size:20px;color:red;" @click="stopLed">&#xe601;</i></span>
+                                <span style="font-size:18px;display:block;margin-bottom: 18px;" v-else>正在办理<i class="iconfont" style="cursor:pointer;font-size:20px;color:green;" @click="reLed">&#xe621;</i></span>
+                                {{currno}}
+                                <span style="font-size:25px;display:block;margin-top: 18px;">已进行<span style="font-size:25px;color:red">{{worktime}}</span></span>
+                            </div>
+                            <div>
+                                <input type="button" value="办   结" v-bind:style="{background:newcolor}" @click="btnbj">
+                                <input type="button" value="空   号" v-bind:style="{background:newcolor}" @click="btnkh">
+                                <input type="button" value="退   号" v-bind:style="{background:newcolor}" @click="btntuih">
+
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/echarts.min.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="pdjh.js"></script>
+
+</html>
+

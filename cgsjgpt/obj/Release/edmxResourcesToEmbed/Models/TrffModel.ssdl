@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“TRFF_PZH.DRIVINGLICENSE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="DRIVINGLICENSE">
+    <Key>
+      <PropertyRef Name="DABH" />
+      <PropertyRef Name="SFZMHM" />
+      <PropertyRef Name="QFRQ" />
+      <PropertyRef Name="CCLZRQ" />
+      <PropertyRef Name="JZQX" />
+      <PropertyRef Name="YXQS" />
+      <PropertyRef Name="YXQZ" />
+      <PropertyRef Name="LJJF" />
+      <PropertyRef Name="BZCS" />
+      <PropertyRef Name="ZT" />
+      <PropertyRef Name="LY" />
+      <PropertyRef Name="XZQH" />
+      <PropertyRef Name="FZRQ" />
+      <PropertyRef Name="GLBM" />
+      <PropertyRef Name="FZJG" />
+      <PropertyRef Name="GXSJ" />
+      <PropertyRef Name="XH" />
+    </Key>
+    <Property Name="DABH" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="SFZMHM" Type="varchar2" MaxLength="18" Nullable="false" />
+    <Property Name="ZJCX" Type="varchar2" MaxLength="15" />
+    <Property Name="YZJCX" Type="varchar2" MaxLength="30" />
+    <Property Name="QFRQ" Type="date" Nullable="false" />
+    <Property Name="SYRQ" Type="date" />
+    <Property Name="CCLZRQ" Type="date" Nullable="false" />
+    <Property Name="CCFZJG" Type="varchar2" MaxLength="10" />
+    <Property Name="JZQX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="YXQS" Type="date" Nullable="false" />
+    <Property Name="YXQZ" Type="date" Nullable="false" />
+    <Property Name="LJJF" Type="number" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="CFRQ" Type="date" />
+    <Property Name="XXTZRQ" Type="date" />
+    <Property Name="BZCS" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="ZT" Type="varchar2" MaxLength="6" Nullable="false" />
+    <Property Name="LY" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="JXMC" Type="varchar2" MaxLength="64" />
+    <Property Name="JLY" Type="varchar2" MaxLength="30" />
+    <Property Name="XZQH" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="XZQJ" Type="varchar2" MaxLength="10" />
+    <Property Name="FZRQ" Type="date" Nullable="false" />
+    <Property Name="JBR" Type="varchar2" MaxLength="30" />
+    <Property Name="GLBM" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="FZJG" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="GXSJ" Type="date" Nullable="false" />
+    <Property Name="LSH" Type="varchar2" MaxLength="13" />
+    <Property Name="XGZL" Type="varchar2" MaxLength="15" />
+    <Property Name="BZ" Type="varchar2" MaxLength="256" />
+    <Property Name="JYW" Type="varchar2" MaxLength="256" />
+    <Property Name="YDABH" Type="char" MaxLength="12" />
+    <Property Name="SQDM" Type="varchar2" MaxLength="12" />
+    <Property Name="ZXBH" Type="char" MaxLength="13" />
+    <Property Name="XH" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="SFZMMC" Type="char" MaxLength="1" />
+    <Property Name="HMCD" Type="char" MaxLength="1" />
+    <Property Name="XM" Type="varchar2" MaxLength="30" />
+    <Property Name="XB" Type="char" MaxLength="1" />
+    <Property Name="CSRQ" Type="date" />
+    <Property Name="GJ" Type="char" MaxLength="3" />
+    <Property Name="DJZSXZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="DJZSXXDZ" Type="varchar2" MaxLength="128" />
+    <Property Name="LXZSXZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="LXZSXXDZ" Type="varchar2" MaxLength="128" />
+    <Property Name="LXZSYZBM" Type="varchar2" MaxLength="6" />
+    <Property Name="LXDH" Type="varchar2" MaxLength="20" />
+    <Property Name="SJHM" Type="varchar2" MaxLength="20" />
+    <Property Name="DZYX" Type="varchar2" MaxLength="30" />
+    <Property Name="ZZZM" Type="varchar2" MaxLength="18" />
+    <Property Name="ZZFZJG" Type="varchar2" MaxLength="30" />
+    <Property Name="ZZFZRQ" Type="date" />
+    <Property Name="SFBD" Type="char" MaxLength="1" />
+    <Property Name="DWBH" Type="varchar2" MaxLength="14" />
+    <Property Name="SYYXQZ" Type="date" />
+    <Property Name="XCZG" Type="char" MaxLength="1" />
+    <Property Name="XCZJCX" Type="varchar2" MaxLength="15" />
+    <Property Name="RYZT" Type="char" MaxLength="1" />
+    <Property Name="SXBJ" Type="char" MaxLength="1" />
+    <Property Name="XZCRQ" Type="date" />
+    <Property Name="SXQKSBJ" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“TRFF_PZH.DRV_FLOW”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="DRV_FLOW">
+    <Key>
+      <PropertyRef Name="LSH" />
+      <PropertyRef Name="SFZMHM" />
+      <PropertyRef Name="XM" />
+      <PropertyRef Name="YWLX" />
+      <PropertyRef Name="YWGW" />
+      <PropertyRef Name="XYGW" />
+      <PropertyRef Name="GLBM" />
+      <PropertyRef Name="DCBJ" />
+    </Key>
+    <Property Name="LSH" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="SFZMHM" Type="varchar2" MaxLength="18" Nullable="false" />
+    <Property Name="DABH" Type="char" MaxLength="12" />
+    <Property Name="XM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="YWLX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="YWYY" Type="varchar2" MaxLength="8" />
+    <Property Name="KSSJ" Type="date" />
+    <Property Name="JSSJ" Type="date" />
+    <Property Name="YWGW" Type="varchar2" MaxLength="8" Nullable="false" />
+    <Property Name="KSKM" Type="char" MaxLength="6" />
+    <Property Name="XYGW" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="GLBM" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="FFBZ" Type="char" MaxLength="1" />
+    <Property Name="RKBZ" Type="char" MaxLength="1" />
+    <Property Name="HDBZ" Type="varchar2" MaxLength="2" />
+    <Property Name="XGZL" Type="varchar2" MaxLength="15" />
+    <Property Name="ZJCX" Type="varchar2" MaxLength="15" />
+    <Property Name="YWZT" Type="char" MaxLength="1" />
+    <Property Name="YWBLBM" Type="varchar2" MaxLength="12" />
+    <Property Name="FZJG" Type="varchar2" MaxLength="10" />
+    <Property Name="DCBJ" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“TRFF_PZH.VEH_FLOW”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="VEH_FLOW">
+    <Key>
+      <PropertyRef Name="LSH" />
+      <PropertyRef Name="XH" />
+      <PropertyRef Name="YWLX" />
+    </Key>
+    <Property Name="LSH" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="XH" Type="char" MaxLength="14" Nullable="false" />
+    <Property Name="YWLX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="YWYY" Type="varchar2" MaxLength="8" />
+    <Property Name="SYR" Type="varchar2" MaxLength="128" />
+    <Property Name="HPZL" Type="char" MaxLength="2" />
+    <Property Name="HPHM" Type="varchar2" MaxLength="15" />
+    <Property Name="CLPP1" Type="varchar2" MaxLength="32" />
+    <Property Name="CLXH" Type="varchar2" MaxLength="32" />
+    <Property Name="CLLX" Type="char" MaxLength="3" />
+    <Property Name="XZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="SQRQ" Type="date" />
+    <Property Name="BJRQ" Type="date" />
+    <Property Name="XYGW" Type="char" MaxLength="1" />
+    <Property Name="YWLC" Type="varchar2" MaxLength="10" />
+    <Property Name="LSZT" Type="char" MaxLength="1" />
+    <Property Name="GLBM" Type="varchar2" MaxLength="12" />
+    <Property Name="FPBJ" Type="char" MaxLength="1" />
+    <Property Name="FFBJ" Type="char" MaxLength="1" />
+    <Property Name="RKBJ" Type="char" MaxLength="1" />
+    <Property Name="CLSBDH" Type="varchar2" MaxLength="25" />
+    <Property Name="LY" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“TRFF_PZH.VEHICLE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="VEHICLE">
+    <Key>
+      <PropertyRef Name="HPZL" />
+      <PropertyRef Name="HPHM" />
+    </Key>
+    <Property Name="XH" Type="char" MaxLength="14" />
+    <Property Name="HPZL" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="HPHM" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="CLPP1" Type="varchar2" MaxLength="32" />
+    <Property Name="CLXH" Type="varchar2" MaxLength="32" />
+    <Property Name="CLPP2" Type="varchar2" MaxLength="32" />
+    <Property Name="GCJK" Type="char" MaxLength="1" />
+    <Property Name="ZZG" Type="char" MaxLength="3" />
+    <Property Name="ZZCMC" Type="varchar2" MaxLength="64" />
+    <Property Name="CLSBDH" Type="varchar2" MaxLength="25" />
+    <Property Name="FDJH" Type="varchar2" MaxLength="30" />
+    <Property Name="CLLX" Type="char" MaxLength="3" />
+    <Property Name="CSYS" Type="varchar2" MaxLength="5" />
+    <Property Name="SYXZ" Type="char" MaxLength="1" />
+    <Property Name="SFZMHM" Type="varchar2" MaxLength="18" />
+    <Property Name="SFZMMC" Type="char" MaxLength="1" />
+    <Property Name="SYR" Type="varchar2" MaxLength="128" />
+    <Property Name="SYQ" Type="char" MaxLength="1" />
+    <Property Name="CCDJRQ" Type="date" />
+    <Property Name="DJRQ" Type="date" />
+    <Property Name="YXQZ" Type="date" />
+    <Property Name="QZBFQZ" Type="date" />
+    <Property Name="FZJG" Type="varchar2" MaxLength="10" />
+    <Property Name="GLBM" Type="varchar2" MaxLength="12" />
+    <Property Name="FPRQ" Type="date" />
+    <Property Name="FZRQ" Type="date" />
+    <Property Name="FDJRQ" Type="date" />
+    <Property Name="FHGZRQ" Type="date" />
+    <Property Name="BXZZRQ" Type="date" />
+    <Property Name="BPCS" Type="number" Precision="2" Scale="0" />
+    <Property Name="BZCS" Type="number" Precision="2" Scale="0" />
+    <Property Name="BDJCS" Type="number" Precision="2" Scale="0" />
+    <Property Name="DJZSBH" Type="varchar2" MaxLength="15" />
+    <Property Name="ZDJZSHS" Type="number" Precision="2" Scale="0" />
+    <Property Name="DABH" Type="varchar2" MaxLength="12" />
+    <Property Name="XZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="ZT" Type="varchar2" MaxLength="6" />
+    <Property Name="DYBJ" Type="char" MaxLength="1" />
+    <Property Name="JBR" Type="varchar2" MaxLength="30" />
+    <Property Name="CLLY" Type="char" MaxLength="1" />
+    <Property Name="LSH" Type="varchar2" MaxLength="13" />
+    <Property Name="FDJXH" Type="varchar2" MaxLength="64" />
+    <Property Name="RLZL" Type="varchar2" MaxLength="3" />
+    <Property Name="PL" Type="number" Precision="6" Scale="0" />
+    <Property Name="GL" Type="number" Precision="5" Scale="1" />
+    <Property Name="ZXXS" Type="char" MaxLength="1" />
+    <Property Name="CWKC" Type="number" Precision="5" Scale="0" />
+    <Property Name="CWKK" Type="number" Precision="4" Scale="0" />
+    <Property Name="CWKG" Type="number" Precision="4" Scale="0" />
+    <Property Name="HXNBCD" Type="number" Precision="5" Scale="0" />
+    <Property Name="HXNBKD" Type="number" Precision="4" Scale="0" />
+    <Property Name="HXNBGD" Type="number" Precision="4" Scale="0" />
+    <Property Name="GBTHPS" Type="number" Precision="3" Scale="0" />
+    <Property Name="ZS" Type="number" Precision="1" Scale="0" />
+    <Property Name="ZJ" Type="number" Precision="5" Scale="0" />
+    <Property Name="QLJ" Type="number" Precision="4" Scale="0" />
+    <Property Name="HLJ" Type="number" Precision="4" Scale="0" />
+    <Property Name="LTGG" Type="varchar2" MaxLength="64" />
+    <Property Name="LTS" Type="number" Precision="2" Scale="0" />
+    <Property Name="ZZL" Type="number" Precision="8" Scale="0" />
+    <Property Name="ZBZL" Type="number" Precision="8" Scale="0" />
+    <Property Name="HDZZL" Type="number" Precision="8" Scale="0" />
+    <Property Name="HDZK" Type="number" Precision="3" Scale="0" />
+    <Property Name="ZQYZL" Type="number" Precision="8" Scale="0" />
+    <Property Name="QPZK" Type="number" Precision="1" Scale="0" />
+    <Property Name="HPZK" Type="number" Precision="2" Scale="0" />
+    <Property Name="HBDBQK" Type="varchar2" MaxLength="128" />
+    <Property Name="CCRQ" Type="date" />
+    <Property Name="HDFS" Type="char" MaxLength="1" />
+    <Property Name="LLPZ1" Type="char" MaxLength="1" />
+    <Property Name="PZBH1" Type="varchar2" MaxLength="20" />
+    <Property Name="LLPZ2" Type="char" MaxLength="1" />
+    <Property Name="PZBH2" Type="varchar2" MaxLength="20" />
+    <Property Name="XSDW" Type="varchar2" MaxLength="64" />
+    <Property Name="XSJG" Type="number" Precision="8" Scale="0" />
+    <Property Name="XSRQ" Type="date" />
+    <Property Name="JKPZ" Type="char" MaxLength="1" />
+    <Property Name="JKPZHM" Type="varchar2" MaxLength="20" />
+    <Property Name="HGZBH" Type="varchar2" MaxLength="20" />
+    <Property Name="NSZM" Type="char" MaxLength="1" />
+    <Property Name="NSZMBH" Type="varchar2" MaxLength="64" />
+    <Property Name="GXRQ" Type="date" />
+    <Property Name="XGZL" Type="varchar2" MaxLength="256" />
+    <Property Name="QMBH" Type="varchar2" MaxLength="15" />
+    <Property Name="HMBH" Type="varchar2" MaxLength="15" />
+    <Property Name="BZ" Type="varchar2" MaxLength="128" />
+    <Property Name="JYW" Type="varchar2" MaxLength="256" />
+    <Property Name="ZSXZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="ZSXXDZ" Type="varchar2" MaxLength="128" />
+    <Property Name="YZBM1" Type="varchar2" MaxLength="6" />
+    <Property Name="LXDH" Type="varchar2" MaxLength="20" />
+    <Property Name="ZZZ" Type="varchar2" MaxLength="18" />
+    <Property Name="ZZXZQH" Type="varchar2" MaxLength="10" />
+    <Property Name="ZZXXDZ" Type="varchar2" MaxLength="128" />
+    <Property Name="YZBM2" Type="varchar2" MaxLength="6" />
+    <Property Name="ZDYZT" Type="varchar2" MaxLength="10" />
+    <Property Name="YXH" Type="varchar2" MaxLength="14" />
+    <Property Name="CYRY" Type="varchar2" MaxLength="30" />
+    <Property Name="DPHGZBH" Type="varchar2" MaxLength="20" />
+    <Property Name="SQDM" Type="char" MaxLength="12" />
+    <Property Name="CLYT" Type="char" MaxLength="2" />
+    <Property Name="YTSX" Type="char" MaxLength="1" />
+    <Property Name="DZYX" Type="varchar2" MaxLength="32" />
+    <Property Name="XSZBH" Type="varchar2" MaxLength="20" />
+    <Property Name="SJHM" Type="varchar2" MaxLength="20" />
+    <Property Name="JYHGBZBH" Type="varchar2" MaxLength="20" />
+    <Property Name="DWBH" Type="varchar2" MaxLength="14" />
+    <Property Name="SYQSRQ" Type="date" />
+    <Property Name="YQJYQZBFQZ" Type="date" />
+    <Property Name="YQJYQZ2" Type="date" />
+    <Property Name="FDJGS" Type="number" Precision="2" Scale="0" />
+    <Property Name="SFYZHGN" Type="char" MaxLength="1" />
+    <Property Name="ZZJGLX" Type="varchar2" MaxLength="2" />
+    <Property Name="WXMBC" Type="char" MaxLength="1" />
+    <Property Name="NCDQSY" Type="char" MaxLength="1" />
+    <Property Name="HPQYSJ" Type="date" />
+    <Property Name="DZBSXLH" Type="varchar2" MaxLength="20" />
+    <Property Name="SFXNY" Type="char" MaxLength="1" />
+    <Property Name="XNYZL" Type="char" MaxLength="1" />
+    <Property Name="QDDJXH" Type="varchar2" MaxLength="128" />
+    <Property Name="QDDJH" Type="varchar2" MaxLength="128" />
+    <Property Name="QDDJGL" Type="number" Precision="6" Scale="2" />
+    <Property Name="CNZZZL" Type="varchar2" MaxLength="32" />
+    <Property Name="CNZZXS" Type="number" Precision="3" Scale="0" />
+    <Property Name="CNZZZDL" Type="number" Precision="10" Scale="2" />
+    <Property Name="CNZZZDY" Type="number" Precision="10" Scale="2" />
+    <Property Name="CNZZDTDY" Type="number" Precision="10" Scale="2" />
+    <Property Name="HDWJCD" Type="char" MaxLength="1" />
+    <Property Name="CDQDXSLCGK" Type="number" Precision="10" Scale="2" />
+    <Property Name="CDQDXSLCDS" Type="number" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="DRIVINGLICENSE" EntityType="Self.DRIVINGLICENSE" store:Type="Views" store:Schema="TRFF_PZH">
+      <DefiningQuery>SELECT 
+"DRIVINGLICENSE"."DABH" AS "DABH", 
+"DRIVINGLICENSE"."SFZMHM" AS "SFZMHM", 
+"DRIVINGLICENSE"."ZJCX" AS "ZJCX", 
+"DRIVINGLICENSE"."YZJCX" AS "YZJCX", 
+"DRIVINGLICENSE"."QFRQ" AS "QFRQ", 
+"DRIVINGLICENSE"."SYRQ" AS "SYRQ", 
+"DRIVINGLICENSE"."CCLZRQ" AS "CCLZRQ", 
+"DRIVINGLICENSE"."CCFZJG" AS "CCFZJG", 
+"DRIVINGLICENSE"."JZQX" AS "JZQX", 
+"DRIVINGLICENSE"."YXQS" AS "YXQS", 
+"DRIVINGLICENSE"."YXQZ" AS "YXQZ", 
+"DRIVINGLICENSE"."LJJF" AS "LJJF", 
+"DRIVINGLICENSE"."CFRQ" AS "CFRQ", 
+"DRIVINGLICENSE"."XXTZRQ" AS "XXTZRQ", 
+"DRIVINGLICENSE"."BZCS" AS "BZCS", 
+"DRIVINGLICENSE"."ZT" AS "ZT", 
+"DRIVINGLICENSE"."LY" AS "LY", 
+"DRIVINGLICENSE"."JXMC" AS "JXMC", 
+"DRIVINGLICENSE"."JLY" AS "JLY", 
+"DRIVINGLICENSE"."XZQH" AS "XZQH", 
+"DRIVINGLICENSE"."XZQJ" AS "XZQJ", 
+"DRIVINGLICENSE"."FZRQ" AS "FZRQ", 
+"DRIVINGLICENSE"."JBR" AS "JBR", 
+"DRIVINGLICENSE"."GLBM" AS "GLBM", 
+"DRIVINGLICENSE"."FZJG" AS "FZJG", 
+"DRIVINGLICENSE"."GXSJ" AS "GXSJ", 
+"DRIVINGLICENSE"."LSH" AS "LSH", 
+"DRIVINGLICENSE"."XGZL" AS "XGZL", 
+"DRIVINGLICENSE"."BZ" AS "BZ", 
+"DRIVINGLICENSE"."JYW" AS "JYW", 
+"DRIVINGLICENSE"."YDABH" AS "YDABH", 
+"DRIVINGLICENSE"."SQDM" AS "SQDM", 
+"DRIVINGLICENSE"."ZXBH" AS "ZXBH", 
+"DRIVINGLICENSE"."XH" AS "XH", 
+"DRIVINGLICENSE"."SFZMMC" AS "SFZMMC", 
+"DRIVINGLICENSE"."HMCD" AS "HMCD", 
+"DRIVINGLICENSE"."XM" AS "XM", 
+"DRIVINGLICENSE"."XB" AS "XB", 
+"DRIVINGLICENSE"."CSRQ" AS "CSRQ", 
+"DRIVINGLICENSE"."GJ" AS "GJ", 
+"DRIVINGLICENSE"."DJZSXZQH" AS "DJZSXZQH", 
+"DRIVINGLICENSE"."DJZSXXDZ" AS "DJZSXXDZ", 
+"DRIVINGLICENSE"."LXZSXZQH" AS "LXZSXZQH", 
+"DRIVINGLICENSE"."LXZSXXDZ" AS "LXZSXXDZ", 
+"DRIVINGLICENSE"."LXZSYZBM" AS "LXZSYZBM", 
+"DRIVINGLICENSE"."LXDH" AS "LXDH", 
+"DRIVINGLICENSE"."SJHM" AS "SJHM", 
+"DRIVINGLICENSE"."DZYX" AS "DZYX", 
+"DRIVINGLICENSE"."ZZZM" AS "ZZZM", 
+"DRIVINGLICENSE"."ZZFZJG" AS "ZZFZJG", 
+"DRIVINGLICENSE"."ZZFZRQ" AS "ZZFZRQ", 
+"DRIVINGLICENSE"."SFBD" AS "SFBD", 
+"DRIVINGLICENSE"."DWBH" AS "DWBH", 
+"DRIVINGLICENSE"."SYYXQZ" AS "SYYXQZ", 
+"DRIVINGLICENSE"."XCZG" AS "XCZG", 
+"DRIVINGLICENSE"."XCZJCX" AS "XCZJCX", 
+"DRIVINGLICENSE"."RYZT" AS "RYZT", 
+"DRIVINGLICENSE"."SXBJ" AS "SXBJ", 
+"DRIVINGLICENSE"."XZCRQ" AS "XZCRQ", 
+"DRIVINGLICENSE"."SXQKSBJ" AS "SXQKSBJ"
+FROM "TRFF_PZH"."DRIVINGLICENSE" "DRIVINGLICENSE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DRV_FLOW" EntityType="Self.DRV_FLOW" store:Type="Views" store:Schema="TRFF_PZH">
+      <DefiningQuery>SELECT 
+"DRV_FLOW"."LSH" AS "LSH", 
+"DRV_FLOW"."SFZMHM" AS "SFZMHM", 
+"DRV_FLOW"."DABH" AS "DABH", 
+"DRV_FLOW"."XM" AS "XM", 
+"DRV_FLOW"."YWLX" AS "YWLX", 
+"DRV_FLOW"."YWYY" AS "YWYY", 
+"DRV_FLOW"."KSSJ" AS "KSSJ", 
+"DRV_FLOW"."JSSJ" AS "JSSJ", 
+"DRV_FLOW"."YWGW" AS "YWGW", 
+"DRV_FLOW"."KSKM" AS "KSKM", 
+"DRV_FLOW"."XYGW" AS "XYGW", 
+"DRV_FLOW"."GLBM" AS "GLBM", 
+"DRV_FLOW"."FFBZ" AS "FFBZ", 
+"DRV_FLOW"."RKBZ" AS "RKBZ", 
+"DRV_FLOW"."HDBZ" AS "HDBZ", 
+"DRV_FLOW"."XGZL" AS "XGZL", 
+"DRV_FLOW"."ZJCX" AS "ZJCX", 
+"DRV_FLOW"."YWZT" AS "YWZT", 
+"DRV_FLOW"."YWBLBM" AS "YWBLBM", 
+"DRV_FLOW"."FZJG" AS "FZJG", 
+"DRV_FLOW"."DCBJ" AS "DCBJ"
+FROM "TRFF_PZH"."DRV_FLOW" "DRV_FLOW"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VEH_FLOW" EntityType="Self.VEH_FLOW" store:Type="Views" store:Schema="TRFF_PZH">
+      <DefiningQuery>SELECT 
+"VEH_FLOW"."LSH" AS "LSH", 
+"VEH_FLOW"."XH" AS "XH", 
+"VEH_FLOW"."YWLX" AS "YWLX", 
+"VEH_FLOW"."YWYY" AS "YWYY", 
+"VEH_FLOW"."SYR" AS "SYR", 
+"VEH_FLOW"."HPZL" AS "HPZL", 
+"VEH_FLOW"."HPHM" AS "HPHM", 
+"VEH_FLOW"."CLPP1" AS "CLPP1", 
+"VEH_FLOW"."CLXH" AS "CLXH", 
+"VEH_FLOW"."CLLX" AS "CLLX", 
+"VEH_FLOW"."XZQH" AS "XZQH", 
+"VEH_FLOW"."SQRQ" AS "SQRQ", 
+"VEH_FLOW"."BJRQ" AS "BJRQ", 
+"VEH_FLOW"."XYGW" AS "XYGW", 
+"VEH_FLOW"."YWLC" AS "YWLC", 
+"VEH_FLOW"."LSZT" AS "LSZT", 
+"VEH_FLOW"."GLBM" AS "GLBM", 
+"VEH_FLOW"."FPBJ" AS "FPBJ", 
+"VEH_FLOW"."FFBJ" AS "FFBJ", 
+"VEH_FLOW"."RKBJ" AS "RKBJ", 
+"VEH_FLOW"."CLSBDH" AS "CLSBDH", 
+"VEH_FLOW"."LY" AS "LY"
+FROM "TRFF_PZH"."VEH_FLOW" "VEH_FLOW"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VEHICLE" EntityType="Self.VEHICLE" store:Type="Views" store:Schema="TRFF_PZH">
+      <DefiningQuery>SELECT 
+"VEHICLE"."XH" AS "XH", 
+"VEHICLE"."HPZL" AS "HPZL", 
+"VEHICLE"."HPHM" AS "HPHM", 
+"VEHICLE"."CLPP1" AS "CLPP1", 
+"VEHICLE"."CLXH" AS "CLXH", 
+"VEHICLE"."CLPP2" AS "CLPP2", 
+"VEHICLE"."GCJK" AS "GCJK", 
+"VEHICLE"."ZZG" AS "ZZG", 
+"VEHICLE"."ZZCMC" AS "ZZCMC", 
+"VEHICLE"."CLSBDH" AS "CLSBDH", 
+"VEHICLE"."FDJH" AS "FDJH", 
+"VEHICLE"."CLLX" AS "CLLX", 
+"VEHICLE"."CSYS" AS "CSYS", 
+"VEHICLE"."SYXZ" AS "SYXZ", 
+"VEHICLE"."SFZMHM" AS "SFZMHM", 
+"VEHICLE"."SFZMMC" AS "SFZMMC", 
+"VEHICLE"."SYR" AS "SYR", 
+"VEHICLE"."SYQ" AS "SYQ", 
+"VEHICLE"."CCDJRQ" AS "CCDJRQ", 
+"VEHICLE"."DJRQ" AS "DJRQ", 
+"VEHICLE"."YXQZ" AS "YXQZ", 
+"VEHICLE"."QZBFQZ" AS "QZBFQZ", 
+"VEHICLE"."FZJG" AS "FZJG", 
+"VEHICLE"."GLBM" AS "GLBM", 
+"VEHICLE"."FPRQ" AS "FPRQ", 
+"VEHICLE"."FZRQ" AS "FZRQ", 
+"VEHICLE"."FDJRQ" AS "FDJRQ", 
+"VEHICLE"."FHGZRQ" AS "FHGZRQ", 
+"VEHICLE"."BXZZRQ" AS "BXZZRQ", 
+"VEHICLE"."BPCS" AS "BPCS", 
+"VEHICLE"."BZCS" AS "BZCS", 
+"VEHICLE"."BDJCS" AS "BDJCS", 
+"VEHICLE"."DJZSBH" AS "DJZSBH", 
+"VEHICLE"."ZDJZSHS" AS "ZDJZSHS", 
+"VEHICLE"."DABH" AS "DABH", 
+"VEHICLE"."XZQH" AS "XZQH", 
+"VEHICLE"."ZT" AS "ZT", 
+"VEHICLE"."DYBJ" AS "DYBJ", 
+"VEHICLE"."JBR" AS "JBR", 
+"VEHICLE"."CLLY" AS "CLLY", 
+"VEHICLE"."LSH" AS "LSH", 
+"VEHICLE"."FDJXH" AS "FDJXH", 
+"VEHICLE"."RLZL" AS "RLZL", 
+"VEHICLE"."PL" AS "PL", 
+"VEHICLE"."GL" AS "GL", 
+"VEHICLE"."ZXXS" AS "ZXXS", 
+"VEHICLE"."CWKC" AS "CWKC", 
+"VEHICLE"."CWKK" AS "CWKK", 
+"VEHICLE"."CWKG" AS "CWKG", 
+"VEHICLE"."HXNBCD" AS "HXNBCD", 
+"VEHICLE"."HXNBKD" AS "HXNBKD", 
+"VEHICLE"."HXNBGD" AS "HXNBGD", 
+"VEHICLE"."GBTHPS" AS "GBTHPS", 
+"VEHICLE"."ZS" AS "ZS", 
+"VEHICLE"."ZJ" AS "ZJ", 
+"VEHICLE"."QLJ" AS "QLJ", 
+"VEHICLE"."HLJ" AS "HLJ", 
+"VEHICLE"."LTGG" AS "LTGG", 
+"VEHICLE"."LTS" AS "LTS", 
+"VEHICLE"."ZZL" AS "ZZL", 
+"VEHICLE"."ZBZL" AS "ZBZL", 
+"VEHICLE"."HDZZL" AS "HDZZL", 
+"VEHICLE"."HDZK" AS "HDZK", 
+"VEHICLE"."ZQYZL" AS "ZQYZL", 
+"VEHICLE"."QPZK" AS "QPZK", 
+"VEHICLE"."HPZK" AS "HPZK", 
+"VEHICLE"."HBDBQK" AS "HBDBQK", 
+"VEHICLE"."CCRQ" AS "CCRQ", 
+"VEHICLE"."HDFS" AS "HDFS", 
+"VEHICLE"."LLPZ1" AS "LLPZ1", 
+"VEHICLE"."PZBH1" AS "PZBH1", 
+"VEHICLE"."LLPZ2" AS "LLPZ2", 
+"VEHICLE"."PZBH2" AS "PZBH2", 
+"VEHICLE"."XSDW" AS "XSDW", 
+"VEHICLE"."XSJG" AS "XSJG", 
+"VEHICLE"."XSRQ" AS "XSRQ", 
+"VEHICLE"."JKPZ" AS "JKPZ", 
+"VEHICLE"."JKPZHM" AS "JKPZHM", 
+"VEHICLE"."HGZBH" AS "HGZBH", 
+"VEHICLE"."NSZM" AS "NSZM", 
+"VEHICLE"."NSZMBH" AS "NSZMBH", 
+"VEHICLE"."GXRQ" AS "GXRQ", 
+"VEHICLE"."XGZL" AS "XGZL", 
+"VEHICLE"."QMBH" AS "QMBH", 
+"VEHICLE"."HMBH" AS "HMBH", 
+"VEHICLE"."BZ" AS "BZ", 
+"VEHICLE"."JYW" AS "JYW", 
+"VEHICLE"."ZSXZQH" AS "ZSXZQH", 
+"VEHICLE"."ZSXXDZ" AS "ZSXXDZ", 
+"VEHICLE"."YZBM1" AS "YZBM1", 
+"VEHICLE"."LXDH" AS "LXDH", 
+"VEHICLE"."ZZZ" AS "ZZZ", 
+"VEHICLE"."ZZXZQH" AS "ZZXZQH", 
+"VEHICLE"."ZZXXDZ" AS "ZZXXDZ", 
+"VEHICLE"."YZBM2" AS "YZBM2", 
+"VEHICLE"."ZDYZT" AS "ZDYZT", 
+"VEHICLE"."YXH" AS "YXH", 
+"VEHICLE"."CYRY" AS "CYRY", 
+"VEHICLE"."DPHGZBH" AS "DPHGZBH", 
+"VEHICLE"."SQDM" AS "SQDM", 
+"VEHICLE"."CLYT" AS "CLYT", 
+"VEHICLE"."YTSX" AS "YTSX", 
+"VEHICLE"."DZYX" AS "DZYX", 
+"VEHICLE"."XSZBH" AS "XSZBH", 
+"VEHICLE"."SJHM" AS "SJHM", 
+"VEHICLE"."JYHGBZBH" AS "JYHGBZBH", 
+"VEHICLE"."DWBH" AS "DWBH", 
+"VEHICLE"."SYQSRQ" AS "SYQSRQ", 
+"VEHICLE"."YQJYQZBFQZ" AS "YQJYQZBFQZ", 
+"VEHICLE"."YQJYQZ2" AS "YQJYQZ2", 
+"VEHICLE"."FDJGS" AS "FDJGS", 
+"VEHICLE"."SFYZHGN" AS "SFYZHGN", 
+"VEHICLE"."ZZJGLX" AS "ZZJGLX", 
+"VEHICLE"."WXMBC" AS "WXMBC", 
+"VEHICLE"."NCDQSY" AS "NCDQSY", 
+"VEHICLE"."HPQYSJ" AS "HPQYSJ", 
+"VEHICLE"."DZBSXLH" AS "DZBSXLH", 
+"VEHICLE"."SFXNY" AS "SFXNY", 
+"VEHICLE"."XNYZL" AS "XNYZL", 
+"VEHICLE"."QDDJXH" AS "QDDJXH", 
+"VEHICLE"."QDDJH" AS "QDDJH", 
+"VEHICLE"."QDDJGL" AS "QDDJGL", 
+"VEHICLE"."CNZZZL" AS "CNZZZL", 
+"VEHICLE"."CNZZXS" AS "CNZZXS", 
+"VEHICLE"."CNZZZDL" AS "CNZZZDL", 
+"VEHICLE"."CNZZZDY" AS "CNZZZDY", 
+"VEHICLE"."CNZZDTDY" AS "CNZZDTDY", 
+"VEHICLE"."HDWJCD" AS "HDWJCD", 
+"VEHICLE"."CDQDXSLCGK" AS "CDQDXSLCGK", 
+"VEHICLE"."CDQDXSLCDS" AS "CDQDXSLCDS"
+FROM "TRFF_PZH"."VEHICLE" "VEHICLE"</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

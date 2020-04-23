@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户编辑</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .website, .userinfo {
+            min-height: 480px;
+        }
+
+        .formtable td {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+
+        .userinfo span {
+            display: block;
+            line-height: 30px;
+            background: #f5e2e2;
+            border: solid 1px #e1c3c3;
+            color: #dd3030;
+            margin-top: 2px;
+            padding-left: 20px;
+        }
+
+        .website span {
+            display: block;
+            line-height: 30px;
+            background: #deefe9;
+            border: solid 1px #bedabf;
+            color: #227447;
+            margin-top: 2px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body style="padding:15px 8px 0px 8px;min-width:100px;">
+    <div id="root">
+        <table class="formtable">
+            <tbody>
+                <tr>
+                    <td class="tlabel">查询类型：</td>
+                    <td>
+                        <input name="cxlx" type="radio" value="机动车信息" v-model="cxlx">机动车信息
+                        <input name="cxlx" type="radio" value="驾驶人信息" v-model="cxlx">驾驶人信息
+                    </td>
+                </tr>
+
+                <tr v-if="cxlx=='机动车信息'">
+                    <td class="tlabel">号牌种类：</td>
+                    <td>
+                        <select class="select swidth" v-model="hpzlno" style="min-width:80px;width:80px">
+                            <option v-for="item in hpzls" :value="item.CODE1">{{item.NAME}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr v-if="cxlx=='机动车信息'">
+                    <td class="tlabel">号牌号码：</td>
+                    <td>
+                        <input type="text" class="forminput inputstyle" placeholder="车牌" v-model="hphm">
+                        <input type="button" value="查询" class="btnsave" style="display:inline;float:none;" @click="query">
+                    </td>
+                </tr>
+
+
+                <tr v-if="cxlx=='驾驶人信息'">
+                    <td class="tlabel">身份证号码：</td>
+                    <td>
+                        <input type="text" class="forminput inputstyle" placeholder="18位身份证号" v-model="sfzhm">
+                        <input type="button" value="查询" class="btnsave" style="display:inline;float:none;" @click="query">
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <ul class="tab" style="margin-top:2px;">
+            <li name="jbxx" class="tabcurrent"><a href="javascript:;">信息详情</a></li>
+            <li name="ishmd" v-show="cxlx=='驾驶人信息'"><a href="javascript:;">黑/红名单信息</a></li>
+
+        </ul>
+
+        <div class="website" style="padding:5px;" id="jbxx">
+            <div v-if="cxlx=='机动车信息'">
+                <div v-if="vehicle!=''">
+                    <div v-if="vehicle==null">
+                        <span>接口查询错误，详细信息请查看日志</span>
+                    </div>
+                    <div v-else-if="vehicle.root.body==''">
+                        <span>没有该机动车</span>
+                    </div>
+                    <div v-else>
+                        <span>所有人：{{vehicle.root.body.veh.syr}}（{{vehicle.root.body.veh.sfzmhm}}）</span>
+                        <span>联系电话：{{vehicle.root.body.veh.sjhm.substr(0,3)}}****{{vehicle.root.body.veh.sjhm.substr(7,4)}}</span>
+                        <span>发动机号：{{vehicle.root.body.veh.fdjh}}</span>
+                        <span>车辆识别代号：{{vehicle.root.body.veh.clsbdh}}</span>
+                        <span>车辆品牌：{{vehicle.root.body.veh.clpp1}}</span>
+                        <span>定检日期：{{vehicle.root.body.veh.djrq}}</span>
+                        <span>检验有效期止：{{vehicle.root.body.veh.yxqz}}</span>
+                        <span>住所详细地址：{{vehicle.root.body.veh.zsxxdz}}</span>
+
+                    </div>
+                </div>
+            </div>
+            <div v-else>
+                <div v-if="driver!=''">
+                    <div v-if="driver==null">
+                        <span>接口查询错误，详细信息请查看日志</span>
+                    </div>
+                    <div v-else-if="driver.root.body==''">
+                        <span>没有该机动车</span>
+                    </div>
+                    <div v-else>
+                        <span>档案编号：{{driver.root.body.DrvPerson.dabh}}</span>
+                        <span>姓名：{{driver.root.body.DrvPerson.xm}}</span>
+                        <span>身份证号码：{{driver.root.body.DrvPerson.sfzmhm}}</span>
+                        <span>状态：{{driver.root.body.DrvPerson.zt}}</span>
+                        <span>积分：{{driver.root.body.DrvPerson.ljjf}}</span>
+                        <span>初次领证日期：{{driver.root.body.DrvPerson.cclzrq}}</span>
+                        <span>手机号码：{{driver.root.body.DrvPerson.sjhm}}</span>
+                        <span>下一审验日期：{{driver.root.body.DrvPerson.yxqz}}</span>
+                        <span>住所地址：{{driver.root.body.DrvPerson.djzsxxdz}}</span>
+                        <span>有效期始：{{driver.root.body.DrvPerson.yxqs}}</span>
+                        <span>有效期止：{{driver.root.body.DrvPerson.yxqz}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="userinfo" style="padding:5px;" id="ishmd">
+            <div v-for="item in rblist">
+                <span>类型：{{item.LX}}</span>
+                <span>姓名：{{item.NAME}}</span>
+                <span>身份证号码：{{item.SFZHM}}</span>
+                <span>加入类型：{{item.ADDLX}}</span>
+                <span>加入原因：{{item.MEMO}}</span>
+                <span>申请人：{{item.OPER}}</span>
+                <span>申请时间：{{item.LRSJ}}</span>
+                <span>审批人：{{item.SPER}}</span>
+                <span>审批时间：{{item.SPSJ}}</span>
+                <span>状态：{{item.ZT}}</span>
+                <span>自动解锁日期：{{item.JSSJ}}</span>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="ywcx.js"></script>
+
+</html>
+

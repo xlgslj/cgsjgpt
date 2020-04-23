@@ -1,0 +1,112 @@
+﻿.s3-btn1, .s3-btn2, .s3-btn3, .s3-btn4, .s3-btn5, a.s3-btn1, a.s3-btn2, a.s3-btn3, a.s3-btn4, a.s3-btn5 {
+    outline: none;
+    text-decoration: none !important;
+    margin: 0 auto;
+    padding: 1em 3em;
+    border-radius: 5px;
+    -webkit-transition: all 100ms linear;
+    transition: all 100ms linear;
+    touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.s3-btn1 {
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #c03718 0%, #e44a27 100%);
+    background: linear-gradient(to bottom, #c03718 0%, #e44a27 100%);
+    border: 1px solid #a93115;
+    box-shadow: 0px 4px 0px 0px #a93115, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+}
+
+    .s3-btn1:hover {
+        background: -webkit-linear-gradient(top, #c03718 0%, #d73e1b 100%);
+        background: linear-gradient(to bottom, #c03718 0%, #d73e1b 100%);
+    }
+
+        .s3-btn1:hover:active {
+            border: none !important;
+            top: 4px;
+            box-shadow: 0px 2px 0px 0px #a93115, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+        }
+
+.s3-btn2 {
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #6fbdbf 0%, #92cdcf 100%);
+    background: linear-gradient(to bottom, #6fbdbf 0%, #92cdcf 100%);
+    border: 1px solid #5db5b8;
+    box-shadow: 0px 4px 0px 0px #5db5b8, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+}
+
+    .s3-btn2:hover {
+        background: -webkit-linear-gradient(top, #6fbdbf 0%, #80c5c7 100%);
+        background: linear-gradient(to bottom, #6fbdbf 0%, #80c5c7 100%);
+    }
+
+        .s3-btn2:hover:active {
+            border: none !important;
+            top: 4px;
+            box-shadow: 0px 2px 0px 0px #5db5b8, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+        }
+
+.s3-btn3 {
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #a8e427 0%, #baea54 100%);
+    background: linear-gradient(to bottom, #a8e427 0%, #baea54 100%);
+    border: 1px solid #9bd71a;
+    box-shadow: 0px 4px 0px 0px #9bd71a, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+}
+
+    .s3-btn3:hover {
+        background: -webkit-linear-gradient(top, #a8e427 0%, #b1e73d 100%);
+        background: linear-gradient(to bottom, #a8e427 0%, #b1e73d 100%);
+    }
+
+        .s3-btn3:hover:active {
+            border: none !important;
+            top: 4px;
+            box-shadow: 0px 2px 0px 0px #9bd71a, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+        }
+
+.s3-btn4 {
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #70df9e 0%, #9ae8ba 100%);
+    background: linear-gradient(to bottom, #70df9e 0%, #9ae8ba 100%);
+    border: 1px solid #5cda8f;
+    box-shadow: 0px 4px 0px 0px #5cda8f, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+}
+
+    .s3-btn4:hover {
+        background: -webkit-linear-gradient(top, #70df9e 0%, #85e3ac 100%);
+        background: linear-gradient(to bottom, #70df9e 0%, #85e3ac 100%);
+    }
+
+        .s3-btn4:hover:active {
+            border: none !important;
+            top: 4px;
+            box-shadow: 0px 2px 0px 0px #5cda8f, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+        }
+
+.s3-btn5 {
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #161616 0%, #2f2f2f 100%);
+    background: linear-gradient(to bottom, #161616 0%, #2f2f2f 100%);
+    border: 1px solid #090909;
+    box-shadow: 0px 4px 0px 0px #090909, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+}
+
+    .s3-btn5:hover {
+        background: -webkit-linear-gradient(top, #161616 0%, #222222 100%);
+        background: linear-gradient(to bottom, #161616 0%, #222222 100%);
+    }
+
+        .s3-btn5:hover:active {
+            border: none !important;
+            top: 4px;
+            box-shadow: 0px 2px 0px 0px #090909, 0px 5px 12px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 10px -5px #000000;
+        }

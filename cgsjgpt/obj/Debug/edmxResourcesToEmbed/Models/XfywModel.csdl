@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EntitiesXfyw" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BUSINESSBM" EntityType="Model.BUSINESSBM" />
+    <EntitySet Name="BUSINESS_FLOW" EntityType="Model.BUSINESS_FLOW" />
+    <EntitySet Name="BUSINESSBASE" EntityType="Model.BUSINESSBASE" />
+  </EntityContainer>
+  <EntityType Name="BUSINESSBM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BIDS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BUSINESS_FLOW">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="XTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="YWYY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SHMS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BLMS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HPZLNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HPZL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HPHM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HPHM1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CLSBDH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CYLSH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRTEL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZJLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZJHM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DLRNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DLRTEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DWDM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BLDWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DWZLS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ISHMD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DRVANDVEHINFO" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="OPERID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPERTIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OPERTIME1" Type="DateTime" />
+    <Property Name="OPERTIME2" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SPER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPTIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SPTIME1" Type="DateTime" />
+    <Property Name="SPTIME2" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SPCONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OPER1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPER1TIME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OPER1TIME1" Type="DateTime" />
+    <Property Name="OPER1TIME2" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CJGLSH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LSHHCZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ZT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="WARNZT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="QUERYZT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BUSINESSBASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="XTLB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GNBH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YWLX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="YWYY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CYLSHISNULL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="YHPHMISNULL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FZX" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CLLX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYXZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZJCX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BLMS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SHMS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DLRZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DWZL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="K1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="K2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="K3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

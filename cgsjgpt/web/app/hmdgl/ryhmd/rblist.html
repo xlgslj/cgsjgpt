@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>部门管理</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <link href="../../../layui/css/layui.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .c-ui {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .c-ui > li {
+                line-height: 30px;
+                margin: 1px 1px 1px 1px;
+                vertical-align: middle;
+                position: relative;
+            }
+
+        input[type='text'] {
+            height: 26px;
+            border: solid 1px #c6c6c6;
+            line-height: 26px;
+            text-indent: 8px;
+            font-family: '微软雅黑';
+            color: #585858;
+            width: 200px;
+        }
+        .layui-table-cell-bak {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <!--top-->
+    <div id="app" style="display:flex;flex-direction:row;align-items:center;padding:10px 0 0 10px;">
+        <ul class="c-ui">
+            <li>
+                类型:&nbsp;
+                <select class="select swidth" style="width:100px;" v-model="lx">
+                    <option value=""></option>
+                    <option value="黑名单">黑名单</option>
+                    <option value="红名单">红名单</option>
+                </select>
+            </li>
+            <li>
+                姓名:&nbsp;<input type="text" v-model="name" style="width:80px;">
+            </li>
+
+            <li>
+                身份证号:&nbsp;<input type="text" v-model="sfzhm" style="width:200px;">
+            </li>
+            <li>
+                审批人:&nbsp;<input type="text" v-model="sper" style="width:80px;">
+            </li>
+            <li>&nbsp;&nbsp;审批日期:&nbsp;<input type="text" id="rqfw" placeholder="选择时间" style="width:160px;">
+        </ul>
+        <ul class="toolbar" style="padding-top:0px;margin-left:10px;">
+            <li><a href="#" class="selected" @click="query"><i class="toolico iconfont">&#x343e;</i>查询</a></li>
+            <li><a href="#" class="selected" @click="add"><i class="toolico iconfont">&#xe649;</i>添加</a></li>
+        </ul>
+    </div>
+    <!--top end-->
+    <div style="padding:0 5px 0 5px">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <script id="barDemo" type="text/html">
+        <a class="layui-btn layui-btn-xs" class="headtop" lay-event="show">查看</a>
+       
+    </script>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/date.js"></script>
+<script type="text/javascript" src="rblist.js"></script>
+</html>
+

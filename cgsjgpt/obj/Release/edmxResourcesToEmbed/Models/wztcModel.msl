@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_wztc">
+    <EntitySetMapping Name="SPECIATABLE">
+      <EntityTypeMapping TypeName="Model.SPECIATABLE">
+        <MappingFragment StoreEntitySet="SPECIATABLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+          <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+          <ScalarProperty Name="DW" ColumnName="DW" />
+          <ScalarProperty Name="HPZLNAME" ColumnName="HPZLNAME" />
+          <ScalarProperty Name="KSSJ" ColumnName="KSSJ" />
+          <ScalarProperty Name="JSSJ" ColumnName="JSSJ" />
+          <ScalarProperty Name="LB" ColumnName="LB" />
+          <ScalarProperty Name="JDCSYR" ColumnName="JDCSYR" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="SFYDD" ColumnName="SFYDD" />
+          <ScalarProperty Name="GXR" ColumnName="GXR" />
+          <ScalarProperty Name="LXR" ColumnName="LXR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

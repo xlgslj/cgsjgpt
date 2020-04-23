@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增部门</title>
+    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+    <form id="root">
+        <table class="formtable" style="width:780px;">
+            <tbody>
+                <tr>
+                    <td class="tlabel">原密码：</td>
+                    <td>
+                        <input type="password" class="forminput inputstyle" style="width:200px;" v-model="oldpwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">新密码：</td>
+                    <td>
+                        <input type="password" class="forminput inputstyle" style="width:200px;" v-model="pwd1">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tlabel">确认新密码 ：</td>
+                    <td>
+                        <input type="password" class="forminput inputstyle" style="width:200px;" v-model="pwd2">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="formbtn">
+            <input type="button" value="保存" class="btnsave" @click="save">
+            <input type="reset" value="重置" class="btncancel">
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../js/vue.min.js"></script>
+<script type="text/javascript" src="mmxg.js"></script>
+
+</html>
+
